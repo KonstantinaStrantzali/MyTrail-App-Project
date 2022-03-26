@@ -9,9 +9,12 @@ app = Flask(__name__)
 def index():
     return render_template("welcome.html")
 
-@app.route("/register")
+
+@app.route("/")
 def register():
     return render_template("register.html")
+
+
 
 
 if __name__ == "__main__":
