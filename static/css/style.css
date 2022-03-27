@@ -32,7 +32,16 @@ html {
         min-height: 100vh;
         margin-top: 0;
 }
-
+.trails-hero{
+    
+    background: url("/static/images/trails.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    min-height: 100vh;
+    margin-top: 0;
+}
 .jumbotron{ 
     margin: 5rem 3rem 0rem;
     background-color: rgba(196, 194, 194, 0.603);
@@ -53,4 +62,8 @@ html {
 .logo{
     font-size: 20px;
     padding: 5px;
+}
+.search-bar-icon{
+    font-size: 20px;
+    margin-right: 10px;
 }

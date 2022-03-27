@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+
+<!--Search bar found on StackOverflow and the modified https://stackoverflow.com/questions/45696685/search-input-with-an-icon-bootstrap-->
+    <div class=" container-fluid trails-hero">
+        <div class="row justify-content-center">
+            <div class="col-lg-8  mt-5">
+                <div class="row">
+                    <!-- Search -->
+                    <form class="col-lg-8 text-center text-md-start" action=""
+                        method="POST">
+                        <input class="form-control mb-2" name="query" id="query" type="search"
+                            placeholder="Search Comics" aria-label="Search Comics">
+                        <button class="btn btn-success text-shadow comic-font" type="submit"><i
+                                class="fas fa-search"></i> Search Trails</button>
+                        <a href=""
+                            class="btn btn-danger text-shadow comic-font">Reset</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+      
+        
+    
+    
+
+{% endblock %}
