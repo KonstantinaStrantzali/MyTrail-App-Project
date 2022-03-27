@@ -1,4 +1,87 @@
 {% extends "base.html" %}
 {% block content %}
-    <h1>Register Page</h1>
+
+<div class="container-fluid register-hero">
+    <div class="row justify-content-center">
+        <div class="col-lg-8 mt-5">
+            <!-- form area -->
+            <section class="form-area"></section>
+            <form id="registration-form" class="card col-12 col-md-8 offset-md-2" method="POST"
+                action="{{ url_for('register') }}">
+                <div class="card-title text-center mt-2">
+                    <h3>Registration Form</h3>
+                </div>
+                <div class="card-body">
+                    <div class="row g-2">
+                        <!-- full name -->
+                        <div class="col-1">
+                            <i class="fas fa-user-plus col-md icons"></i>
+                        </div>
+                        <div class="col-md-10 offset-md-1 col-lg-11 offset-lg-0">
+                            <div class="form-floating mb-3">
+                                <input type="text" name="fullname" class="form-control col-md-8" id="fullname"
+                                    placeholder="Full Name" minlength="5" maxlength="25" required>
+                                <label for="fullname">Full Name</label>
+                            </div>
+                        </div>
+                        <!-- username -->
+                        <div class="col-md-1">
+                            <i class="fas fa-user-tag col-md icons"></i>
+                        </div>
+                        <div class="col-md-10 offset-md-1 col-lg-11 offset-lg-0">
+                            <div class="form-floating mb-3">
+                                <input type="text" name="username" class="form-control" id="username"
+                                    placeholder="Username" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$"
+                                    required>
+                                <label for="username">Username</label>
+                            </div>
+                        </div>
+                        <!-- email -->
+                        <div class="col-md-1">
+                            <i class="fas fa-envelope col-md icons"></i>
+                        </div>
+                        <div class="col-md-10 offset-md-1 col-lg-11 offset-lg-0">
+                            <div class="form-floating mb-3">
+                                <input type="email" name="email" class="form-control" id="email"
+                                    placeholder="name@example.com" required>
+                                <label for="email">Email address</label>
+                            </div>
+                        </div>
+                        <!-- password -->
+                        <div class="col-md-1 ">
+                            <i class="fas fa-user-lock col-md icons"></i>
+                        </div>
+                        <div class="col-md-10 offset-md-1 col-lg-11 offset-lg-0">
+                            <div class="form-floating mb-3">
+                                <input type="password" name="password" class="form-control" id="password"
+                                    placeholder="Password" minlength="8" maxlength="15" pattern="^[a-zA-Z0-9]{8,15}$"
+                                    required>
+                                <label for="password">Password</label>
+                                <p id="error-msg" class="d-none mb-0">
+                                    <small>
+                                        Please enter a valid password.
+                                    </small>
+                                </p>
+                                <p class="password-requirements text-muted">
+                                    Eight or more characters with a mix of numbers and letters, including a capital
+                                    letter.
+                                </p>
+
+                            </div>
+                        </div>
+                        <!-- register -->
+                        <div class="row d-flex justify-content-center mt-4 mb-3">
+                            <div class="d-grid col-lg-4 text-center">
+                                <button class="btn btn-success text-shadow comic-font" type="submit">
+                                    Register <i class="fas fa-sign-in-alt"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+          </section>
+        </div>
+    </div>
+</div>
 {% endblock %}
