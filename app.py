@@ -23,11 +23,11 @@ def login():
 @app.route("/trails")
 def trails():
     return render_template("trails.html")
-    
 
-@app.route("/add_trails")
-def add_trails():
-    return render_template("add_trails.html")
+
+@app.route("/add_trail")
+def add_trail():
+    return render_template("add_trail.html")
 
 
 

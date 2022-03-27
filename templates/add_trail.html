@@ -1,0 +1,105 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+<section class="add_trail_area">
+    <div class="container-fluid">
+   
+    <div class="row">
+        <div class="col">
+            <h2 class="text-center">Add Trail</h2>
+        </div>
+    </div>
+    <div class="row">
+        <form class="card col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2" method="POST" action="">
+            <div class="card-body">
+                <div class="row g-2">
+                    <!-- title -->
+                    <div class="col-md-1">
+                        <i class="fas fa-align-left col-md fields"></i>
+                    </div>
+                    <div class="col-md-10 offset-md-1 col-lg-11 offset-lg-0">
+                        <div class="form-floating mb-3">
+                            <input type="text" name="title" class="form-control col-md-8" id="title" placeholder="Title"
+                                minlength="2" maxlength="25" required>
+                            <label for="title">Title</label>
+                        </div>
+                    </div>
+                    <!-- location -->
+                    <div class="col-md-1 align-self-center">
+                        <i class="fas fa-hashtag col-md fields"></i>
+                    </div>
+                    <div class="col-md-10 offset-md-1 col-lg-11 offset-lg-0">
+                        <div class="form-floating mb-3">
+                            <input type="text" name="location" class="form-control" id="location"
+                                placeholder="Location" minlength="1" maxlength="4" pattern="^[0-9]{1,4}$" required>
+                            <label for="location">Location</label>
+                        </div>
+                    </div>
+                    <!-- grade -->
+                    <div class="col-md-1 align-self-center">
+                        <i class="fas fa-award col-md fields"></i>
+                    </div>
+                    <div class="col-md-10 offset-md-1 col-lg-11 offset-lg-0">
+                        <div class="form-floating mb-3">
+                            <select class="form-select form-select-m mb-3" id="difficullty" name="difficullty" class="validate" required aria-label=".form-select-lg example">
+                                <option selected>Select Difficulty</option>
+                                <option value="1">Very Hard</option>
+                                <option value="2">Hard</option>
+                                <option value="3">Easy</option>
+                                <option value="3">Very Easy</option>
+                              </select>
+                            <label for="difficullty"></label>
+                        </div>
+                    </div>
+                    <!-- Miles -->
+                    <div class="col-md-1 align-self-center">
+                        <i class="fas  col-md fields"></i>
+                    </div>
+                    <div class="col-md-10 offset-md-1 col-lg-11 offset-lg-0">
+                        <div class="form-floating mb-3">
+                            <input type="text" name="miles" class="form-control col-md-8" id="miles"
+                                minlength="1" maxlength="7" placeholder="Miles" pattern="^\d*\.?\d+$" required>
+                            <label for="miles">Miles In ml</label>
+                        </div>
+                    </div>
+                    <!-- image url -->
+                    <div class="col-md-1 align-self-center">
+                        <i class="fas fa-image col-md fields"></i>
+                    </div>
+                    <div class="col-md-10 offset-md-1 col-lg-11 offset-lg-0">
+                        <div class="form-floating mb-3">
+                            <input type="text" name="image_url" class="form-control col-md-8" id="image_url"
+                                placeholder="Image" minlength="5" maxlength="150"
+                                pattern="https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)">
+                            <label for="image_url">Image URL</label>
+                        </div>
+                    </div>
+                    <!-- Description -->
+                    <div class="col-md-1 align-self-center">
+                        <i class="fas fa-edit col-md fields"></i>
+                    </div>
+                    <div class="col-md-10 offset-md-1 col-lg-11 offset-lg-0">
+                        <div class="form-floating">
+                            <textarea class="form-control" placeholder="description" id="description"
+                                name="description"></textarea>
+                            <label for="description">Description</label>
+                        </div>
+                    </div>
+                    <!-- Add button -->
+                    <div class="row d-flex justify-content-center mt-4">
+                        <div class="d-grid col-md-4 mb-3">
+                            <button type="submit" class="btn text-shadow btn-success comic-font">
+                                Add Trail <i class="far fa-plus-square"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+</section>
+
+
+{% endblock %}
