@@ -1,24 +1,24 @@
 {% extends "base.html" %}
 {% block content %}
   
-
-<body>
     <div class=" container-fluid welcome-page-hero">
-    <div class="row">
-    <div class="col-12">
-    <div class="jumbotron">
-        <h1 class="display-4 text-center">Welcome to MyTrail</h1>
-        <p class="lead text-center">A trail experience share app, where you can find your next favorite trail destination</p>
-        <hr class="my-4">
-        <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-        <p class="lead text-center">
-          <a class="btn btn-primary btn-lg" href="#" role="button">Sign In</a>
-          <a class="btn btn-primary btn-lg" href="#" role="button">Register</a>
-        </p>
-      </div>
-    </div> 
-</div>
-</div>
+        <div class="row">
+            <div class="col-12">
+                <div class="jumbotron">
+                    <h1 class="display-4 text-center">Welcome to MyTrail</h1>
+                    <p class="lead text-center">A trail experience share app, where you can find your next favorite
+                        trail destination</p>
+                    <hr class="my-4">
+                    <p>It uses utility classes for typography and spacing to space content out within the larger
+                        container.</p>
+                    <p class="lead text-center">
+                        <a class="btn btn-primary btn-lg" href="#" role="button">Sign In</a>
+                        <a class="btn btn-primary btn-lg" href="{{ url_for('register') }}" role="button">Register</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
 
  {% endblock %}
  
