@@ -21,6 +21,12 @@ def index():
     return render_template("welcome.html")
 
 
+@app.route("/get_trails")
+def get_tasks():
+    tasks = list(mongo.db.tasks.find())
+    return render_template("trails.html", trails=trails)
+
+
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
@@ -81,11 +87,11 @@ def logout():
     return redirect(url_for("login"))
 
 
-@app.route("/trails<username>", methods=["GET", "POST"])
-def trails(username):
+@app.route("/profile<username>", methods=["GET", "POST"])
+def profile(username):
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
-    return render_template("trails.html", username=username)
+    return render_template("profile.html", username=username)
 
 
 
