@@ -22,8 +22,8 @@ def index():
 
 
 @app.route("/get_trails")
-def get_tasks():
-    tasks = list(mongo.db.tasks.find())
+def trails():
+    trails = list(mongo.db.trails.find())
     return render_template("trails.html", trails=trails)
 
 

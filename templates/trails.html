@@ -5,9 +5,7 @@
         <div class="row justify-content-center">
             <div class="col-lg-8  mt-5">
                 <div class="row">
-                    <h3 class="text-center">
-                        {{ username }}'s Profile
-                    </h3>
+                   
                     <!-- Search -->
                     <form class="col-lg-8 text-center text-md-start" action=""
                         method="POST">
@@ -20,23 +18,24 @@
                     </form>
                 </div>
             </div>
+            {% for trail in trails %}
             <div class="row">
                 <div class="col">
                     <div class="card" style="width: 18rem;">
-                        <img src="..." class="card-img-top" alt="...">
+                        <img src="{{ trail.trail_url }}" class="card-img-top" alt="...">
                         <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up
-                                the bulk of the card's content.</p>
+                            <h5 class="card-title">{{ trail.trail_title }}</h5>
+                            <p class="card-text">{{ trail.trail_description }}</p>
                         </div>
                         <ul class="list-group list-group-flush">
-                            <li class="list-group-item">An item</li>
+                            <li class="list-group-item">{{ trail.trail_category }}</li>
                             <li class="list-group-item">A second item</li>
                             <li class="list-group-item">A third item</li>
                         </ul>
                         <div class="card-body">
                         </div>
                     </div>
+                    {% endfor %}
                 </div>
             </div>
         </div>
