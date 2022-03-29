@@ -21,11 +21,6 @@ def index():
     return render_template("welcome.html")
 
 
-@app.route("/get_trails")
-def trails():
-    trails = list(mongo.db.trails.find())
-    return render_template("trails.html", trails=trails)
-
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
@@ -97,7 +92,14 @@ def profile(username):
 
 @app.route("/add_trail")
 def add_trail():
-    return render_template("add_trail.html")
+    types = mongo.db.types.find().sort("type_name", 1)
+    return render_template("add_trail.html", types=types)
+
+
+@app.route("/get_trails")
+def trails():
+    trails = list(mongo.db.trails.find())
+    return render_template("trails.html", trails=trails)
 
 
 

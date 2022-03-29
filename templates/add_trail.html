@@ -11,7 +11,7 @@
         </div>
     </div>
     <div class="row">
-        <form class="card col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2" method="POST" action="">
+        <form class="card col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2" method="POST" action="{{ url_for('add_trail') }}">
             <div class="card-body">
                 <div class="row g-2">
                     <!-- title -->
@@ -36,7 +36,22 @@
                             <label for="location">Location</label>
                         </div>
                     </div>
-                    <!-- grade -->
+                    <div class="col-md-1 align-self-center">
+                        <i class="fas fa-award col-md fields"></i>
+                    </div>
+                    <div class="col-md-10 offset-md-1 col-lg-11 offset-lg-0">
+                        <div class="form-floating mb-3">
+                            <select class="form-select form-select-m mb-3" id="type_name" name="type_name" class="validate" required aria-label=".form-select-lg example">
+                                <option selected>Select Type</option>
+                                {% for type in types %}
+                                <option value="{{ type.type_name  }}">{{ type.type_name  }}</option>
+                                
+                                {% endfor %}
+                              </select>
+                            <label for="type_name"></label>
+                        </div>
+                    </div>
+                    <!-- difficulty -->
                     <div class="col-md-1 align-self-center">
                         <i class="fas fa-award col-md fields"></i>
                     </div>
