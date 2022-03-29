@@ -44,6 +44,7 @@ def register():
         session["user"] = request.form.get("username").lower()
         flash("Registration Successful!")
     return render_template("register.html")
+    
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
@@ -73,6 +74,13 @@ def login():
     return render_template("login.html")
 
 
+@app.route("/logout")
+def logout():
+    flash("You have been logged out")
+    session.pop("user")
+    return redirect(url_for("login"))
+
+
 @app.route("/trails<username>", methods=["GET", "POST"])
 def trails(username):
     username = mongo.db.users.find_one(
@@ -84,9 +92,6 @@ def trails(username):
 @app.route("/add_trail")
 def add_trail():
     return render_template("add_trail.html")
-
-
-
 
 
 
