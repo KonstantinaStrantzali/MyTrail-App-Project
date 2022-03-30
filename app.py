@@ -94,15 +94,23 @@ def profile(username):
 def add_trail():
     if request.method == "POST":
         trail = {
-            "trial_title": request.form.get("title_name"),
-            "trial_type": request.form.get("trial_type"),
-            "trial_location": request.form.get("trial_type"),
+            "title": request.form.get("title"),
+            "type": request.form.get("type_name"),
+            "location": request.form.get("location"),
+            "difficulty": request.form.get("difficulty"),
+            "miles": request.form.get("miles"),
+            "image_url": request.form.get("image_url"),
+            "description": request.form.get("description"),
+            "created_by": session["user"]
+
         }
         mongo.db.trails.insert_one(trail)
         flash("Task Successfully Added")
         return redirect(url_for("trails"))
-        types = mongo.db.types.find().sort("type_name", 1)
+
+    types = mongo.db.types.find().sort("type_name", 1)
     return render_template("add_trail.html", types=types)
+
 
 
 @app.route("/get_trails")

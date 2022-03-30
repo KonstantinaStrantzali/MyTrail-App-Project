@@ -11,7 +11,7 @@
         </div>
     </div>
     <div class="row">
-        <form class="card col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2" method="POST" action="{{ url_for('add_trail') }}">
+        <form class="card col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2 requires-validation" method="POST" action="{{ url_for('add_trail') }}">
             <div class="card-body">
                 <div class="row g-2">
                     <!-- title -->
@@ -20,9 +20,12 @@
                     </div>
                     <div class="col-md-10 offset-md-1 col-lg-11 offset-lg-0">
                         <div class="form-floating mb-3">
-                            <input type="text" name="trail_title" class="form-control col-md-8" id="trail_title" placeholder="Title"
+                            <input type="text" name="title" class="form-control col-md-8" id="title" placeholder="Title"
                                 minlength="2" maxlength="25" required>
-                            <label for="trail_title">Title</label>
+                                <div class="valid-feedback">Username field is valid!</div>
+                                <div class="invalid-feedback">Username field cannot be blank!</div>
+                             </div>
+                            <label for="title">Title</label>
                         </div>
                     </div>
                     <!-- location -->
@@ -31,9 +34,9 @@
                     </div>
                     <div class="col-md-10 offset-md-1 col-lg-11 offset-lg-0">
                         <div class="form-floating mb-3">
-                            <input type="text" name="trail_location" class="form-control" id="trail_location"
-                                placeholder="Location" minlength="1" maxlength="10" pattern="^[0-9]{1,4}$" required>
-                            <label for="trail_location">Location</label>
+                            <input type="text" name="location" class="form-control" id="location"
+                                placeholder="Location" minlength="1"  required>
+                            <label for="location">Location</label>
                         </div>
                     </div>
                     <div class="col-md-1 align-self-center">
@@ -57,14 +60,14 @@
                     </div>
                     <div class="col-md-10 offset-md-1 col-lg-11 offset-lg-0">
                         <div class="form-floating mb-3">
-                            <select class="form-select form-select-m mb-3" id="difficullty" name="difficullty" class="validate" required aria-label=".form-select-lg example">
+                            <select class="form-select form-select-m mb-3" id="difficulty" name="difficulty" class="validate" required aria-label=".form-select-lg example">
                                 <option selected>Select Difficulty</option>
                                 <option value="1">Very Hard</option>
                                 <option value="2">Hard</option>
                                 <option value="3">Easy</option>
                                 <option value="3">Very Easy</option>
                               </select>
-                            <label for="difficullty"></label>
+                            <label for="difficulty"></label>
                         </div>
                     </div>
                     <!-- Miles -->

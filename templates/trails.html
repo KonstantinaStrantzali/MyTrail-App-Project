@@ -1,10 +1,11 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <div class=" container-fluid trails-hero">
-        <div class="row justify-content-center">
-            <div class="col-lg-8  mt-5">
-                <div class="row">
+   
+    <div class="container-fluid cards-section mb-5">
+        <div class="row">
+            <div class="col-12 mt-5">
+                <div class="row justify-content-center">
                    
                     <!-- Search -->
                     <form class="col-lg-8 text-center text-md-start" action=""
@@ -16,39 +17,27 @@
                         <a href=""
                             class="btn btn-danger text-shadow comic-font">Reset</a>
                     </form>
-                </div>
-            </div>
-            {% for trail in trails %}
-            <div class="row">
-                <div class="col">
-                    <div class="card" style="width: 18rem;">
-                        <img src="{{ trail.trail_url }}" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">{{ trail.trail_title }}</h5>
-                            <p class="card-text">{{ trail.trail_description }}</p>
-                        </div>
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item">{{ trail.trail_category }}</li>
-                            <li class="list-group-item">A second item</li>
-                            <li class="list-group-item">A third item</li>
-                        </ul>
-                        <div class="card-body">
-                        </div>
-                    </div>
-                    {% endfor %}
-                </div>
             </div>
         </div>
-
-
-                    
-                    
-
-
-
-                   
-      
-        
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            {% for trail in trails %}
+          <div class="col">
+            <div class="card h-100">
+                <img src="{{ trail.image_url }}" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">{{ trail.title }} </h5>
+                
+                <p class="card-text"> {{ trail.description }}</p>
+                <p class="card-text"> {{ trail.type }}</p>
+                
+              </div>
+              <div class="card-footer">
+                <p><em>Created by {{ trail.created_by }}</em></p>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
     
     
 
