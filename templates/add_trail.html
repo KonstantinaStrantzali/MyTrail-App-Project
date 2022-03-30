@@ -11,7 +11,7 @@
         </div>
     </div>
     <div class="row">
-        <form class="card col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2 requires-validation" method="POST" action="{{ url_for('add_trail') }}">
+        <form class="card col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2 requires-validation" novalidate method="POST" action="{{ url_for('add_trail') }}">
             <div class="card-body">
                 <div class="row g-2">
                     <!-- title -->
@@ -20,17 +20,15 @@
                     </div>
                     <div class="col-md-10 offset-md-1 col-lg-11 offset-lg-0">
                         <div class="form-floating mb-3">
-                            <input type="text" name="title" class="form-control col-md-8" id="title" placeholder="Title"
-                                minlength="2" maxlength="25" required>
-                                <div class="valid-feedback">Username field is valid!</div>
-                                <div class="invalid-feedback">Username field cannot be blank!</div>
-                             </div>
+                            <input type="text" name="title" class="form-control is-invalid col-md-8"  id="title" placeholder="Title" onkeyup="checkInput()"
+                                 required>
+                               
                             <label for="title">Title</label>
                         </div>
                     </div>
                     <!-- location -->
                     <div class="col-md-1 align-self-center">
-                        <i class="fas fa-hashtag col-md fields"></i>
+                        <i class="fas fa-hashtag col-md"></i>
                     </div>
                     <div class="col-md-10 offset-md-1 col-lg-11 offset-lg-0">
                         <div class="form-floating mb-3">
@@ -44,8 +42,9 @@
                     </div>
                     <div class="col-md-10 offset-md-1 col-lg-11 offset-lg-0">
                         <div class="form-floating mb-3">
-                            <select class="form-select form-select-m mb-3" id="type_name" name="type_name" class="validate" required aria-label=".form-select-lg example">
-                                <option selected>Select Type</option>
+                            <select class="form-select form-select-m mb-3" id="type_name" name="type_name" class="validate" required>
+                                
+                                <option selected disabled value="">Select type</option>
                                 {% for type in types %}
                                 <option value="{{ type.type_name  }}">{{ type.type_name  }}</option>
                                 
@@ -61,7 +60,7 @@
                     <div class="col-md-10 offset-md-1 col-lg-11 offset-lg-0">
                         <div class="form-floating mb-3">
                             <select class="form-select form-select-m mb-3" id="difficulty" name="difficulty" class="validate" required aria-label=".form-select-lg example">
-                                <option selected>Select Difficulty</option>
+                                <option selected disabled value="">Select difficulty</option>
                                 <option value="1">Very Hard</option>
                                 <option value="2">Hard</option>
                                 <option value="3">Easy</option>
@@ -89,10 +88,12 @@
                         <div class="form-floating mb-3">
                             <input type="text" name="image_url" class="form-control col-md-8" id="image_url"
                                 placeholder="Image" minlength="5" maxlength="150"
-                                pattern="https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)">
-                            <label for="image_url">Image URL</label>
+                                pattern="https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)" required>
+                            <label for="image_url">Image url</label>
                         </div>
                     </div>
+
+                
                     <!-- Description -->
                     <div class="col-md-1 align-self-center">
                         <i class="fas fa-edit col-md fields"></i>
@@ -100,7 +101,7 @@
                     <div class="col-md-10 offset-md-1 col-lg-11 offset-lg-0">
                         <div class="form-floating">
                             <textarea class="form-control" placeholder="description" id="description"
-                                name="description"></textarea>
+                                name="description" required></textarea>
                             <label for="description">Description</label>
                         </div>
                     </div>
