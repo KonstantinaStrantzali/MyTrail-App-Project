@@ -89,8 +89,13 @@ def profile(username):
     trails = list(mongo.db.trails.find(
         {"created_by": session["user"]}))
     return render_template("profile.html", trails=trails, username=username)
-   
 
+
+@app.route("/edit_trail/<trail_id>", methods=["GET", "POST"])
+def edit_trail(trail_id):
+    trail = mongo.db.trails.find_one({"_id": ObjectId(trail_id)})
+    types = mongo.db.types.find().sort("category_name", 1)
+    return render_template("edit_trail.html", trail=trail, types=types) 
 
 
 @app.route("/add_trail", methods=["GET", "POST"])
