@@ -86,7 +86,10 @@ def logout():
 def profile(username):
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
-    return render_template("profile.html", username=username)
+    trails = list(mongo.db.trails.find(
+        {"created_by": session["user"]}))
+    return render_template("profile.html", trails=trails, username=username)
+   
 
 
 
