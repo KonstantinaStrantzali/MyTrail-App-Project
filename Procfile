@@ -1,1 +1,1 @@
-web: python app.pyimport os
+web: python app.py import os
