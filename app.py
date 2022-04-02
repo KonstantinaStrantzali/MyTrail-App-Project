@@ -94,8 +94,9 @@ def profile(username):
 @app.route("/edit_trail/<trail_id>", methods=["GET", "POST"])
 def edit_trail(trail_id):
     trail = mongo.db.trails.find_one({"_id": ObjectId(trail_id)})
-    types = mongo.db.types.find().sort("category_name", 1)
-    return render_template("edit_trail.html", trail=trail, types=types) 
+    types = mongo.db.types.find().sort("type_name", 1)
+    return render_template("edit_trail.html", trail=trail, types=types)
+
 
 
 @app.route("/add_trail", methods=["GET", "POST"])
