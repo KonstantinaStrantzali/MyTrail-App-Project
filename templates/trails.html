@@ -2,7 +2,7 @@
 {% block content %}
 
    
-    <div class="container-fluid cards-section mb-5">
+    <div class="container-fluid search-section mb-5">
         <div class="row">
             <div class="col-12 mt-5">
                 <div class="row justify-content-center">
@@ -19,7 +19,9 @@
                     </form>
             </div>
         </div>
-        <div class="row row-cols-1 row-cols-md-3 g-4">
+      </div>
+      <div class = "container-fluid">
+        <div class="row row-cols-lg-4 row-cols-sm-2 g-4">
             {% for trail in trails %}
           <div class="col">
             <div class="card h-100">
@@ -41,6 +43,7 @@
           </div>
           {% endfor %}
         </div>
+    </div>
         {% for trail in trails %}
     <!-- Modal -->
 <div class="modal fade" id="modal-{{ trail._id }}" tabindex="-1" aria-labelledby="{{ trail._id }}" aria-hidden="true">
