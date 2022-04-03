@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 
-
+  {% if trails|length > 0 %}
     <div class="row row-cols-1 row-cols-md-3 g-4">
         {% for trail in trails %}
       <div class="col">
@@ -23,6 +23,15 @@
         </div>
       </div>
       {% endfor %}
+      {% else %}
+      <div class="text-center">
+                    <h2 class="page-heading heading">
+                     You havent add any trails
+                    </h2>
+                    <a class="btn btn-danger" href="{{ url_for('add_trail') }}">Add</a>
+                  </div>        
+     
+    {% endif %} 
     </div>
     {% for trail in trails %}
 <!-- Modal -->
