@@ -157,7 +157,9 @@ def edit_trail(trail_id):
 def delete_trail(trail_id):
     mongo.db.trails.delete_one({"_id":ObjectId(trail_id)})
     flash("Trail Successfully Deleted")
-    return redirect(url_for("trails"))
+    username = mongo.db.users.find_one(
+        {"username": session["user"]})["username"]
+    return redirect(url_for("profile", username=username))
 
 
 
