@@ -91,6 +91,12 @@ def profile(username):
     return render_template("profile.html", trails=trails, username=username)
 
 
+@app.route("/get_trails")
+def trails():
+    trails = list(mongo.db.trails.find())
+    return render_template("trails.html", trails=trails)
+
+
 
 @app.route("/add_trail", methods=["GET", "POST"])
 def add_trail():
@@ -120,7 +126,7 @@ def add_trail():
 @app.route("/edit_trail/<trail_id>", methods=["GET", "POST"])
 def edit_trail(trail_id):
     if request.method == "POST":
-        submit =  {
+        submit = {
             "title": request.form.get("title"),
             "type": request.form.get("type_name"),
             "location": request.form.get("location"),
@@ -147,12 +153,11 @@ def edit_trail(trail_id):
         "edit_trail.html", trail=trail, types=types, difficulty=difficulty)
 
 
-
-
-@app.route("/get_trails")
-def trails():
-    trails = list(mongo.db.trails.find())
-    return render_template("trails.html", trails=trails)
+@app.route("/delete_trail/<trail_id>")
+def delete_trail(trail_id):
+    mongo.db.trails.delete_one({"_id":ObjectId(trail_id)})
+    flash("Trail Successfully Deleted")
+    return redirect(url_for("trails"))
 
 
 
