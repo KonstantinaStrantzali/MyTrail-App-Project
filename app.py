@@ -91,14 +91,6 @@ def profile(username):
     return render_template("profile.html", trails=trails, username=username)
 
 
-@app.route("/edit_trail/<trail_id>", methods=["GET", "POST"])
-def edit_trail(trail_id):
-    trail = mongo.db.trails.find_one({"_id": ObjectId(trail_id)})
-    types = mongo.db.types.find().sort("type_name", 1)
-    difficulty = mongo.db.difficulty.find().sort("difficulty_level", 1)
-    return render_template("edit_trail.html", trail=trail, types=types, difficulty=difficulty)
-
-
 
 @app.route("/add_trail", methods=["GET", "POST"])
 def add_trail():
@@ -121,6 +113,34 @@ def add_trail():
     types = mongo.db.types.find().sort("type_name", 1)
     difficulty = mongo.db.difficulty.find().sort("difficulty_level", 1)
     return render_template("add_trail.html", types=types, difficulty=difficulty)
+
+
+
+@app.route("/edit_trail/<trail_id>", methods=["GET", "POST"])
+def edit_trail(trail_id):
+    if request.method == "POST":
+        submit = {
+            "title": request.form.get("title"),
+            "type": request.form.get("type_name"),
+            "location": request.form.get("location"),
+            "difficulty": request.form.get("difficulty_level"),
+            "miles": request.form.get("miles"),
+            "image_url": request.form.get("image_url"),
+            "description": request.form.get("description"),
+            "created_by": session["user"]
+
+        }
+        mongo.db.trails.update({"_id": ObjectId(trail_id)}, submit)
+        flash("Trail Successfully Updated")
+        return redirect(url_for("profile"))
+   
+
+    trail = mongo.db.trails.find_one({"_id": ObjectId(trail_id)})
+    types = mongo.db.types.find().sort("type_name", 1)
+    difficulty = mongo.db.difficulty.find().sort("difficulty_level", 1)
+    return render_template(
+        "edit_trail.html", trail=trail, types=types, difficulty=difficulty)
+
 
 
 
