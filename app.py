@@ -112,14 +112,15 @@ def add_trail():
 
     types = mongo.db.types.find().sort("type_name", 1)
     difficulty = mongo.db.difficulty.find().sort("difficulty_level", 1)
-    return render_template("add_trail.html", types=types, difficulty=difficulty)
+    return render_template(
+        "add_trail.html", types=types, difficulty=difficulty)
 
 
 
 @app.route("/edit_trail/<trail_id>", methods=["GET", "POST"])
 def edit_trail(trail_id):
     if request.method == "POST":
-        submit = {
+        submit =  {
             "title": request.form.get("title"),
             "type": request.form.get("type_name"),
             "location": request.form.get("location"),
@@ -128,11 +129,15 @@ def edit_trail(trail_id):
             "image_url": request.form.get("image_url"),
             "description": request.form.get("description"),
             "created_by": session["user"]
+         }
+        myquery = {"_id": ObjectId(trail_id)}
+        new_values = {"$set": submit}
+        mongo.db.trails.update_one(myquery, new_values)
 
-        }
-        mongo.db.trails.update({"_id": ObjectId(trail_id)}, submit)
+        # mongo.db.trails.update_one( {"$set" {"_id": ObjectId(trail_id)}, submit)
+        
         flash("Trail Successfully Updated")
-        return redirect(url_for("profile"))
+        return redirect(url_for("trails"))
    
 
     trail = mongo.db.trails.find_one({"_id": ObjectId(trail_id)})
