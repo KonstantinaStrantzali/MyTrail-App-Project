@@ -63,11 +63,11 @@
                         <div class="form-floating mb-3">
                             <select class="form-select form-select-m mb-3" id="difficulty" name="difficulty" class="validate" required aria-label=".form-select-lg example">
                                 <option selected disabled value="">Select difficulty</option>
-                                {% for difficulty in difficulties %}
-                                    {% if difficulty.difficulty == trail.difficulty %}
-                                    <option value="{{ difficulty.difficulty}}" selected>{{ difficulty.difficulty}}</option>
+                                {% for level in difficulty %}
+                                    {% if level.difficulty_level == trail.difficulty_level %}
+                                    <option value="{{ level.difficulty_level }}" selected>{{ level.difficulty_level }}</option>
                                     {% else %}
-                                    <option value="{{ difficulty.difficulty}}" selected>{{ difficulty.difficulty}}</option>
+                                    <option value="{{ level.difficulty_level }}" selected>{{ level.difficulty_level }}</option>
                                     {% endif %}
                                 {% endfor %}
                               </select>

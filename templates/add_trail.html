@@ -58,14 +58,13 @@
                     </div>
                     <div class="col-md-10 offset-md-1 col-lg-11 offset-lg-0">
                         <div class="form-floating mb-3">
-                            <select class="form-select form-select-m mb-3" id="difficulty" name="difficulty" class="validate" required aria-label=".form-select-lg example">
+                            <select class="form-select form-select-m mb-3" id="difficulty_level" name="difficulty_level" class="validate" required aria-label=".form-select-lg example">
                                 <option selected disabled value="">Select difficulty</option>
-                                <option value="1">Very Hard</option>
-                                <option value="2">Hard</option>
-                                <option value="3">Easy</option>
-                                <option value="3">Very Easy</option>
+                                {% for level in difficulty %}
+                                <option value="{{ level.difficulty_level }}">{{ level.difficulty_level }}</option>
+                               {% endfor %}
                               </select>
-                            <label for="difficulty"></label>
+                            <label for="difficulty_name"></label>
                         </div>
                     </div>
                     <!-- Miles -->

@@ -95,7 +95,8 @@ def profile(username):
 def edit_trail(trail_id):
     trail = mongo.db.trails.find_one({"_id": ObjectId(trail_id)})
     types = mongo.db.types.find().sort("type_name", 1)
-    return render_template("edit_trail.html", trail=trail, types=types)
+    difficulty = mongo.db.difficulty.find().sort("difficulty_level", 1)
+    return render_template("edit_trail.html", trail=trail, types=types, difficulty=difficulty)
 
 
 
@@ -106,7 +107,7 @@ def add_trail():
             "title": request.form.get("title"),
             "type": request.form.get("type_name"),
             "location": request.form.get("location"),
-            "difficulty": request.form.get("difficulty"),
+            "difficulty": request.form.get("difficulty_level"),
             "miles": request.form.get("miles"),
             "image_url": request.form.get("image_url"),
             "description": request.form.get("description"),
@@ -118,7 +119,8 @@ def add_trail():
         return redirect(url_for("trails"))
 
     types = mongo.db.types.find().sort("type_name", 1)
-    return render_template("add_trail.html", types=types)
+    difficulty = mongo.db.difficulty.find().sort("difficulty_level", 1)
+    return render_template("add_trail.html", types=types, difficulty=difficulty)
 
 
 
