@@ -67,3 +67,38 @@ html {
     font-size: 20px;
     margin-right: 10px;
 }
+
+/*------------------------------->Nav bar */
+.navbar{
+    background-color: black;
+  }
+  
+  .navbar-brand {
+    color:white;
+    font-size: 25px;
+    left:5px;
+    font-family:'Roboto', sans-serif;
+    }
+  .navbar-brand:hover{
+    color:#F6F6F6 !important;
+  }
+  /* Change the color of nav text by using !important, answer found on StackOverflow, user: dynamiclynk (https://stackoverflow.com/questions/24420080/change-navbar-text-color-bootstrap) */
+  .navbar-nav li a{
+    font-size: 25px;
+    color:#F6F6F6!important;
+  }
+  .nav-item a:hover {
+    background-color: #33472B;
+    color: #F6F6F6!important;
+  }
+  .navbar-brand i{
+    transform: rotate(30deg); 
+    background-color: #33472B;
+    font-size:35px;
+    margin-right: 10px;
+    margin-left:5px;
+    
+  }
+  .logo {
+      color: white;
+  }
