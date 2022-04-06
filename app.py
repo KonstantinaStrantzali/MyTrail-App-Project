@@ -62,9 +62,9 @@ def login():
                 flash("Welcome, {}".format(request.form.get("username")))
                 return redirect(url_for(
                     "trails", username=session["user"]))
-            else:
+            else: 
                 # invalid password match
-                flash("Incorrect Username and/or Password")
+                flash("Incorrect Username and/or Password", "alert-error")
                 return redirect(url_for("login"))
 
         else:
