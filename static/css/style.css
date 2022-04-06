@@ -120,6 +120,12 @@ html {
     border-color:  #7A5D49ff;
     text-decoration: none;
   }
+  .btn-welcome:hover {
+    background-color: #302F30ff;
+    color: #F6F6F6 !important;
+    border-color:#302F30ff;
+    text-decoration: none;
+  }
 
   footer{
     background-color: #302F30ff;
