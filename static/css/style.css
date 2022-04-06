@@ -14,7 +14,7 @@ html {
     margin-top: 0;
 }
 .register-hero {
-    background: url("/static/images/register.jpg") no-repeat center center fixed;
+    background: url("/static/images/register-image.png") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -44,7 +44,6 @@ html {
 }
 .jumbotron{ 
     margin: 5rem 9rem 0rem;
-    text: 16px;
     background-color: rgba(196, 194, 194, 0.603);
     padding-bottom: 10px;
 }
@@ -52,7 +51,7 @@ html {
     size:15px;
 }
 .card{
-    background-color: rgba(196, 194, 194, 0.603);
+    background-color: rgba(122, 92, 73, 0.692);
     
 }
 .icons{
@@ -142,9 +141,24 @@ html {
       transform: scale(1.4);
     }
 
+  .form-area h3 {
+    color: white;
+  }
+
+
 
   @media only screen and (max-width: 600px) {
     .jumbotron{ 
       margin: 5rem 1rem 0rem;
   }
+}
+.btn-register{
+  background-color: #302F30ff;
+  color: white;
+
+}
+.btn-register:hover{
+  background-color: #302F30ff;
+  color: white !important;
+
 }

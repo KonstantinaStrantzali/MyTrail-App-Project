@@ -5,11 +5,11 @@
     <div class="row justify-content-center">
         <div class="col-lg-8 mt-5">
             <!-- form area -->
-            <section class="form-area"></section>
+            <section class="form-area">
             <form id="registration-form" class="card col-12 col-md-8 offset-md-2" method="POST"
                 action="{{ url_for('register') }}">
                 <div class="card-title text-center mt-2">
-                    <h3>Registration Form</h3>
+                    <h3 class="register-header pt-3">Registration Form</h3>
                 </div>
                 <div class="card-body">
                     <div class="row g-2">
@@ -62,7 +62,7 @@
                                         Please enter a valid password.
                                     </small>
                                 </p>
-                                <p class="password-requirements text-muted">
+                                <p class="password-requirements">
                                     Eight or more characters with a mix of numbers and letters, including a capital
                                     letter.
                                 </p>
@@ -72,7 +72,7 @@
                         <!-- register -->
                         <div class="row d-flex justify-content-center mt-1 mb-3">
                             <div class="d-grid col-lg-4 text-center">
-                                <button class="btn btn-success text-shadow comic-font" type="submit">
+                                <button class="btn btn-register" type="submit">
                                     Register <i class="fas fa-sign-in-alt"></i>
                                 </button>
                             </div>
