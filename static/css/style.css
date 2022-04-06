@@ -70,12 +70,9 @@ html {
 
 /*------------------------------->Nav bar */
 .navbar{
-    background-color: #302F30ff;
+    background-color: #302F30ff !important;
   }
-.navbar-toggler{
-  background-color: #7A5D49ff;
-  color:white;
-}
+
   
   .navbar-brand {
     color:white;
