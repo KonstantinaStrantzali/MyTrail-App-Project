@@ -1,25 +1,24 @@
 {% extends "base.html" %}
 {% block content %}
-  
-    <div class=" container-fluid welcome-page-hero">
-        <div class="row">
-            <div class="col-12">
-                <div class="jumbotron">
-                    <h1 class="display-5 pt-4 text-center">Welcome to MyTrail</h1>
-                    <p class="lead text-center">A trail experience share app, where you can find your next favorite
-                        trail destination</p>
-                    <hr class="my-4">
-                   </p>
-                    <p class="lead text-center">
-                        <a class="btn btn-primary btn-welcome btn-lg" href="{{ url_for('login') }}" role="button">Sign In</a>
-                        <a class="btn btn-primary btn-welcome btn-lg" href="{{ url_for('register') }}" role="button">Register</a>
-                    </p>
-                </div>
+
+<div class=" container-fluid welcome-hero-image">
+    <div class="row">
+        <div class="col-12">
+            <div class="jumbotron">
+                <h1 class="display-5 pt-4 text-center">Welcome to MyTrail</h1>
+                <p class="lead text-center">A trail experience share app, where you can find your next favorite
+                    trail destination</p>
+                <hr class="my-4">
+                </p>
+                <p class="lead text-center">
+                    <a class="btn btn-primary btn-welcome btn-lg" href="{{ url_for('login') }}" role="button">Sign
+                        In</a>
+                    <a class="btn btn-primary btn-welcome btn-lg" href="{{ url_for('register') }}"
+                        role="button">Register</a>
+                </p>
             </div>
         </div>
     </div>
+</div>
 
- {% endblock %}
- 
-
- 
+{% endblock %}

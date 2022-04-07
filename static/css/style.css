@@ -3,8 +3,8 @@ html {
     padding: 0;
     font-family: 'Lato', sans-serif;
 }
-
-.welcome-page-hero {
+/*----------------------------------Containers*/
+.welcome-hero-image {
     background: url("/static/images/welcome-image.jpg") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -13,7 +13,7 @@ html {
     min-height: 100vh;
     margin-top: 0;
 }
-.register-hero {
+.register-hero-image {
     background: url("/static/images/register-image.png") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -22,7 +22,7 @@ html {
     min-height: 100vh;
     margin-top: 0;
 }
-.login-hero{
+.login-hero-image{
     
         background: url("/static/images/login.jpg") no-repeat center center fixed;
         -webkit-background-size: cover;
@@ -42,6 +42,8 @@ html {
     min-height: 100vh;
     margin-top: 0;
 }
+
+/*----------------------------------Jumbotron*/
 .jumbotron{ 
     margin: 5rem 9rem 0rem;
     background-color: rgba(196, 194, 194, 0.603);
@@ -59,16 +61,14 @@ html {
     padding-top:5px;
 }
 
-.logo{
-    font-size: 20px;
-    padding: 5px;
-}
+
 .search-bar-icon{
     font-size: 20px;
     margin-right: 10px;
 }
 
-/*------------------------------->Nav bar */
+/*----------------------------------Navigation Bar*/
+/* over-write the Bootstrap navbar class */
 .navbar{
     background-color: #302F30ff !important;
   }
@@ -102,7 +102,10 @@ html {
   }
   .logo {
       color: white;
+      font-size: 20px;
+    padding: 5px;
   }
+  
 
   .alert-error {
     background-color: red;
@@ -113,7 +116,7 @@ html {
     background-color: yellow;
     color: black;
   }
-
+/* Buttons */
   .btn-welcome {
     background-color:#7A5D49ff;
     color: #F6F6F6 !important;
@@ -127,6 +130,17 @@ html {
     text-decoration: none;
   }
 
+  .btn-register{
+    background-color: #302F30ff;
+    color: white;
+  
+  }
+  .btn-register:hover{
+    background-color: #302F30ff;
+    color: white !important;
+  
+  }
+/* Footer */
   footer{
     background-color: #302F30ff;
     color: #F6F6F6;
@@ -147,24 +161,16 @@ html {
       transform: scale(1.4);
     }
 
+
+/*----------------------------------Form */
   .form-area h3 {
     color: white;
   }
 
 
-
+/*----------------------------------Media Queries */
   @media only screen and (max-width: 600px) {
     .jumbotron{ 
       margin: 5rem 1rem 0rem;
   }
-}
-.btn-register{
-  background-color: #302F30ff;
-  color: white;
-
-}
-.btn-register:hover{
-  background-color: #302F30ff;
-  color: white !important;
-
 }
