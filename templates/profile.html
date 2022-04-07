@@ -1,21 +1,23 @@
 {% extends "base.html" %}
 {% block content %}
-
+<section class="profile-section">
   {% if trails|length > 0 %}
+  <div class="container-fluid">
     <div class="row row-cols-1 row-cols-md-3 g-4">
-        {% for trail in trails %}
+      {% for trail in trails %}
       <div class="col">
         <div class="card h-100">
-            <img src="{{ trail.image_url }}" class="card-img-top" alt="...">
+          <img src="{{ trail.image_url }}" class="card-img-top" alt="...">
           <div class="card-body">
             <h5 class="card-title text-center">{{ trail.title }} </h5>
-            
-            
+
+
             <p class="card-text"> Trail Type: {{ trail.type }}</p>
             <p><em>Created by {{ trail.created_by }}</em></p>
           </div>
           <div class="card-footer">
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal-{{ trail._id }}">
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+              data-bs-target="#modal-{{ trail._id }}">
               Read More
             </button>
 
@@ -25,39 +27,42 @@
       {% endfor %}
       {% else %}
       <div class="text-center">
-                    <h2 class="page-heading heading">
-                     You haven't added any trail yet
-                    </h2>
-                    <a class="btn btn-danger" href="{{ url_for('add_trail') }}">Add</a>
-                  </div>        
-     
-    {% endif %} 
+        <h2 class="page-heading heading">
+          You haven't added any trail yet
+        </h2>
+        <a class="btn btn-danger" href="{{ url_for('add_trail') }}">Add</a>
+      </div>
+
+      {% endif %}
     </div>
     {% for trail in trails %}
-<!-- Modal -->
-<div class="modal fade" id="modal-{{ trail._id }}" tabindex="-1" aria-labelledby="{{ trail._id }}" aria-hidden="true">
-<div class="modal-dialog">
-<div class="modal-content">
-  <div class="modal-header">
-    <h5 class="modal-title" id="exampleModalLabel">{{ trail.title }} </h5>
-    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-  </div>
-  <div class="modal-body">
-    {{ trail.description }} 
-  </div>
-  <div class="modal-footer">
-    <a href="{{ url_for('edit_trail', trail_id=trail._id ) }}" class="btn text-shadow btn-success">
-      Edit <i class="far fa-edit"></i>
-  </a>
-  <a href="{{ url_for('delete_trail', trail_id=trail._id ) }}" class="btn text-shadow btn-success"> Delete <i class="far fa-delete"></i>
-  </a>
-  </div>
-</div>
-</div>
-</div>
+    <!-- Modal -->
+    <div class="modal fade" id="modal-{{ trail._id }}" tabindex="-1" aria-labelledby="{{ trail._id }}"
+      aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">{{ trail.title }} </h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            {{ trail.description }}
+          </div>
+          <div class="modal-footer">
+            <a href="{{ url_for('edit_trail', trail_id=trail._id ) }}" class="btn text-shadow btn-success">
+              Edit <i class="far fa-edit"></i>
+            </a>
+            <a href="{{ url_for('delete_trail', trail_id=trail._id ) }}" class="btn text-shadow btn-success"> Delete <i
+                class="far fa-delete"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
 
 {% endfor %}
-
-
+</div>
+</div>
+</section>
 
 {% endblock %}
