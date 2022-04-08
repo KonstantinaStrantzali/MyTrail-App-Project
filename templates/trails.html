@@ -49,19 +49,26 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">{{ trail.title }} </h5>
+          <h5 class=" text-center modal-title" id="exampleModalLabel">{{ trail.title }} </h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
+          </div>
+          <img src="{{ trail.image_url }}" class="card-img-top" alt="...">
+          
+       
         <div class="modal-body">
-          {{ trail.description }}
+         <p class="description"> <i class="fa-solid fa-info"></i> Information: {{ trail.description }}</p> 
+         <p class="description"> <i class="fa-regular fa-earth-europe"></i> Location: {{ trail.location }}</p> 
+         <p class="description"> <i class="fa-solid fa-info"></i> Difficulty: {{ trail.difficulty }}</p> 
+         <p class="description"> <i class="fa-solid fa-info"></i> Miles {{ trail.miles }} ml</p> 
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
+          
         </div>
       </div>
     </div>
-  </div>
+    </div>
+  
 {% endfor %}
 {% endblock %}
   
