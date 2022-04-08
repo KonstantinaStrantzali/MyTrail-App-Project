@@ -212,8 +212,13 @@ html {
   background-color: #7A5D49ff;
   color: beige;
 }
+.font-icon{
+  size: 25px;
+}
 
-
+.trail-icon{
+  font-size: 25px;
+}
 /*----------------------------------Media Queries */
   @media only screen and (max-width: 600px) {
     .jumbotron{ 
