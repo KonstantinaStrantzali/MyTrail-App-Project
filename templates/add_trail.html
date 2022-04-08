@@ -3,16 +3,11 @@
 
 
 <section class="add_trail_area">
-    <div class="container-fluid">
-   
-    <div class="row">
-        <div class="col">
-            <h2 class="text-center">Add Trail</h2>
-        </div>
-    </div>
-    <div class="row">
-        <form class="card col-12 col-md-8 offset-md-2 col-lg-6 offset-lg-3 requires-validation" novalidate method="POST" action="{{ url_for('add_trail') }}">
+    <div class="container-fluid add-trail-hero-image">
+        <div class="row">
+        <form class="card col-12 col-md-8 offset-md-2 col-lg-6 offset-lg-3 requires-validation mt-4" novalidate method="POST" action="{{ url_for('add_trail') }}">
             <div class="card-body">
+                <h2 class="text-center text-white">Add Your Trail</h2>
                 <div class="row g-2">
                     <!-- title -->
                     <div class="col-md-1 align-self-center font-icon">
@@ -106,7 +101,7 @@
                     <!-- Add button -->
                     <div class="row d-flex justify-content-center mt-4">
                         <div class="d-grid col-md-4 mb-3">
-                            <button type="submit" class="btn text-shadow btn-success">
+                            <button type="submit" class="btn text-shadow btn-add-trail">
                                 Add Trail <i class="far fa-plus-square"></i>
                             </button>
                         </div>
@@ -115,7 +110,7 @@
             </div>
         </form>
     </div>
-</div>
+    </div>
 </section>
 
 

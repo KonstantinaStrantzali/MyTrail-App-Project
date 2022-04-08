@@ -43,7 +43,15 @@ html {
     min-height: 100vh;
     margin-top: 0;
 }
-
+.add-trail-hero-image {
+  background: url("/static/images/add-trail-image.avif") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  min-height: 100vh;
+  margin-top: 0;
+}
 /*----------------------------------Jumbotron*/
 .jumbotron{ 
     margin: 5rem 9rem 0rem;
@@ -120,7 +128,7 @@ html {
     border-color:#302F30ff;
     text-decoration: none;
   }
-
+ .btn-add-trail,
   .btn-register,
   .btn-login {
     background-color: #7A5D49ff;
@@ -213,11 +221,12 @@ html {
   color: beige;
 }
 .font-icon{
-  size: 25px;
+  font-size: 25px;
 }
 
 .trail-icon{
   font-size: 25px;
+  color: white;
 }
 /*----------------------------------Media Queries */
   @media only screen and (max-width: 600px) {
@@ -238,4 +247,7 @@ html {
   height: 29vw;
   object-fit: cover;
 }
+}
+.img-thumbnail{
+max-width: 20%;
 }
