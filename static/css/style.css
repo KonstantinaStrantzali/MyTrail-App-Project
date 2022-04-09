@@ -155,12 +155,13 @@ html {
     color: white;
     border-color: #302F30ff;
   }
-  .btn-edit
+  .btn-edit,
+  .btn-delete
   {
     background-color: #302F30ff;
     color: white;
     border-color: #302F30ff;
-    
+    padding:6px 20px;
     
   }
 

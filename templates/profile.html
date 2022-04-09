@@ -15,14 +15,14 @@
     <div class="card pt-5 shadow p-3 mb-5 bg-white rounded" id="profile-card">
       <div class="row">
        {% if trail.image_url %}
-        <div class="col-4 d-none d-lg-block">
+        <div class="col-md-4 col-4 d-none d-md-block">
          
             <img src="{{ trail.image_url }}" class="img-thumbnail float-start" alt="...">
          
         </div>
         {% else %}
 
-        <div class="col-4 d-none d-lg-block">
+        <div class="col-4  d-none d-md-block">
          
           <img src="/static/images/signIn-image.png" class="img-thumbnail float-start" alt="...">
        
@@ -30,24 +30,24 @@
 
       {% endif %}
 
-        <div class="col-4 col-md-4 col-lg-2 d-none d-lg-block">
+        <div class="col-4 col-md-4">
 
-          <div class="mt-5">{{ trail.title }}</div>
+          <div class="mt-md-5 mb-4">{{ trail.title }}</div>
 
         </div>
-        <div class="col-4 col-md-4 col-lg-2">
+        <div class="col-4 col-md-2 col-lg-2 col-lg-2 d-none d-lg-block">
 
           <div class="mt-5">{{ trail.location}}</div>
 
         </div>
-        <div class="col-4 col-md-4 col-lg-1  mt-5">
-          <a href="{{ url_for('edit_trail', trail_id=trail._id ) }}" class="btn btn-secondary btn-edit">
-            Edit <i class="far fa-edit"></i>
+        <div class="col-4 col-md-2 col-lg-1  mt-md-5">
+          <a href="{{ url_for('edit_trail', trail_id=trail._id ) }}" class="btn text-shadow btn-success btn-edit">
+           Edit
           </a>
         </div>
-        <div class="col-4 col-md-4 col-lg-1  mt-5">
-          <a href="{{ url_for('delete_trail', trail_id=trail._id ) }}" class="btn text-shadow btn-success"> Delete <i
-              class="far fa-delete"></i>
+        <div class="col-4 col-md-2 col-lg-1 mt-md-5">
+          <a href="{{ url_for('delete_trail', trail_id=trail._id ) }}" class="btn text-shadow btn-success"> Delete 
+  
           </a>
         </div>
       </div>
