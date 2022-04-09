@@ -7,7 +7,7 @@
         <div class="row">
         <form class="card col-12 col-md-8 offset-md-2 col-lg-6 offset-lg-3 requires-validation mt-4" novalidate method="POST" action="{{ url_for('add_trail') }}">
             <div class="card-body">
-                <h2 class="text-center text-white">Add Your Trail</h2>
+                <h2 class="text-center text-white">Edit Your Trail</h2>
                 <div class="row g-2">
                     <!-- title -->
                     <div class="col-md-1 align-self-center font-icon">
@@ -72,7 +72,7 @@
                     <div class="col-md-10 offset-md-1 col-lg-11 offset-lg-0">
                         <div class="form-floating mb-3">
                             <input type="text" name="miles" class="form-control col-md-8" id="miles"
-                                minlength="1" maxlength="7" placeholder="Miles" pattern="^\d*\.?\d+$" required>
+                                minlength="1" maxlength="7" value= "{{ trail.miles }}" placeholder="Miles" pattern="^\d*\.?\d+$" required>
                             <label for="miles">Miles In ml</label>
                         </div>
                     </div>
@@ -84,7 +84,7 @@
                         <div class="form-floating mb-3">
                             <input type="text" name="image_url" class="form-control col-md-8" id="image_url"
                                 placeholder="Image" minlength="5" maxlength="150"
-                                pattern="https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)" required>
+                                pattern="https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)" value= "{{ trail.image_url }}" required>
                             <label for="image_url">Image url</label>
                         </div>
                     </div>
@@ -96,9 +96,9 @@
                     </div>
                     <div class="col-md-10 offset-md-1 col-lg-11 offset-lg-0">
                         <div class="form-floating">
-                            <textarea class="form-control" placeholder="description" id="description"
+                            <textarea class="form-control" style="height: 150px" placeholder="description" id="description"
                                 name="description" required></textarea>
-                            <label for="description">Description</label>
+                            <label for="description">{{ trail.description}}</label>
                         </div>
                     </div>
                     <!-- Add button -->

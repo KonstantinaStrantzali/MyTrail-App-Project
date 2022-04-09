@@ -279,3 +279,7 @@ margin-right: 10%;
   background-color: white;
   box-shadow: #272222;
 }
+textarea {
+ 
+  height: 30vh;
+}
