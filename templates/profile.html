@@ -30,12 +30,12 @@
 
       {% endif %}
 
-        <div class="col-4 col-md-4">
+        <div class="col-4 col-md-4 col-lg-2">
 
           <div class="mt-md-5 mb-4">{{ trail.title }}</div>
 
         </div>
-        <div class="col-4 col-md-2 col-lg-2 col-lg-2 d-none d-lg-block">
+        <div class="col-4 col-md-2  col-lg-2 d-none d-lg-block">
 
           <div class="mt-5">{{ trail.location}}</div>
 
@@ -46,7 +46,7 @@
           </a>
         </div>
         <div class="col-4 col-md-2 col-lg-1 mt-md-5">
-          <a href="{{ url_for('delete_trail', trail_id=trail._id ) }}" class="btn text-shadow btn-success"> Delete 
+          <a href="{{ url_for('delete_trail', trail_id=trail._id ) }}" class="btn text-shadow btn-success btn-delete"> Delete 
   
           </a>
         </div>

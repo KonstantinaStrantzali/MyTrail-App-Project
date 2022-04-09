@@ -149,15 +149,14 @@ html {
   }
   .btn-edit,
   .btn-card,
+  .btn-delete,
   .btn-reset,
   .btn-search{
     background-color: #302F30ff;
     color: white;
     border-color: #302F30ff;
   }
-  .btn-edit,
-  .btn-delete
-  {
+  .btn-edit{
     background-color: #302F30ff;
     color: white;
     border-color: #302F30ff;
@@ -165,7 +164,15 @@ html {
     
   }
 
+  .btn-edit:hover{
+    background-color: #302F30ff;
+    color: white;
+    border-color: #302F30ff;
+    padding:6px 20px;
+    
+  }
 
+  .btn-delete:hover,
   .btn-card:hover{
     background-color: #302F30ff;
     color: white;
