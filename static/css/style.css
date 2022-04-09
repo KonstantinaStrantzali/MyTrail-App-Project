@@ -142,6 +142,7 @@ html {
     color: white !important;
     border-color:#7A5D49ff;
   }
+  .btn-edit,
   .btn-card,
   .btn-reset,
   .btn-search{
@@ -149,6 +150,15 @@ html {
     color: white;
     border-color: #302F30ff;
   }
+  .btn-edit
+  {
+    background-color: #302F30ff;
+    color: white;
+    border-color: #302F30ff;
+    
+    
+  }
+
 
   .btn-card:hover{
     background-color: #302F30ff;
@@ -160,6 +170,9 @@ html {
   footer{
     background-color: #302F30ff;
     color: #F6F6F6;
+    
+    bottom: 0;
+    width:100%;
   } 
     
     .social-media-section .list-inline .list-inline-item a{
@@ -248,6 +261,17 @@ html {
   object-fit: cover;
 }
 }
+
+
 .img-thumbnail{
-max-width: 20%;
+max-width: 70%;
+margin-left: 20px;
+margin-right: 10%;
+
+}
+
+.container-fluid {
+  height: -webkit-fill-available;
+  height: fill-available;
+  height: -moz-available;
 }
