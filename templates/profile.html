@@ -1,54 +1,69 @@
 {% extends "base.html" %}
 {% block content %}
 
-<section class ="user-profile">
+<section class="user-profile">
 
-        <h4 class="curly text-center">
-          {{ username }} 's Profile</h4>
-        
-          <h4 class="review-header text-center">My trails</h4>
-    
-      
-              {% if trails %}
-              {% for trail in trails %}
-              <div class="container-fluid">
-                <div class="row">
-                  <div class="col-6 d-none d-lg-block">
-                    <div class="pb-3">
-                      <img src="{{ trail.image_url }}" class="img-thumbnail float-start" alt="...">
-                    </div>
-                  </div>
-                  <div class="col-4 col-md-4 col-lg-3">
-                    
-                    <div class=" col-4 col-md-4 col-6  mt-5" >{{ trail.title }}</div>
-                    
-                  </div>
-                  <div class="col-4 col-md-4 col-lg-1  mt-5">
-                    <a href="{{ url_for('edit_trail', trail_id=trail._id ) }}" class="btn btn-secondary btn-edit">
-                      Edit <i class="far fa-edit"></i>
-                    </a>
-                  </div>
-                  <div class="col-4 col-md-4 col-lg-1  mt-5">
-                    <a href="{{ url_for('delete_trail', trail_id=trail._id ) }}" class="btn text-shadow btn-success"> Delete <i
-                      class="far fa-delete"></i>
-                  </a>
-                </div>
-              
-             
-                      
-                      {% endfor %}
-                  
-              {% else %}
-                  <div class="row center-align">
-                      <h5 class="col-12">
-                          You haven't written any reviews yet, click <a href="{{ url_for('add_trail') }}">here</a> to add
-                          one!
-                      </h5>
-                  </div>
-                  </div>
-      
-                </div>
-              </section>
+  <h4 class="curly text-center py-5">
+    {{ username }} 's Profile</h4>
+
+  <h4 class="review-header text-center">My trails</h4>
+
+
+  {% if trails %}
+  {% for trail in trails %}
+  <div class="container-fluid">
+    <div class="card pt-5 shadow p-3 mb-5 bg-white rounded" id="profile-card">
+      <div class="row">
+
+        <div class="col-4 d-none d-lg-block">
+         
+            <img src="{{ trail.image_url }}" class="img-thumbnail float-start" alt="...">
+         
+        </div>
+        <div class="col-4 col-md-4 col-lg-2 d-none d-lg-block">
+
+          <div class="mt-5">{{ trail.title }}</div>
+
+        </div>
+        <div class="col-4 col-md-4 col-lg-2">
+
+          <div class="mt-5">{{ trail.location}}</div>
+
+        </div>
+        <div class="col-4 col-md-4 col-lg-1  mt-5">
+          <a href="{{ url_for('edit_trail', trail_id=trail._id ) }}" class="btn btn-secondary btn-edit">
+            Edit <i class="far fa-edit"></i>
+          </a>
+        </div>
+        <div class="col-4 col-md-4 col-lg-1  mt-5">
+          <a href="{{ url_for('delete_trail', trail_id=trail._id ) }}" class="btn text-shadow btn-success"> Delete <i
+              class="far fa-delete"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+
+
+    {% endfor %}
+
+    {% else %}
+    <div class="container-fluid">
+      <div class="card pt-5 shadow p-3 mb-5 bg-white rounded" id="profile-card">
+        <div class="row text-center">
+          <h5 class="col-12">
+            You haven't written any trail yet.
+          </h5>
+          <div class="col-12 text-center">
+          <a class="btn btn-danger btn-lg" href="{{ url_for('add_trail') }}">Add</a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    </div>
+
   {% endif %}
-              
+</section>
+
+
 {% endblock %}

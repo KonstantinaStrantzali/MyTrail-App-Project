@@ -2,7 +2,12 @@ body,
 html {
     padding: 0;
     font-family: 'Lato', sans-serif;
-    
+}
+
+html {
+  position: relative;
+  padding-bottom: 96px;
+  min-height: 100vh;
 }
 /*----------------------------------Containers*/
 .welcome-hero-image {
@@ -170,9 +175,9 @@ html {
   footer{
     background-color: #302F30ff;
     color: #F6F6F6;
-    
+    position: absolute;
     bottom: 0;
-    width:100%;
+    width: 100%;
   } 
     
     .social-media-section .list-inline .list-inline-item a{
@@ -264,14 +269,13 @@ html {
 
 
 .img-thumbnail{
-max-width: 70%;
+  width: 60%;
 margin-left: 20px;
 margin-right: 10%;
 
 }
 
-.container-fluid {
-  height: -webkit-fill-available;
-  height: fill-available;
-  height: -moz-available;
+#profile-card{
+  background-color: white;
+  box-shadow: #272222;
 }
