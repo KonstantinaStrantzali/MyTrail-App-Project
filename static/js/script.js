@@ -17,16 +17,19 @@
       //const input = document.getElementById("title")
       const value = input.value;
       
+      
       if (value.length < 5) {
         input.classList.remove("is-valid");
         input.classList.add("is-invalid");
       } 
       else if (input.type == "password" && value.length < 8)  {
-        password.classList.remove("is-valid");
-        password.classList.add("is-invalid");
+        input.classList.remove("is-valid");
+        input.classList.add("is-invalid");
       }
+      
       else {
         input.classList.add("is-valid");
         input.classList.remove("is-invalid");
       }
+      
     }

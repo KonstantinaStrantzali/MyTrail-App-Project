@@ -1,4 +1,5 @@
 import os
+import datetime
 from flask import (
     Flask, flash, render_template,
     redirect, request, session, url_for)
@@ -109,7 +110,9 @@ def add_trail():
             "miles": request.form.get("miles"),
             "image_url": request.form.get("image_url"),
             "description": request.form.get("description"),
-            "created_by": session["user"]
+            "created_by": session["user"],
+            "post_date": datetime.datetime.utcnow().strftime(
+                '%d %B %Y')
 
         }
         mongo.db.trails.insert_one(trail)
@@ -140,7 +143,6 @@ def edit_trail(trail_id):
         new_values = {"$set": submit}
         mongo.db.trails.update_one(myquery, new_values)
 
-        # mongo.db.trails.update_one( {"$set" {"_id": ObjectId(trail_id)}, submit)
         
         flash("Trail Successfully Updated")
         return redirect(url_for("trails"))
