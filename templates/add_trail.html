@@ -16,7 +16,8 @@
                     <div class="col-md-10 offset-md-1 col-lg-11 offset-lg-0">
                         <div class="form-floating mb-3">
                             <input type="text" name="title" class="form-control"  id="title" placeholder="Title" 
-                            onchange="checkInput()"required>   
+                            onkeyup="checkInput(this)" required> 
+                              
                             <label for="title">Title</label>
                         </div>
                     </div>
@@ -27,7 +28,7 @@
                     <div class="col-md-10 offset-md-1 col-lg-11 offset-lg-0">
                         <div class="form-floating mb-3">
                             <input type="text" name="location" class="form-control" id="location"
-                                placeholder="Location" minlength="1"  required>
+                                placeholder="Location" minlength="1" onkeyup="checkInput(this)"  required>
                             <label for="location">Location</label>
                         </div>
                     </div>
@@ -94,7 +95,7 @@
                     <div class="col-md-10 offset-md-1 col-lg-11 offset-lg-0">
                         <div class="form-floating">
                             <textarea class="form-control" placeholder="description" id="description"
-                                name="description" required></textarea>
+                                name="description" onkeyup="checkInput(this)" required></textarea>
                             <label for="description">Description</label>
                         </div>
                     </div>
