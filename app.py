@@ -145,7 +145,7 @@ def edit_trail(trail_id):
         flash("Trail Successfully Updated")
         return redirect(url_for("trails"))
    
-    trail = mongo.db.trails.find_one({"_id": ObjectId(trail_id)})
+    trail = mongo.db.trails.find_one({"_id": ObjectId(trail_id)}) 
     types = mongo.db.types.find().sort("type_name", 1)
     difficulty = mongo.db.difficulty.find().sort("difficulty_level", 1)
     return render_template(
