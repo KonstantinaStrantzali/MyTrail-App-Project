@@ -31,27 +31,28 @@
          </button>
          <div class="collapse navbar-collapse justify-content-end" id="navbarTogglerDemo02">
             <ul class="navbar-nav ">
-               {% if session.user %}
+       {% if session.user %}
                <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="{{ url_for('trails') }}">Trails</a>
-                  
+                  <a class="nav-link" aria-current="page" href="{{ url_for('trails') }}">Trails</a>
                </li>
                <li class="nav-item">
                   <a class="nav-link" href="{{ url_for('add_trail') }}">Add Trail</a>
                </li>
                <li class="nav-item">
-                  <a class="nav-link" href="{{ url_for('profile', username=session['user']) }}" tabindex="-1" aria-disabled="true">Profile</a>
+                  <a class="nav-link" href="{{ url_for('profile', username=session['user']) }}" tabindex="-1"
+                     aria-disabled="true">Profile</a>
                </li>
-               {% if session.user|lower == "admin"|lower %}
+                  {% if session.user|lower == "admin"|lower %}
                <li class="nav-item">
-                  <a class="nav-link" href="{{ url_for('manage_trails') }}" tabindex="-1" aria-disabled="true">Manage Trails</a>
+                  <a class="nav-link" href="{{ url_for('manage_trails') }}" tabindex="-1" aria-disabled="true">Manage
+                     Trails</a>
                </li>
-               {% endif %}
+                  {% endif %}
                <li class="nav-item">
                   <a class="nav-link" href="{{ url_for('logout') }}" tabindex="-1" aria-disabled="true">Log Out</a>
                </li>
-              
-               {% else %}
+
+         {% else %}
                <li class="nav-item">
                   <a class="nav-link" href="{{ url_for('index') }}" tabindex="-1" aria-disabled="true">Home</a>
                </li>
@@ -61,7 +62,7 @@
                <li class="nav-item">
                   <a class="nav-link" href="{{ url_for('login') }}" tabindex="-1" aria-disabled="true">Sign In</a>
                </li>
-               {% endif %}
+         {% endif %}
             </ul>
 
          </div>

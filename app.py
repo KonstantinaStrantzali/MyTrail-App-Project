@@ -45,6 +45,7 @@ def register():
         # put the new user into 'session' cookie
         session["user"] = request.form.get("username").lower()
         flash("Registration Successful!")
+        return redirect(url_for("login"))
     return render_template("register.html")
     
 
@@ -87,6 +88,15 @@ def logout():
 def manage_trails():
       trails = list(mongo.db.trails.find())
       return render_template("manage-trails.html", trails=trails)
+
+
+@app.route("/search", methods= ["GET", "POST"])
+def search():
+    query = request.form.get("query")
+    trails = list(mongo.db.trails.find({"$text": {"$search": query}}))
+    return render_template("trails.html", trails=trails)
+
+
 
 
 @app.route("/profile<username>", methods=["GET", "POST"])

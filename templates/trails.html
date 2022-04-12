@@ -8,46 +8,49 @@
       <div class="row justify-content-center">
 
         <!-- Search -->
-        <form class="col-lg-8 text-center text-md-start" action="" method="POST">
+        <form class="col-lg-6 text-center text-md-start" action="{{ url_for('search') }}" method="POST">
           <input class="form-control mb-2" name="query" id="query" type="search" placeholder="Search Trails"
             aria-label="Search Trails">
           <button class="btn btn-search text-shadow" type="submit"><i class="fas fa-search"></i> Search Trails</button>
-          <a href="" class="btn btn-reset text-shadow">Reset</a>
+          <a href="{{ url_for('trails') }}" class="btn btn-reset text-shadow">Reset</a>
         </form>
       </div>
     </div>
   </div>
+
+{% if trails|length > 0 %}
   <div class="container-fluid">
     <div class="row row-cols-lg-4 row-cols-sm-2 g-4">
       {% for trail in trails %}
-      <div class="col">
+        <div class="col">
         <div class="card-trails h-100">
           {% if trail.image_url %}
           <img src="{{ trail.image_url }}" class="card-img-top" alt="...">
           {% else %}
-          <img src="/static/images/welcome-image.jpg" class="card-img-top" alt="...">
+           <img src="/static/images/welcome-image.jpg" class="card-img-top" alt="...">
           {% endif %}
-          <div class="card-body">
-            <h5 class="card-title text-center">{{ trail.title }} </h5>
-
-
-            <p class="card-text"> Trail Type: {{ trail.type }}</p>
-            <p><em>Created by {{ trail.created_by }} on{{ trail.post_date }}</em></p>
+              <div class="card-body">
+                <h5 class="card-title text-center">{{ trail.title }} </h5>
+                <p class="card-text"> Trail Type: {{ trail.type }}</p>
+                <p><em>Created by {{ trail.created_by }} on{{ trail.post_date }}</em></p>
+              </div>
+              <div class="card-footer">
+                <button type="button" class="btn btn-card text-shadow" data-bs-toggle="modal"
+                data-bs-target="#modal-{{ trail._id }}"> Read More</button>
+              </div>
+            </div>
           </div>
-          <div class="card-footer">
-            <button type="button" class="btn btn-card text-shadow" data-bs-toggle="modal"
-              data-bs-target="#modal-{{ trail._id }}">
-              Read More
-            </button>
-           </div>
-        </div>
-      </div>
       {% endfor %}
     </div>
   </div>
-  
+{% else %}
+<div>
+  <h2 class="page-heading heading">Sorry, No results found!</h2>
+</div> 
+{% endif %} 
 </section>
-  {% for trail in trails %}
+
+{% for trail in trails %}
   <!-- Modal -->
   <div class="modal fade" id="modal-{{ trail._id }}" tabindex="-1" aria-labelledby="{{ trail._id }}" aria-hidden="true">
     <div class="modal-dialog">
@@ -57,8 +60,6 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <img src="{{ trail.image_url }}" class="card-img-top" alt="...">
-          
-       
         <div class="modal-body">
          <p class="description"> <i class="fa-solid fa-info"></i> Information: {{ trail.description }}</p> 
          <p class="description"> <i class="fa-solid fa-location-dot"></i> Location: {{ trail.location }}</p> 
@@ -72,7 +73,7 @@
       </div>
     </div>
     </div>
-  
 {% endfor %}
+
 {% endblock %}
   
