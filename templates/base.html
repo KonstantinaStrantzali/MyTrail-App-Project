@@ -37,14 +37,20 @@
                   
                </li>
                <li class="nav-item">
-                  <a class="nav-link" href="{{ url_for('add_trail') }}">Add Trails</a>
+                  <a class="nav-link" href="{{ url_for('add_trail') }}">Add Trail</a>
                </li>
                <li class="nav-item">
                   <a class="nav-link" href="{{ url_for('profile', username=session['user']) }}" tabindex="-1" aria-disabled="true">Profile</a>
                </li>
+               {% if session.user|lower == "admin"|lower %}
+               <li class="nav-item">
+                  <a class="nav-link" href="{{ url_for('manage_trails') }}" tabindex="-1" aria-disabled="true">Manage Trails</a>
+               </li>
+               {% endif %}
                <li class="nav-item">
                   <a class="nav-link" href="{{ url_for('logout') }}" tabindex="-1" aria-disabled="true">Log Out</a>
                </li>
+              
                {% else %}
                <li class="nav-item">
                   <a class="nav-link" href="{{ url_for('index') }}" tabindex="-1" aria-disabled="true">Home</a>

@@ -83,6 +83,12 @@ def logout():
     return redirect(url_for("login"))
 
 
+@app.route("/manage_trails")
+def manage_trails():
+      trails = list(mongo.db.trails.find())
+      return render_template("manage-trails.html", trails=trails)
+
+
 @app.route("/profile<username>", methods=["GET", "POST"])
 def profile(username):
     username = mongo.db.users.find_one(
