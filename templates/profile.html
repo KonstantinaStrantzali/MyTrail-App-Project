@@ -1,9 +1,11 @@
 {% extends "base.html" %}
 {% block content %}
 
-<section class="user-profile">
+<section class="profile-hero">
 
-  <h4 class="curly text-center py-5">
+  <div class="container-fluid">
+    <div class="row justify-content-center">
+  <h4 class="username text-center my-5">
     {{ username }} 's trails</h4>
 
   
@@ -11,8 +13,8 @@
 
   {% if trails %}
   {% for trail in trails %}
-  <div class="container-fluid">
-    <div class="card pt-5 shadow p-3 mb-5 bg-white rounded" id="profile-card">
+  
+    <div class="card pt-5 shadow p-3 mb-5 rounded" id="profile-card">
       <div class="row">
        {% if trail.image_url %}
         <div class="col-md-4 col-4 d-none d-md-block">
@@ -73,7 +75,8 @@
       </div>
     </div>
     </div>
-  
+  </div>
+</div>
     {% endif %}
 
     {% for trail in trails %}

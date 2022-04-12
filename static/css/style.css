@@ -1,5 +1,4 @@
-body,
-html {
+body {
     padding: 0;
     font-family: 'Lato', sans-serif;
 }
@@ -8,6 +7,7 @@ html {
   position: relative;
   padding-bottom: 96px;
   min-height: 100vh;
+  
 }
 /*----------------------------------Containers*/
 .welcome-hero-image {
@@ -18,6 +18,17 @@ html {
     background-size: cover;
     min-height: 100vh;
     margin-top: 0;
+}
+
+.profile-hero{
+  background: url("/static/images/profile-image.avif") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  min-height: 100vh;
+  margin-top: 0;
+
 }
 .register-hero-image {
     background: url("/static/images/register-image.png") no-repeat center center fixed;
@@ -37,6 +48,7 @@ html {
         background-size: cover;
         min-height: 100vh;
         margin-top: 0;
+        padding-top:0;
 }
 .trails-hero{
     
@@ -125,6 +137,7 @@ html {
     border-color:#302F30ff;
     text-decoration: none;
   }
+ .btn-card,
  .btn-add-trail,
   .btn-register,
   .btn-login {
@@ -133,6 +146,7 @@ html {
     border-color:#7A5D49ff;
   
   }
+  .btn-card:hover,
   .btn-register:hover,
   .btn-login:hover{
     background-color: #7A5D49ff;
@@ -140,7 +154,6 @@ html {
     border-color:#7A5D49ff;
   }
   .btn-edit,
-  .btn-card,
   .btn-delete,
   .btn-reset,
   .btn-search{
@@ -165,7 +178,7 @@ html {
   }
 
   .btn-delete:hover,
-  .btn-card:hover{
+  .btn-search:hover{
     background-color: #302F30ff;
     color: white;
     border-color: #302F30ff;
@@ -226,7 +239,7 @@ html {
 /*----------------------------------https://stackoverflow.com/questions/37287153/how-to-get-images-in-bootstraps-card-to-be-the-same-height-width */
 
 .card-trails{
-  background-color: #7A5D49ff;
+  background-color: #302F30ff;
   color: white;
 }
 .card-img-top{
@@ -278,10 +291,12 @@ margin-right: 10%;
 }
 
 #profile-card{
-  background-color: white;
+  background-color: rgba(122, 92, 73, 0.781);
+  color: white;
   box-shadow: #272222;
   width: 100%;
   position:relative;
+  
 }
 textarea {
  
@@ -300,7 +315,7 @@ textarea {
   border: 2px solid darkred;
   background-color: red;
   color: white;
-  padding-bottom: 0%;
+  padding-bottom: 0;
 }
 
 .alert-success {
@@ -310,11 +325,34 @@ textarea {
   border: 2px solid rgb(12, 139, 0);
   background-color: rgba(8, 143, 64, 0.582);
   color: white;
-  padding-bottom: 0%;
-
+  padding-bottom: 0;
 }
 
 .alert-info {
   background-color: yellow;
   color: black;
+  font-size: 1.2rem;
+  margin-bottom: 16px;
+  border: 2px solid rgb(12, 139, 0);
+  padding-bottom: 0%;
+}
+
+.trails-section{
+  background-color: #7A5D49ff;
+}
+
+.username{
+  width: 200px;
+  height: 10vh;
+  padding: 10px;
+  background-color: rgba(122, 92, 73, 0.781);
+  color: white;
+  
+ 
+}
+.opaque-overlay {
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.74);
 }
