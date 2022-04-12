@@ -44,9 +44,9 @@
     </div>
   </div>
 {% else %}
-<div>
-  <h2 class="page-heading heading">Sorry, No results found!</h2>
-</div> 
+   <div>
+      <h2 class="no-results">Sorry, No results found!</h2>
+   </div> 
 {% endif %} 
 </section>
 
@@ -58,21 +58,20 @@
         <div class="modal-header">
           <h5 class=" text-center modal-title" id="exampleModalLabel">{{ trail.title }} </h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <img src="{{ trail.image_url }}" class="card-img-top" alt="...">
+        </div>
+        <img src="{{ trail.image_url }}" class="card-img-top" alt="...">
         <div class="modal-body">
-         <p class="description"> <i class="fa-solid fa-info"></i> Information: {{ trail.description }}</p> 
-         <p class="description"> <i class="fa-solid fa-location-dot"></i> Location: {{ trail.location }}</p> 
-         <p class="description"> <i class="fa-solid fa-battery-full"></i> Difficulty: {{ trail.difficulty }}</p> 
-         <p class="description"> <i class="fa-solid fa-shoe-prints"></i> Miles: {{ trail.miles }} ml</p> 
+          <p class="description"> <i class="fa-solid fa-info"></i> Information: {{ trail.description }}</p>
+          <p class="description"> <i class="fa-solid fa-location-dot"></i> Location: {{ trail.location }}</p>
+          <p class="description"> <i class="fa-solid fa-battery-full"></i> Difficulty: {{ trail.difficulty }}</p>
+          <p class="description"> <i class="fa-solid fa-shoe-prints"></i> Miles: {{ trail.miles }} ml</p>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          
         </div>
       </div>
     </div>
-    </div>
+  </div>
 {% endfor %}
 
 {% endblock %}

@@ -295,3 +295,7 @@ textarea {
  
   height: 30vh;
 }
+
+.no-results{
+  color:black;
+}
