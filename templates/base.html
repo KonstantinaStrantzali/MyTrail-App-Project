@@ -20,6 +20,7 @@
 
    <title>My trail</title>
 </head>
+<body>
 <header>
    <!-- Navigation Bar copied from Bootstap 5 documentation and then modified -->
    <nav class="navbar navbar-dark navbar-expand-lg">
@@ -70,23 +71,24 @@
    </nav>
    <!-- /Navigation Bar-->
 </header>
-<body>
-<section>
-   <!-- flash messages https://blog.teclado.com/flashing-messages-with-flask/ -->
-   {% with messages = get_flashed_messages(with_categories=true) %}
-   {% if messages %}
-       {% for cat, message in messages %}
-           <aside class="alert text-center alert-{{ cat }}">
-               <h4>{{ message }}</h4>
-              
-           </aside>
-       {% endfor %}
-   {% endif %}
-{% endwith %}
-</section>
+ <!-- flash messages https://blog.teclado.com/flashing-messages-with-flask/ -->
+ 
 
+   {% with messages = get_flashed_messages(with_categories=true) %}
+ {% if messages %}
+     {% for cat, message in messages %}
+         <aside class="alert text-center alert-{{ cat }}">
+             <h4>{{ message }}</h4>
+            
+         </aside>
+     {% endfor %}
+ {% endif %}
+{% endwith %}
+
+<main>
 {% block content %}
 {% endblock %}
+</main>
 
 <footer>
    <section class= "social-media-section">

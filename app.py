@@ -31,7 +31,7 @@ def register():
             {"username": request.form.get("username").lower()})
 
         if existing_user:
-            flash("Username already exists")
+            flash('Username already exists', 'error')
             return redirect(url_for("register"))
 
         register = {
@@ -66,12 +66,12 @@ def login():
                     "trails", username=session["user"]))
             else: 
                 # invalid password match
-                flash("Incorrect Username and/or Password", "alert-error")
+                flash('Incorrect Username and/or Password', 'error')
                 return redirect(url_for("login"))
 
         else:
             # username doesn't exist
-            flash("Incorrect Username and/or Password")
+            flash('Incorrect Username and/or Password', 'error')
             return redirect(url_for("login"))
 
     return render_template("login.html")
@@ -79,7 +79,7 @@ def login():
 
 @app.route("/logout")
 def logout():
-    flash("You have been logged out")
+    flash('You have been logged out', 'info')
     session.pop("user")
     return redirect(url_for("login"))
 
@@ -132,7 +132,7 @@ def add_trail():
 
         }
         mongo.db.trails.insert_one(trail)
-        flash("Task Successfully Added")
+        flash('Trail Successfully Added', 'success')
         return redirect(url_for("trails"))
 
     types = mongo.db.types.find().sort("type_name", 1)
@@ -160,7 +160,7 @@ def edit_trail(trail_id):
         mongo.db.trails.update_one(myquery, new_values)
 
         
-        flash("Trail Successfully Updated")
+        flash('Trail Successfully Updated', 'success')
         return redirect(url_for("trails"))
    
     trail = mongo.db.trails.find_one({"_id": ObjectId(trail_id)}) 
@@ -173,7 +173,7 @@ def edit_trail(trail_id):
 @app.route("/delete_trail/<trail_id>")
 def delete_trail(trail_id):
     mongo.db.trails.delete_one({"_id":ObjectId(trail_id)})
-    flash("Trail Successfully Deleted")
+    flash('Trail Successfully Deleted', 'success')
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
     return redirect(url_for("profile", username=username))

@@ -110,16 +110,8 @@ html {
    
   }
   
-
-  .alert-error {
-    background-color: red;
-    color: white;
-  }
   
-  .alert-info {
-    background-color: yellow;
-    color: black;
-  }
+  
 /* Buttons */
   .btn-welcome {
     background-color:#7A5D49ff;
@@ -298,4 +290,31 @@ textarea {
 
 .no-results{
   color:black;
+}
+
+/* Flashes */
+.alert-error {
+  border-radius: 3px;
+  font-size: 1.2rem;
+  margin-bottom: 16px;
+  border: 2px solid darkred;
+  background-color: red;
+  color: white;
+  padding-bottom: 0%;
+}
+
+.alert-success {
+  border-radius: 3px;
+  font-size: 1.2rem;
+  margin-bottom: 16px;
+  border: 2px solid rgb(12, 139, 0);
+  background-color: rgba(8, 143, 64, 0.582);
+  color: white;
+  padding-bottom: 0%;
+
+}
+
+.alert-info {
+  background-color: yellow;
+  color: black;
 }
