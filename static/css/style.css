@@ -146,6 +146,7 @@ html {
     border-color:#7A5D49ff;
   
   }
+  
   .btn-card:hover,
   .btn-register:hover,
   .btn-login:hover{
@@ -355,3 +356,6 @@ textarea {
   font-size: 30px;
 }
 
+.invalid-feedback{
+  color:white;
+}

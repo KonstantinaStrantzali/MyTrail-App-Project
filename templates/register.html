@@ -23,7 +23,7 @@
                                         placeholder="Full Name" onkeyup="checkInput(this)" required>
                                     <label for="fullname">Full Name</label>
                                     <div class="invalid-feedback">
-                                        You need more than 5 digits
+                                        Minimum 2 digits
                                     </div>
                                 </div>
                             </div>
@@ -38,7 +38,7 @@
                                         pattern="^[a-zA-Z0-9]{5,15}$" onkeyup="checkInput(this)" required>
                                     <label for="username">Username</label>
                                     <div class="invalid-feedback">
-                                        You need more than 5 digits
+                                        Minimum 2 digits
                                     </div>
                                 </div>
                             </div>
@@ -51,6 +51,9 @@
                                     <input type="email" name="email" class="form-control" id="email"
                                         placeholder="name@example.com" onkeyup="checkInput(this)" required>
                                     <label for="email">Email address</label>
+                                    <div class="invalid-feedback">
+                                        name@example.com
+                                    </div>
                                 </div>
                             </div>
                             <!-- password -->
@@ -63,15 +66,15 @@
                                         placeholder="Password" minlength="8" maxlength="15"
                                         pattern="^[a-zA-Z0-9]{8,15}$" onkeyup="checkInput(this)" required>
                                     <label for="password">Password</label>
-                                    <div class="invalid-feedback d-none mb-0">
-                                        Minimum 8 digit
+                                    <div class="invalid-feedback">
+                                        Minimum 8 digits
                                     </div>
                                 </div>
                             </div>
                             <!-- register -->
                             <div class="row d-flex justify-content-center mt-1 mb-3">
                                 <div class="d-grid col-lg-4 text-center">
-                                    <button class="btn btn-success btn-register text-shadow" type="submit">
+                                    <button class="btn btn-register text-shadow" type="submit">
                                         Register <i class="fas fa-sign-in-alt"></i>
                                     </button>
                                 </div>
