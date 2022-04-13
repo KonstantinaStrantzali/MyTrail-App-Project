@@ -8,10 +8,6 @@
   <h4 class="username text-center my-5">
     {{ username }} 's trails</h4>
 
-    {% for fav in favs %}
-      <h1>{{ fav.title  }}</h1>
-    {% endfor %}
-
 
   {% if trails %}
   {% for trail in trails %}
@@ -106,6 +102,46 @@
       </div>
       </div>
     {% endfor %}
+    <div class="container-fluid">
+      <div class="row justify-content-center">
+    <h4 class="username text-center my-5">
+      Favourites</h4>
+
+
+      {% for fav in favs %}
+    <div class="card pt-5 shadow p-3 mb-5 rounded" id="profile-card">
+      <div class="row">
+
+        <div class="col-md-4 col-4 d-none d-md-block">
+
+          <img src="{{ fav.image_url }}" class="img-thumbnail float-start" alt="...">
+
+        </div>
+        <div class="col-4 col-md-4 col-lg-2">
+
+          <div class="mt-md-5 mb-4">{{ fav.title }}</div>
+
+        </div>
+        <div class="col-4 col-md-2  col-lg-2 d-none d-lg-block">
+
+          <div class="mt-5">{{ fav.location}}</div>
+
+        </div>
+        <div class="col-4 col-md-2 col-lg-1  mt-md-5">
+          <a href="" class="btn text-shadow btn-success btn-edit">
+            Delete
+          </a>
+        </div>
+
+      </div>
+    </div>
+
+      
+    {% endfor %}
+
+    
+
+
   </section>
 
 

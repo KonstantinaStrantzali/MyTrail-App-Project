@@ -198,10 +198,6 @@ def add_favourite(favourite_id):
     """
     add trail into favourites collection in DB.
     """
-
-    favourites = list(mongo.db.favourites.find({"username": session['user'] }))
-    print(favourites)
-
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
     data = {
