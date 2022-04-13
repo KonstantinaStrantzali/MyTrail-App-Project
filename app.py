@@ -101,11 +101,24 @@ def search():
 
 @app.route("/profile<username>", methods=["GET", "POST"])
 def profile(username):
-    username = mongo.db.users.find_one(
-        {"username": session["user"]})["username"]
-    trails = list(mongo.db.trails.find(
-        {"created_by": session["user"]}))
-    return render_template("profile.html", trails=trails, username=username)
+    username = mongo.db.users.find_one({"username": session["user"]})["username"]
+
+    trails = list(mongo.db.trails.find({"created_by": session["user"]}))
+
+    # get user favourites
+    favourites = list(mongo.db.favourites.find({"username": session['user']}))
+    print(favourites)
+
+    # make only a list of the favoute ids
+    object_ids = [i["title_name"] for i in favourites]
+    print(object_ids)
+
+    # get all trails if the contain the id in our list of favourite ids
+    # TODO
+    favs = mongo.db.trails.find({"_id": {"$in": object_ids}})
+    print(favs)
+        
+    return render_template("profile.html", favs=favs, trails=trails, username=username)
 
 
 @app.route("/get_trails")
@@ -177,7 +190,7 @@ def delete_trail(trail_id):
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
     return redirect(url_for("profile", username=username))
-    
+
 
 
 @app.route("/add_favourite/<favourite_id>", methods=["GET", "POST"])
@@ -185,16 +198,21 @@ def add_favourite(favourite_id):
     """
     add trail into favourites collection in DB.
     """
+
+    favourites = list(mongo.db.favourites.find({"username": session['user'] }))
+    print(favourites)
+
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
     data = {
-        "trail_name": ObjectId(favourite_id),
+        "title_name": ObjectId(favourite_id),
         "username": username
     }
     mongo.db.favourites.insert_one(data)
-    flash("Book saved to favourites")
+    flash("Trail saved to favourites")
 
     return redirect(url_for("trails", username=username))
+
 
 
 

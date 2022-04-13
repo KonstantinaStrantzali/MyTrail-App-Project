@@ -8,7 +8,9 @@
   <h4 class="username text-center my-5">
     {{ username }} 's trails</h4>
 
-  
+    {% for fav in favs %}
+      <h1>{{ fav.title  }}</h1>
+    {% endfor %}
 
 
   {% if trails %}

@@ -6,8 +6,8 @@
         <div class="col-lg-8">
             <!-- form area -->
             <section class="form-area mt-5">
-                <form id="registration-form" class="card col-12 col-md-8 offset-md-2  requires-validation" novalidate method="POST"
-                    action="{{ url_for('register') }}">
+                <form id="registration-form" class="card col-12 col-md-8 offset-md-2  requires-validation" novalidate
+                    method="POST" action="{{ url_for('register') }}">
                     <div class="card-title text-center mt-2">
                         <h3 class="register-header pt-3">Registration Form</h3>
                     </div>
@@ -24,7 +24,7 @@
                                     <label for="fullname">Full Name</label>
                                     <div class="invalid-feedback">
                                         You need more than 5 digits
-                                      </div>
+                                    </div>
                                 </div>
                             </div>
                             <!-- username -->
@@ -39,7 +39,7 @@
                                     <label for="username">Username</label>
                                     <div class="invalid-feedback">
                                         You need more than 5 digits
-                                      </div>
+                                    </div>
                                 </div>
                             </div>
                             <!-- email -->
@@ -64,8 +64,8 @@
                                         pattern="^[a-zA-Z0-9]{8,15}$" onkeyup="checkInput(this)" required>
                                     <label for="password">Password</label>
                                     <div class="invalid-feedback d-none mb-0">
-                                       Minimum 8 digit
-                                      </div>  
+                                        Minimum 8 digit
+                                    </div>
                                 </div>
                             </div>
                             <!-- register -->
@@ -77,7 +77,8 @@
                                 </div>
                             </div>
                             <p class="form-link-here text-center mt-2">
-                                Already registered? Click <a href="{{ url_for('login') }}" class="form-link-here">here</a> to
+                                Already registered? Click <a href="{{ url_for('login') }}"
+                                    class="form-link-here">here</a> to
                                 Login!
                             </p>
                         </div>
