@@ -1,5 +1,14 @@
-import os
+"""
+    Code adapted from Code Institute Course Material
+    Task Manager Flask App mini Project
+"""
+
+
 import datetime
+import env
+import os
+
+
 from flask import (
     Flask, flash, render_template,
     redirect, request, session, url_for)
@@ -7,20 +16,18 @@ from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
 if os.path.exists("env.py"):
-    import env
 
 app = Flask(__name__)
-
 app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
 app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
 app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
 
+
 @app.route("/")
 def index():
     return render_template("welcome.html")
-
 
 
 @app.route("/register", methods=["GET", "POST"])
@@ -47,7 +54,7 @@ def register():
         flash('Registration Successful!', 'success')
         return redirect(url_for("login"))
     return render_template("register.html")
-    
+
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
@@ -64,7 +71,7 @@ def login():
                 flash("Welcome, {}".format(request.form.get("username")))
                 return redirect(url_for(
                     "trails", username=session["user"]))
-            else: 
+            else:
                 # invalid password match
                 flash('Incorrect Username and/or Password', 'error')
                 return redirect(url_for("login"))
@@ -86,22 +93,21 @@ def logout():
 
 @app.route("/manage_trails")
 def manage_trails():
-      trails = list(mongo.db.trails.find())
-      return render_template("manage-trails.html", trails=trails)
+    trails = list(mongo.db.trails.find())
+    return render_template("manage-trails.html", trails=trails)
 
 
-@app.route("/search", methods= ["GET", "POST"])
+@app.route("/search", methods=["GET", "POST"])
 def search():
     query = request.form.get("query")
     trails = list(mongo.db.trails.find({"$text": {"$search": query}}))
     return render_template("trails.html", trails=trails)
 
 
-
-
 @app.route("/profile<username>", methods=["GET", "POST"])
 def profile(username):
-    username = mongo.db.users.find_one({"username": session["user"]})["username"]
+    username = mongo.db.users.find_one(
+        {"username": session["user"]})["username"]
 
     trails = list(mongo.db.trails.find({"created_by": session["user"]}))
 
@@ -117,7 +123,7 @@ def profile(username):
     # TODO
     favs = mongo.db.trails.find({"_id": {"$in": object_ids}})
     print(favs)
-        
+
     return render_template("profile.html", favs=favs, trails=trails, username=username)
 
 
@@ -125,7 +131,6 @@ def profile(username):
 def trails():
     trails = list(mongo.db.trails.find())
     return render_template("trails.html", trails=trails)
-
 
 
 @app.route("/add_trail", methods=["GET", "POST"])
@@ -154,7 +159,6 @@ def add_trail():
         "add_trail.html", types=types, difficulty=difficulty)
 
 
-
 @app.route("/edit_trail/<trail_id>", methods=["GET", "POST"])
 def edit_trail(trail_id):
     if request.method == "POST":
@@ -167,16 +171,15 @@ def edit_trail(trail_id):
             "image_url": request.form.get("image_url"),
             "description": request.form.get("description"),
             "created_by": session["user"]
-         }
+        }
         myquery = {"_id": ObjectId(trail_id)}
         new_values = {"$set": submit}
         mongo.db.trails.update_one(myquery, new_values)
 
-        
         flash('Trail Successfully Updated', 'success')
         return redirect(url_for("trails"))
-   
-    trail = mongo.db.trails.find_one({"_id": ObjectId(trail_id)}) 
+
+    trail = mongo.db.trails.find_one({"_id": ObjectId(trail_id)})
     types = mongo.db.types.find().sort("type_name", 1)
     difficulty = mongo.db.difficulty.find().sort("difficulty_level", 1)
     return render_template(
@@ -185,12 +188,11 @@ def edit_trail(trail_id):
 
 @app.route("/delete_trail/<trail_id>")
 def delete_trail(trail_id):
-    mongo.db.trails.delete_one({"_id":ObjectId(trail_id)})
+    mongo.db.trails.delete_one({"_id": ObjectId(trail_id)})
     flash('Trail Successfully Deleted', 'success')
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
     return redirect(url_for("profile", username=username))
-
 
 
 @app.route("/add_favourite/<favourite_id>", methods=["GET", "POST"])
@@ -210,6 +212,13 @@ def add_favourite(favourite_id):
     return redirect(url_for("trails", username=username))
 
 
+@app.route("/remove_favourite/<favourite_id>")
+def remove_favourite(favourite_id):
+    """
+    delete trails from favourites collection in DB and from profile
+    """
+    mongo.db.favourites.delete_one({"title_name": ObjectId(favourite_id)})
+    return redirect(url_for("profile", username=session["user"]))
 
 
 if __name__ == "__main__":
