@@ -77,7 +77,7 @@
    {% with messages = get_flashed_messages(with_categories=true) %}
  {% if messages %}
      {% for cat, message in messages %}
-         <aside class="alert text-center alert-{{ cat }}">
+         <aside class="flash-messages text-center alert-{{ cat }}">
              <h4>{{ message }}</h4>
             
          </aside>
