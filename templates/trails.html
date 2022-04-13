@@ -35,8 +35,19 @@
                 <p><em>Created by {{ trail.created_by }} on{{ trail.post_date }}</em></p>
               </div>
               <div class="card-footer">
+                <div class = "col-12">
                 <button type="button" class="btn btn-card text-shadow" data-bs-toggle="modal"
                 data-bs-target="#modal-{{ trail._id }}"> Read More</button>
+                {% if session["user"] %}
+                
+                    <a href="{{ url_for('add_favourite', favourite_id=trail._id) }}"
+                        class="btn-floating waves-effect waves-light red top tooltipped favourite"
+                        data-position="top" data-tooltip="Save to Favourites"><i
+                            class="fa-solid fa-heart"></i>
+                    </a>
+                
+            {% endif %}
+              </div>
               </div>
             </div>
           </div>

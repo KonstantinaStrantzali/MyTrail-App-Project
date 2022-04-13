@@ -44,7 +44,7 @@ def register():
 
         # put the new user into 'session' cookie
         session["user"] = request.form.get("username").lower()
-        flash("Registration Successful!")
+        flash('Registration Successful!', 'success')
         return redirect(url_for("login"))
     return render_template("register.html")
     
@@ -177,6 +177,24 @@ def delete_trail(trail_id):
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
     return redirect(url_for("profile", username=username))
+    
+
+
+@app.route("/add_favourite/<favourite_id>", methods=["GET", "POST"])
+def add_favourite(favourite_id):
+    """
+    add trail into favourites collection in DB.
+    """
+    username = mongo.db.users.find_one(
+        {"username": session["user"]})["username"]
+    data = {
+        "trail_name": ObjectId(favourite_id),
+        "username": username
+    }
+    mongo.db.favourites.insert_one(data)
+    flash("Book saved to favourites")
+
+    return redirect(url_for("trails", username=username))
 
 
 
