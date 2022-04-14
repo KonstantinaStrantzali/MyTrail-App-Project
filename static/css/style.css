@@ -292,10 +292,9 @@ html {
   width: 60%;
 margin-left: 20px;
 margin-right: 10%;
-
-
 }
 
+.card-add-trail,
 #profile-card{
   background-color: rgba(122, 92, 73, 0.781);
   color: white;
