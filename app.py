@@ -127,8 +127,17 @@ def profile(username):
 
 @app.route("/get_trails")
 def trails():
-    trails = list(mongo.db.trails.find())
-    return render_template("trails.html", trails=trails)
+    username = mongo.db.users.find_one({"username": session["user"]})["username"]
+    trails = list(mongo.db.trails.find({"created_by": session["user"]}))
+    favourites = list(mongo.db.favourites.find({"username": session['user']}))
+    for i in trails:
+        i["favourite"] = "far"
+        for j in favourites:
+            if i["_id"] == j["title_name"]:
+                i["favourite"] = "fas"
+                break
+                 
+    return render_template("trails.html", username=username, trails=trails)
 
 
 @app.route("/add_trail", methods=["GET", "POST"])
@@ -201,12 +210,18 @@ def add_favourite(trail_id):
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
 
+    fav = mongo.db.favourites.find_one({"username": session["user"],"title_name": ObjectId(trail_id)})
+    if fav:
+        return redirect(url_for("trails", username=username))
+    
     data = {
         "title_name": ObjectId(trail_id),
         "username": username
     }
+
     mongo.db.favourites.insert_one(data)
     flash("Trail saved to favourites")
+
 
     return redirect(url_for("trails", username=username))
 
