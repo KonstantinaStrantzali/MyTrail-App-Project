@@ -1,8 +1,8 @@
 {% extends "base.html" %}
 {% block content %}
 
-<section class ="profile-hero">
-<div class="container-fluid search-section mb-5">
+<section class ="profile-hero mb-5">
+<div class="container-fluid search-section">
   <div class="row">
     <div class="col-12 mt-5">
       <div class="row justify-content-center">
@@ -20,10 +20,11 @@
 
 {% if trails|length > 0 %}
   <div class="container-fluid">
-    <div class="row row-cols-lg-4 row-cols-sm-2 g-4">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 pb-4">
+      
       {% for trail in trails %}
-        <div class="col">
-        <div class="card-trails h-100">
+        <div class="col mb-5">
+        <div class="card-trails h-100 ">
           {% if trail.image_url %}
           <img src="{{ trail.image_url }}" class="card-img-top" alt="...">
           {% else %}
@@ -53,13 +54,15 @@
       {% endfor %}
     </div>
   </div>
+  </div>
 {% else %}
    <div>
       <h2 class="no-results">Sorry, No results found!</h2>
    </div> 
 {% endif %}
 </div>
-</section>
+</div>
+
 
 {% for trail in trails %}
   <!-- Modal -->
@@ -83,6 +86,7 @@
       </div>
     </div>
   </div>
+</section>
 {% endfor %}
 <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
 <script src="{{ url_for('static', filename='js/like_icon.js') }}"></script>
