@@ -38,11 +38,13 @@
                 <div class = "col-12">
                 <button type="button" class="btn btn-card text-shadow" data-bs-toggle="modal"
                 data-bs-target="#modal-{{ trail._id }}"> Read More</button>
+
                     <a href="{{ url_for('add_favourite', favourite_id=trail._id) }}"
-                        class=" ms-5 btn-floating waves-effect waves-light red top tooltipped favourite-icon"
-                        data-position="top" data-tooltip="Save to Favourites"><i
-                            class="fa-solid fa-heart"></i>
+                        class=" ms-5 check-favourite favourite-icon"
+                        data-position="top" data-tooltip="Save to Favourites">
+                        <i class="like-icon far fa-heart"></i>
                     </a>
+                    
                 
               </div>
               </div>
@@ -82,6 +84,7 @@
     </div>
   </div>
 {% endfor %}
-
+<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+<script src="{{ url_for('static', filename='js/like_icon.js') }}"></script>
 {% endblock %}
   

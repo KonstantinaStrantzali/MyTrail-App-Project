@@ -357,8 +357,9 @@ textarea {
  
 }
 
-.favourite-icon{
+.like-icon{
   font-size: 30px;
+  color:rgba(189, 15, 44, 0.979)
 }
 
 .invalid-feedback{
