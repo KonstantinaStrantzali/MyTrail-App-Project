@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 
-<section class="profile-hero mb-4">
+<section class="hero-image mb-4">
 
   <div class="container-fluid">
     <div class="row justify-content-center">
@@ -41,7 +41,7 @@
 
         </div>
         <div class="col-4 col-md-2 col-lg-1  mt-md-5">
-          <a href="{{ url_for('edit_trail', trail_id=trail._id ) }}" class="btn text-shadow btn-success btn-edit">
+          <a href="{{ url_for('edit_trail', trail_id=trail._id ) }}" class="btn text-shadow  btn-edit">
            Edit
           </a>
         </div>
@@ -90,7 +90,7 @@
            
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn text-shadow btn-success" data-bs-dismiss="modal">
+            <button type="button" class="btn text-shadow" data-bs-dismiss="modal">
                 Cancel <i class="far fa-times-circle"></i>
             </button>
             <a href="{{ url_for('delete_trail', trail_id=trail._id ) }}" role="button"

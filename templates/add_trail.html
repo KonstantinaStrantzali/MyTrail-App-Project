@@ -2,8 +2,8 @@
 {% block content %}
 
 
-<section class="profile-hero">
-    <div class="container-fluid add-trail-hero-image">
+<section class="hero-image">
+    <div class="container-fluid">
         <div class="row">
         <form class="form-card col-12 col-md-8 offset-md-2 col-lg-6 offset-lg-3 requires-validation mt-4" novalidate method="POST" action="{{ url_for('add_trail') }}">
             <div class="card-body">
@@ -34,7 +34,7 @@
                     </div>
 
                     <div class="col-md-1 align-self-center font-icon">
-                        <i class="fa-solid fa-arrow trail-icon"></i>
+                        <i class="fa-solid fa-person-hiking trail-icon"></i>
                     </div>
                     <div class="col-md-10 offset-md-1 col-lg-11 offset-lg-0">
                         <div class="form-floating mb-3">
@@ -96,7 +96,7 @@
                     <div class="col-md-10 offset-md-1 col-lg-11 offset-lg-0">
                         <div class="form-floating">
                             <textarea class="form-control" placeholder="description" id="description"
-                                name="description" onkeyup="checkInput(this)" required></textarea>
+                                name="description" style="height: 150px" onkeyup="checkInput(this)" required></textarea>
                             <label for="description">Description</label>
                         </div>
                     </div>

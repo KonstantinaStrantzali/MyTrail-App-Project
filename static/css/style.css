@@ -23,7 +23,7 @@ html {
     margin-top: 0;
 }
 
-.profile-hero{
+.hero-image{
   background: url("/static/images/profile-image.avif") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -136,6 +136,7 @@ html {
     border-color:  #7A5D49ff;
     text-decoration: none;
   }
+  .btn-add-trail:hover,
   .btn-welcome:hover {
     background-color: #302F30ff;
     color: #F6F6F6 !important;
@@ -143,9 +144,8 @@ html {
     text-decoration: none;
   }
  .btn-card,
- .btn-add-trail,
-  .btn-register,
-  .btn-login {
+ .btn-register,
+ .btn-login {
     background-color: #7A5D49ff;
     color: white;
     border-color:#7A5D49ff;
@@ -159,6 +159,7 @@ html {
     color: white !important;
     border-color:#7A5D49ff;
   }
+  .btn-add-trail,
   .btn-edit,
   .btn-delete,
   .btn-reset,
@@ -333,18 +334,18 @@ textarea {
   border-radius: 3px;
   font-size: 1.2rem;
   margin-bottom: 16px;
-  border: 2px solid rgb(12, 139, 0);
+  border: 2px solid rgba(8, 143, 64, 0.582);
   background-color: rgba(8, 143, 64, 0.582);
-  color: white;
+  color: #302F30ff;
   padding-bottom: 0;
 }
 
 .alert-info {
-  background-color: yellow;
-  color: black;
+  background-color: #7A5D49ff;
+  color: white;
   font-size: 1.2rem;
   margin-bottom: 16px;
-  border: 2px solid rgb(12, 139, 0);
+  border: 2px solid #7A5D49ff;
   padding-bottom: 0%;
 }
 
@@ -353,7 +354,7 @@ textarea {
 }
 
 .username{
-  width: 200px;
+  width: 250px;
   height: 10vh;
   padding: 10px;
   background-color: rgba(122, 92, 73, 0.781);

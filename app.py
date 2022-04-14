@@ -50,7 +50,7 @@ def register():
         # put the new user into 'session' cookie
         session["user"] = request.form.get("username").lower()
         flash('Registration Successful!', 'success')
-        return redirect(url_for("login"))
+        return redirect(url_for("profile", username=session["user"]))
     return render_template("register.html")
 
 
@@ -66,7 +66,7 @@ def login():
             if check_password_hash(
                     existing_user["password"], request.form.get("password")):
                 session["user"] = request.form.get("username").lower()
-                flash("Welcome, {}".format(request.form.get("username")))
+                flash('Welcome, {}'.format(request.form.get("username")), 'info')
                 return redirect(url_for(
                     "trails", username=session["user"]))
             else:
@@ -108,6 +108,7 @@ def profile(username):
         {"username": session["user"]})["username"]
 
     trails = list(mongo.db.trails.find({"created_by": session["user"]}))
+   
 
     # get user favourites
     favourites = list(mongo.db.favourites.find({"username": session['user']}))
@@ -128,7 +129,8 @@ def profile(username):
 @app.route("/get_trails")
 def trails():
     username = mongo.db.users.find_one({"username": session["user"]})["username"]
-    trails = list(mongo.db.trails.find({"created_by": session["user"]}))
+    # trails = list(mongo.db.trails.find({"created_by": session["user"]}))
+    trails = list(mongo.db.trails.find({}))
     favourites = list(mongo.db.favourites.find({"username": session['user']}))
     for i in trails:
         i["favourite"] = "far"
@@ -220,7 +222,7 @@ def add_favourite(trail_id):
     }
 
     mongo.db.favourites.insert_one(data)
-    flash("Trail saved to favourites")
+    flash("Trail saved to favourites", 'info')
 
 
     return redirect(url_for("trails", username=username))
