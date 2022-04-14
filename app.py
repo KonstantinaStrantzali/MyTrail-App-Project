@@ -102,7 +102,7 @@ def search():
     return render_template("trails.html", trails=trails)
 
 
-@app.route("/profile<username>", methods=["GET", "POST"])
+@app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
@@ -193,15 +193,16 @@ def delete_trail(trail_id):
     return redirect(url_for("profile", username=username))
 
 
-@app.route("/add_favourite/<favourite_id>", methods=["GET", "POST"])
-def add_favourite(favourite_id):
+@app.route("/add_favourite/<trail_id>", methods=["GET", "POST"])
+def add_favourite(trail_id):
     """
     add trail into favourites collection in DB.
     """
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
+
     data = {
-        "title_name": ObjectId(favourite_id),
+        "title_name": ObjectId(trail_id),
         "username": username
     }
     mongo.db.favourites.insert_one(data)
@@ -210,12 +211,18 @@ def add_favourite(favourite_id):
     return redirect(url_for("trails", username=username))
 
 
-@app.route("/remove_favourite/<favourite_id>")
-def remove_favourite(favourite_id):
+@app.route("/remove_favourite/<trail_id>")
+def remove_favourite(trail_id):
     """
     delete trails from favourites collection in DB and from profile
+
     """
-    mongo.db.favourites.delete_one({"title_name": ObjectId(favourite_id)})
+    username = mongo.db.users.find_one(
+        {"username": session["user"]})["username"]
+
+    mongo.db.favourites.delete_one({"title_name": ObjectId(trail_id),
+                                     "username": username })
+
     return redirect(url_for("profile", username=session["user"]))
 
 

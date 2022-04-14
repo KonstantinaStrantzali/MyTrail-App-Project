@@ -303,6 +303,12 @@ margin-right: 10%;
   position:relative;
   
 }
+
+.form-card{
+  background-color: rgba(122, 92, 73, 0.781);
+  color: black;
+  box-shadow: #272222;
+}
 textarea {
  
   height: 30vh;

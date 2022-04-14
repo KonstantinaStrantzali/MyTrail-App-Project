@@ -33,14 +33,14 @@
               <div class="card-body">
                 <h5 class="card-title text-center">{{ trail.title }} </h5>
                 <p class="card-text"> Trail Type: {{ trail.type }}</p>
-                <p><em>Created by {{ trail.created_by }} on{{ trail.post_date }}</em></p>
+                <p><em>Created by {{ trail.created_by }} on {{ trail.post_date }}</em></p>
               </div>
               <div class="card-footer">
                 <div class = "col-12">
                 <button type="button" class="btn btn-card text-shadow" data-bs-toggle="modal"
                 data-bs-target="#modal-{{ trail._id }}"> Read More</button>
 
-                    <a href="{{ url_for('add_favourite', favourite_id=trail._id) }}"
+                    <a href="{{ url_for('add_favourite', trail_id=trail._id) }}"
                         class=" ms-5 check-favourite favourite-icon"
                         data-position="top" data-tooltip="Save to Favourites">
                         <i class="like-icon far fa-heart"></i>

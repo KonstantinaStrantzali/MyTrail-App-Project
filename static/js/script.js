@@ -18,7 +18,7 @@
       const value = input.value;
       
       
-      if (value.length < 5) {
+      if (value.length < 2) {
         input.classList.remove("is-valid");
         input.classList.add("is-invalid");
       } 
