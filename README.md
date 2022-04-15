@@ -21,8 +21,8 @@ This website provides a platform to users who love sharing trail as well as expl
 [Information Architecture](#information-architecture)
 * [Database Design](#database-design)
 * [User Collection](#user-collection)
-* [Comic Collection](#comic-collection)
-* [Publishers Collection](#publishers-collection)
+* [Trail Collection](#comic-collection)
+* [Favourites Collection](#publishers-collection)
 
 [Technologies Used](#technologies-used)
 * [Languages Used](#languages-used)
@@ -105,3 +105,20 @@ As an admin user should be able to:
 - The [Register page](static/images/register-image.png) has a strong mountain background image and make the site inviting.
 - The [Login page](static/images/singIn-image.png) has an other beautiful nature scened image making the site welcoming for the user.
 - The rest of pages, used [hero image](static/images/profile-image.avif) as general image background to keep consistency and harmony in terms of web design across the site.
+
+
+### **Wireframes**
+
+The wireframes were created using [Balsamiq](https://www.adobe.com/uk/products/xd.html) for Desktop, Ipad and Mobile viewport. 
+
+
+  - [Home](documentation/wireframes/home-page-wireframe.png)
+  - [Log In](documentation/wireframes/signIn-page-wireframe.png)
+  - [Register](documentation/wireframes/register-page-wireframe.png)
+  - [Add/Edit Trail](documentation/wireframes/addTrail-wireframe.png)
+  - [Trails](documentation/wireframes/trails-page-wireframe.png)
+  - [Profile](documentation/wireframes/profile-page-wireframe.png)
+  - [Manage Trails](documentation/wireframes/admin-page-wireframe.png) when the user is admin.
+
+
+
