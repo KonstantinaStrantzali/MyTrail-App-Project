@@ -3,7 +3,7 @@
 body{
   margin-bottom: 5%;
   font-family: 'Lato', sans-serif;
-  background-color: #302F30ff;
+  background-color: #2C2D31;
 }
 
 html {
@@ -94,12 +94,12 @@ html {
 /*----------------------------------Navigation Bar*/
 /* over-write the Bootstrap navbar class */
 .navbar{
-    background-color: #302F30ff !important;
+    background-color: #2C2D31 !important;
   }
 
   
   .navbar-brand {
-    color:white;
+    color:DEDDDB;
     left:5px;
     font-family:'Roboto', sans-serif;
     }
@@ -112,12 +112,12 @@ html {
     color:#F6F6F6!important;
   }
   .nav-item a:hover {
-    background-color: #7A5D49ff;
+    background-color: #7A5D49;
     color: #F6F6F6!important;
   }
   .navbar-brand i{
     transform: rotate(30deg); 
-    background-color: #7A5D49ff;
+    background-color: #7A5D49;
     font-size:30px;
     padding: 3px;
     margin-right: 10px;
@@ -125,7 +125,7 @@ html {
     
   }
   .logo {
-      color: white;
+      color: DEDDDB;
       font-size: 15px;
    
   }
@@ -134,69 +134,69 @@ html {
   
 /* Buttons */
   .btn-welcome {
-    background-color:#7A5D49ff;
+    background-color:#7A5D49;
     color: #F6F6F6 !important;
-    border-color:  #7A5D49ff;
+    border-color:  #7A5D49;
     text-decoration: none;
   }
   .btn-add-trail:hover,
   .btn-welcome:hover {
-    background-color: #302F30ff;
-    color: #F6F6F6 !important;
-    border-color:#302F30ff;
+    background-color: #2C2D31;
+    color: #DEDDDB !important;
+    border-color:#2C2D31;
     text-decoration: none;
   }
  .btn-card,
  .btn-register,
  .btn-login {
-    background-color: #7A5D49ff;
-    color: white;
-    border-color:#7A5D49ff;
+    background-color: #7A5D49;
+    color: #DEDDDB;
+    border-color:#7A5D49;
   
   }
   
   .btn-card:hover,
   .btn-register:hover,
   .btn-login:hover{
-    background-color: #7A5D49ff;
-    color: white !important;
-    border-color:#7A5D49ff;
+    background-color: #7A5D49;
+    color: DEDDDB !important;
+    border-color:#7A5D49;
   }
   .btn-add-trail,
   .btn-edit,
   .btn-delete,
   .btn-reset,
   .btn-search{
-    background-color: #302F30ff;
-    color: white;
-    border-color: #302F30ff;
+    background-color: #2C2D31;
+    color: DEDDDB;
+    border-color: #2C2D31;
   }
   .btn-edit{
-    background-color: #302F30ff;
-    color: white;
-    border-color: #302F30ff;
+    background-color: #2C2D31;
+    color: DEDDDB;
+    border-color: #2C2D31;
     padding:6px 20px;
     
   }
 
   .btn-edit:hover{
-    background-color: #302F30ff;
-    color: white;
-    border-color: #302F30ff;
+    background-color: #2C2D31;
+    color: DEDDDB;
+    border-color: #2C2D31;
     padding:6px 20px;
     
   }
 
   .btn-delete:hover,
   .btn-search:hover{
-    background-color: #302F30ff;
-    color: white;
-    border-color: #302F30ff;
+    background-color: #2C2D31;
+    color: DEDDDB;
+    border-color: #2C2D31;
   }
   
 /* Footer */
   footer{
-    background-color: #302F30ff;
+    background-color: #2C2D31;
     color: #F6F6F6;
     position: absolute;
     bottom: 0;
@@ -231,27 +231,27 @@ html {
 .icons{
   font-size:25px;
   padding-top:5px;
-  color: white;
+  color: DEDDDB;
 }
 
 .form-link-here {
-  color:white;
+  color:DEDDDB;
   text-decoration: none;
 }
 
 .form-area h3 {
-    color: white;
+    color: DEDDDB;
   }
 
 .trails-section{
   
-  color:white;
+  color:DEDDDB;
 }
 /*----------------------------------https://stackoverflow.com/questions/37287153/how-to-get-images-in-bootstraps-card-to-be-the-same-height-width */
 
 .card-trails{
-  background-color: #302F30ff;
-  color: white;
+  background-color: #2C2D31;
+  color: DEDDDB;
 }
 .card-img-top{
   width: 100%;
@@ -259,7 +259,7 @@ html {
   object-fit: cover;
 }
 .modal-content{
-  background-color: #7A5D49ff;
+  background-color: #7A5D49;
   color: beige;
 }
 .font-icon{
@@ -268,7 +268,7 @@ html {
 
 .trail-icon{
   font-size: 25px;
-  color: white;
+  color: DEDDDB;
 }
 /*----------------------------------Media Queries */
   @media only screen and (max-width: 600px) {
@@ -302,7 +302,7 @@ margin-right: 10%;
 .card-add-trail,
 #profile-card{
   background-color: rgba(122, 92, 73, 0.781);
-  color: white;
+  color: DEDDDB;
   box-shadow: #272222;
   width: 100%;
   position:relative;
@@ -336,7 +336,7 @@ textarea {
   margin-bottom: 16px;
   border: 2px solid darkred;
   background-color: red;
-  color: white;
+  color: DEDDDB;
   padding-bottom: 0;
 }
 
@@ -346,21 +346,21 @@ textarea {
   margin-bottom: 16px;
   border: 2px solid rgba(8, 143, 64, 0.582);
   background-color: rgba(8, 143, 64, 0.582);
-  color: #302F30ff;
+  color: #2C2D31;
   padding-bottom: 0;
 }
 
 .alert-info {
-  background-color: #7A5D49ff;
-  color: white;
+  background-color: #7A5D49;
+  color: DEDDDB;
   font-size: 1.2rem;
   margin-bottom: 16px;
-  border: 2px solid #7A5D49ff;
+  border: 2px solid #7A5D49;
   padding-bottom: 0%;
 }
 
 .trails-section{
-  background-color: #7A5D49ff;
+  background-color: #7A5D49;
 }
 
 .username{
@@ -368,7 +368,7 @@ textarea {
   height: 10vh;
   padding: 10px;
   background-color: rgba(122, 92, 73, 0.781);
-  color: white;
+  color: DEDDDB;
   
  
 }
@@ -379,7 +379,7 @@ textarea {
 }
 
 .invalid-feedback{
-  color:white;
+  color:DEDDDB;
 }
 .flash-messages{
   margin-bottom: 0%;
