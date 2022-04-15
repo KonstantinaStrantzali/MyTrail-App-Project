@@ -82,7 +82,7 @@ As an admin user should be able to:
 * Provide to nature lovers a platform where they can share their trail experiences securely.
 * Edit and delete other users posts if needed.
 
-[Back to Top](#the-collector)
+[Back to Top](#contents)
 
 ---
 ## **Design**
@@ -119,6 +119,49 @@ The wireframes were created using [Balsamiq](https://www.adobe.com/uk/products/x
   - [Trails](documentation/wireframes/trails-page-wireframe.png)
   - [Profile](documentation/wireframes/profile-page-wireframe.png)
   - [Manage Trails](documentation/wireframes/admin-page-wireframe.png) when the user is admin.
+
+## Features
+
+The site website's map is shown below.
+
+For users logged out:
+![](documentation/screenshots/site-map-graph-logged-out.png)
+
+For users logged in:
+![](documentation/screenshots/site-map-graph-logged.png)  
+
+For admin users:
+![](documentation/screenshots/site-map-graph-admin.png)
+
+ * ![Home Page](documentation/screenshots/home-page.png)
+
+---
+
+* Register
+    * ![Register Form](documentation/screenshots/register-page.png)
+    - Form requesting the user register with their name, address, username and password.
+
+---
+* Log In
+    * ![Log In Form](documentation/screenshots/login-page.png)
+   - Form requesting the user sign in providing their username and password.
+
+---
+
+* Log Out
+---
+
+* Trails Page
+    * ![TrailPage](documentation/screenshots/trails-page.png)
+
+- **Welcome**
+    - Flash message at the top of the page gives feedback that register is successful or `Welcome <users first name>` in case their are already signed users.
+- **Trails** 
+    - Trails experiences written by other users, including title and username whom was created be. Button for read more details, activates a modal which show more details for the trail such as type, description, miles, image_url, difficulty, location.
+- **My Favourites**
+    - User can click on the heart icon and save the trail as favourite.
+- **Search Bar**
+
 
 
 
