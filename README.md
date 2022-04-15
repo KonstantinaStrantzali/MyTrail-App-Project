@@ -124,44 +124,105 @@ The wireframes were created using [Balsamiq](https://www.adobe.com/uk/products/x
 
 The site website's map is shown below.
 
-For users logged out:
-![](documentation/screenshots/site-map-graph-logged-out.png)
+* For admin users:
+<p float="center">
+  <img src="documentation/screenshots/site-map-graph-admin.png"/>
+    </p>
+* For users logged in: 
+ <p float="center">
+  <img src="documentation/screenshots/site-map-graph-logged.png.png"/>
+    </p>
 
-For users logged in:
-![](documentation/screenshots/site-map-graph-logged.png)  
+* For users logged out: 
 
-For admin users:
-![](documentation/screenshots/site-map-graph-admin.png)
+  <img src="documentation/screenshots/site-map-graph-logged-out.png"/>
+    </p>
 
- * ![Home Page](documentation/screenshots/home-page.png)
+--- 
+ 
+ 
+ **Home Page**
+ - User can choose pressing register or login button
+     ![Home Page](documentation/screenshots/home-page.png)
 
----
-
-* Register
+ **Register Page**
+ - Form requesting the user register with their name, address, username and password.
     * ![Register Form](documentation/screenshots/register-page.png)
-    - Form requesting the user register with their name, address, username and password.
+   
+ **Login Page**
+ - Form requesting the user sign in providing their username and password.
+  ![Log In Form](documentation/screenshots/signIn-page.png)
+ 
+ **Logout Page**
 
----
-* Log In
-    * ![Log In Form](documentation/screenshots/login-page.png)
-   - Form requesting the user sign in providing their username and password.
-
----
-
-* Log Out
----
-
-* Trails Page
-    * ![TrailPage](documentation/screenshots/trails-page.png)
-
-- **Welcome**
+ **Trails Page**
+ ![Register Form](documentation/screenshots/trails-page.png)
+ 
+- Welcome
     - Flash message at the top of the page gives feedback that register is successful or `Welcome <users first name>` in case their are already signed users.
-- **Trails** 
+- View Trails
     - Trails experiences written by other users, including title and username whom was created be. Button for read more details, activates a modal which show more details for the trail such as type, description, miles, image_url, difficulty, location.
-- **My Favourites**
+    
+- My Favourites
     - User can click on the heart icon and save the trail as favourite.
-- **Search Bar**
+- Search Bar
+  - The search bar allows the user to search by trail name and description so they can find more trails based on their interests. Search and reset buttons present for easy use. 
 
+ **Add Trails**
+ 
+ <p float="center">
+  <img src="documentation/screenshots/add-trail.png"/>
+    </p>
+ 
+ - Form
+   - Allows user to enter details of the trails including: location, trail name, trail type, difficulty, image url, miles description of trail.
+ 
+ **Edit Trails**
+ 
+ <p float="center">
+  <img src="documentation/screenshots/edit-page.png"/>
+    </p>
+ - Form
+   - Allows user to edit details of the trails including: location, trail name, trail type, difficulty, image url, miles description of trail.
+  
+ **Profile Page**
+ ![Profile](documentation/screenshots/profile-page.png)
+  - Username
+    - On the top of the profile page is written `<usersname> s Profile`, showing whom the website belongs to.
+ 
+  - User's Posts
+    - User can view the trails posted and edit or delete them if they want by clicking the corresponding button.
+ 
+ - Favourites
+   - Trails chosen as favourites by clicking the heart icon on the trails page, have been saved and displayed on the fabourites field.
 
+ **Manage Trails** - Only seen by admin user
+ 
+  ![Manage](documentation/screenshots/manage-trails.png)
+ 
+ - Edit trail and Delete Trails
+   - Admin can edit or delete any post made by other users.
+
+---
+
+* Confirm trail deletion modal
+    * ![Confirm account deletion](docs/screenshots/confirm_delete_account.png)
+
+---
+
+* Social links that open in a new tab
+    * ![Social Links](docs/screenshots/full_footer.png)
+
+---
+
+* 404 Page Not Found
+* 500 Internal Server Error
+    * ![404 Page Not Found](docs/screenshots/page_not_found.png)
+
+---
+
+### Future Features
+ 
+ 
 
 
