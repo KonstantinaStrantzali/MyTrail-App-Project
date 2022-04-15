@@ -129,7 +129,6 @@ def profile(username):
 @app.route("/get_trails")
 def trails():
     username = mongo.db.users.find_one({"username": session["user"]})["username"]
-    # trails = list(mongo.db.trails.find({"created_by": session["user"]}))
     trails = list(mongo.db.trails.find({}))
     favourites = list(mongo.db.favourites.find({"username": session['user']}))
     for i in trails:

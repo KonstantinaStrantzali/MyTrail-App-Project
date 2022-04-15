@@ -32,12 +32,12 @@
 
         <div class="col-4 col-md-4 col-lg-2">
 
-          <div class="mt-md-5 mb-4">{{ trail.title }}</div>
+          <div class="mt-md-5 mb-4 trail-content">{{ trail.title }}</div>
 
         </div>
         <div class="col-4 col-md-2  col-lg-2 d-none d-lg-block">
 
-          <div class="mt-5">{{ trail.location}}</div>
+          <div class="mt-5 trail-content">{{ trail.location}}</div>
 
         </div>
         <div class="col-4 col-md-2 col-lg-1  mt-md-5">
@@ -62,7 +62,7 @@
     <div class="container-fluid">
       <div class="card pt-5 shadow p-3 mb-5 rounded" id="profile-card">
         <div class="row text-center ">
-          <h5 class="col-12 mb-4">
+          <h5 class="col-12 mb-4 trail-content">
             You haven't written any trail yet.
           </h5>
           <div class="col-12 text-center">
@@ -119,16 +119,16 @@
         </div>
         <div class="col-4 col-md-4 col-lg-2">
 
-          <div class="mt-md-5 mb-4">{{ fav.title }}</div>
+          <div class="mt-md-5 mb-4 trail-content">{{ fav.title }}</div>
 
         </div>
         <div class="col-4 col-md-2  col-lg-2 d-none d-lg-block">
 
-          <div class="mt-5">{{ fav.location}}</div>
+          <div class="mt-5 trail-content">{{ fav.location}}</div>
 
         </div>
         <div class="col-4 col-md-2 col-lg-1  mt-md-5">
-          <a href="{{ url_for('remove_favourite', trail_id=fav._id ) }}" class="btn text-shadow btn-success btn-edit">
+          <a href="{{ url_for('remove_favourite', trail_id=fav._id ) }}" class="btn text-shadow btn-danger">
             Delete
           </a>
         </div>
