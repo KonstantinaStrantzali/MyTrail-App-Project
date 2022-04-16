@@ -178,7 +178,8 @@ html {
     background-color: #2C2D31;
     color:#DEDDDB;
     border-color: #2C2D31;
-    padding:14px 25px;
+    border-radius: 5px;
+    padding:13px 25px;
     text-decoration: none;
     font-size: 20px;
     
@@ -297,6 +298,7 @@ html {
 }
  .btn-edit-trail {
   font-size: 16px;
+  padding: 12px 22px;
 }
   }
 
@@ -403,4 +405,8 @@ textarea {
 }
 .flash-messages {
   margin-bottom: 0%;
+}
+
+.push{
+  margin-top: 8px;
 }
