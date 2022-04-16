@@ -139,6 +139,7 @@ html {
     border-color:  #7A5D49;
     text-decoration: none;
   }
+  .btn-cancel,
   .btn-add-trail:hover,
   .btn-welcome:hover {
     background-color: #2C2D31;
@@ -164,11 +165,12 @@ html {
   }
   .btn-add-trail,
   .btn-edit,
+  .btn-cancel,
   .btn-delete,
   .btn-reset,
   .btn-search{
     background-color: #2C2D31;
-    color: DEDDDB;
+    color: #DEDDDB;
     border-color: #2C2D31;
   }
   .btn-edit{
@@ -260,8 +262,9 @@ html {
 }
 .modal-content{
   background-color: #7A5D49;
-  color: beige;
+  color: #DEDDDB;
 }
+
 .font-icon{
   font-size: 25px;
 }
@@ -346,7 +349,7 @@ textarea {
   margin-bottom: 16px;
   border: 2px solid rgba(8, 143, 64, 0.582);
   background-color: rgba(8, 143, 64, 0.582);
-  color: #2C2D31;
+  color: #DEDDDB;
   padding-bottom: 0;
 }
 

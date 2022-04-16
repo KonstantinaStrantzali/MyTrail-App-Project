@@ -79,15 +79,19 @@
           <h5 class=" text-center modal-title" id="exampleModalLabel">{{ trail.title }} </h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <img src="{{ trail.image_url }}" class="card-img-top" alt="...">
+        {% if trail.image_url %}
+          <img src="{{ trail.image_url }}" class="card-img-top" alt="...">
+          {% else %}
+           <img src="/static/images/welcome-image.jpg" class="card-img-top" alt="...">
+          {% endif %}
         <div class="modal-body">
-          <p class="description"> <i class="fa-solid fa-info"></i> Information: {{ trail.description }}</p>
-          <p class="description"> <i class="fa-solid fa-location-dot"></i> Location: {{ trail.location }}</p>
-          <p class="description"> <i class="fa-solid fa-battery-full"></i> Difficulty: {{ trail.difficulty }}</p>
-          <p class="description"> <i class="fa-solid fa-shoe-prints"></i> Miles: {{ trail.miles }} ml</p>
+          <p class="card-field"> <i class="fa-solid fa-info"></i> Information: {{ trail.description }}</p>
+          <p class="card-field"> <i class="fa-solid fa-location-dot"></i> Location: {{ trail.location }}</p>
+          <p class="card-field"> <i class="fa-solid fa-battery-full"></i> Difficulty: {{ trail.difficulty }}</p>
+          <p class="card-field"><i class="fa-solid fa-shoe-prints"></i> Miles: {{ trail.miles }} ml</p>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-cancel" data-bs-dismiss="modal">Close</button>
         </div>
       </div>
     </div>
