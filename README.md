@@ -36,7 +36,6 @@ This website provides a platform to users who love sharing trail as well as expl
 * [Testing](#testing)
 
 [Deployment](#deployment)
-* [Requirements for Deployment](#requirements-for-deployment)
 * [Initial Deployment](#initial-deployment)
 * [How to Fork it](#how-to-fork-it)
 * [Making a Local Clone](#making-a-local-clone)
@@ -354,14 +353,60 @@ Version Control was managed by GitHub and Gitpod after pushing commits to Github
 * [Lighthouse](https://developers.google.com/web/tools/lighthouse/) used to check the site's Performance, Accessibility, Best Practices, and SEO.
 * [pip](https://pip.pypa.io/en/stable/) was used to install the required dependancies for this site.
 
-
-
 ### Testing
+ 
+* [JSHint](https://jshint.com/) used to test and validate JavaScript.
+* [PEP8](http://pep8online.com/) used to validate the python syntax.
+* [W3C Markup Validation Service](https://validator.w3.org/) used to validate HTML.
+* [W3C CSS Validation Service](http://jigsaw.w3.org/css-validator/) used to validate CSS.
 
-* [W3C Markup Validation Service](https://validator.w3.org/) was used to test that the HTML is valid.
-* [W3C CSS Validation Service](http://jigsaw.w3.org/css-validator/) was used to test that the CSS is valid.
-* [JSHint](https://jshint.com/) was used to test that the JavaScript is valid.
-* [PEP8](http://pep8online.com/) was used to validate the python syntax.
+[Back to Top](#contents)
 
+---
 
+## **Deployment**
+ 
+ ### Initial Deployment
+ 
+ **Requirements for Demployment**
+  * Python, MongoDB account and database as well as Github and Heroku account is needed.
 
+The project was developed using [GitPod](https://gitpod.io/) and pushed to [GitHub](https://github.com/) then deployed on Heroku using these instructions:
+
+ 
+ 1. A requirements.txt file created using command *pip3 freeze --local > requirements.txt*
+ 2. A .gitignore file created in my repository.
+ 3. A `env.py` and `__pycache__/` added into my .gitignore file, for the avoidance of any sensitive information being added into the repository.
+ 4. An env.py file created and added the following information to it, replacing the '## x ##' values with my own values:
+
+        ``` python
+        import os
+
+        os.environ.setdefault("IP", "0.0.0.0")
+        os.environ.setdefault("PORT", "5000")
+        os.environ.setdefault("SECRET_KEY", " ## YOUR SECRET_KEY ## ")
+        os.environ.setdefault("MONGO_URI", " ## YOUR MONGO_URI ## ")
+        os.environ.setdefault("MONGO_DB", " ## YOUR MONGO_DBNAME ## ")
+        ```
+   
+5. A Procfile created using the terminal command *echo web: python app.py > Procfile* after making sure there was no stray line in the file as this can cause issues during Heroku deployment.
+6. Commit and push to Github the new requirements created above.
+7. New app created in Heroku by clicking "New" and "Create New App", setting the region to the closest location and giving the project name.
+8. On Heroku dashboard "Deplay" clicked and then from "Deployment Method", GitHub selected.
+9. Searched for GitHub repo and connected.
+10. In dashboard "Settings" needs to be clicked and then "Reveal Config Vars"
+11. Config vars need to be set:
+Table:
+
+| Key          | Value |
+| ------------ |--------- |
+| PORT         | 5000 |
+| IP           | 0.0.0.0 |
+| MONGO_URI    | USER_MONGODB_URI |
+| MONGO_DBNAME | USER_MONGODB_NAME |
+| Secret_Key   | USER_SECRET_KEY |
+ 
+ 13. On the 'Deploy' tab, 'Enable Automatic Deployment' was clicked.
+ 14. In 'Manual Deploy', 'master' branch was chosen.
+ 15.'Deploy Branch' was clicked to deploy the app onto the Heroku servers.
+ 16. Once the app had finished building, 'Open App' to open my site was clicked.
