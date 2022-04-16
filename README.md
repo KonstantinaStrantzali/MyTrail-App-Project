@@ -410,3 +410,29 @@ Table:
  14. In 'Manual Deploy', 'master' branch was chosen.
  15.'Deploy Branch' was clicked to deploy the app onto the Heroku servers.
  16. Once the app had finished building, 'Open App' to open my site was clicked.
+ 
+ ### Making a Local Clone
+
+1. Log in to the [GitHub Repository](https://github.com/KonstantinaStrantzali/MyTrail-App-Project).
+2. Click "Code" above the list of files, where you can Clone or Download the repository.
+3. To clone using HTTPS click the clipboard symbol under "Clone with HTTPS".
+4. Open Git Bash.
+6. Current working directory needs to be changed to the new location, where you want the cloned directory to be.
+7. Type `git clone`, and then paste the URL copied in Step 3.
+8. Press Enter, to creat the local clone.
+9. An env.py file with new values, a MongoDB database with the data keys and types need to be created.
+
+## **Testing And Project Bugs**
+
+All testing and project Bugs can be found here - [TESTING.md]
+
+[Back to Top](#contents)
+
+---
+
+## **Credits**
+
+### Code
+ * [Code Institute](https://codeinstitute.net/) Task Manager Mini Project walkthrough was the main source to create this project.
+ 
+
