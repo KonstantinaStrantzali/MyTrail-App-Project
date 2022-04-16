@@ -303,9 +303,9 @@ margin-right: 10%;
 }
 
 .card-add-trail,
-#profile-card{
+.profile-card{
   background-color: rgba(122, 92, 73, 0.781);
-  color: DEDDDB;
+  color: #DEDDDB;
   box-shadow: #272222;
   width: 100%;
   position:relative;
@@ -371,7 +371,7 @@ textarea {
   height: 10vh;
   padding: 10px;
   background-color: rgba(122, 92, 73, 0.781);
-  color: DEDDDB;
+  color: #DEDDDB;
   
  
 }
