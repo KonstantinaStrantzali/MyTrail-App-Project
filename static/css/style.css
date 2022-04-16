@@ -173,11 +173,15 @@ html {
     color: #DEDDDB;
     border-color: #2C2D31;
   }
-  .btn-edit{
+  .btn-edit,
+  .btn-edit-trail{
     background-color: #2C2D31;
     color:#DEDDDB;
     border-color: #2C2D31;
-    padding:6px 20px;
+    padding:14px 25px;
+    text-decoration: none;
+    font-size: 20px;
+    
     
   }
 
@@ -284,10 +288,17 @@ html {
     height: 29vw;
     object-fit: cover;
   }
+
+  .btn-delete-trail,
   .btn-delete-fav{
-   size:5%;
-  }
+   padding:10px !important;
+   font-size: 15px;
+   
 }
+ .btn-edit-trail {
+  font-size: 16px;
+}
+  }
 
 
 @media only screen and (max-width: 900px) {
@@ -390,6 +401,6 @@ textarea {
 .invalid-feedback{
   color: #DEDDDB ;
 }
-.flash-messages{
+.flash-messages {
   margin-bottom: 0%;
 }
