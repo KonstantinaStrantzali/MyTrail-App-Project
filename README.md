@@ -317,15 +317,51 @@ MongoDB was used to store data for this site in a database, using the collection
 
 ### Version Control
 
-* [Git](https://git-scm.com/) was used for version control by utilizing the Gitpod terminal to add and commit to Git and push to GitHub.
-* [GitHub](https://github.com/) is used to store the code for this project after being pushed from Git.
+Version Control was managed by GitHub and Gitpod after pushing commits to Github.
+
+* [GitHub](https://github.com/) First step on GitHub was to clone the Code Institute template by clicking Use This Template and copying to my repository under the name of my project. By clicking Gitpod, my workspace launched there. 
+* [Gitpod](https://gitpod.io/) I created various branches and push to master, by using the commands git add <files to be added> , git commit -m <commit message> and  git push.
+* [Gitpod](https://gitpod.io/) version control managed by utilizing the Gitpod terminal to add and commit to Git and push to GitHub.
 
 ### Wireframing
 
-* [Balsamiq](https://balsamiq.com/) was used to create the wireframes during the design process.
+* [Balsamiq](https://balsamiq.com/) used to create the wireframes of the project.
 
 ### Responsive Design
 
-* [Am I Responsive Design](http://ami.responsivedesign.is/)
+* [Am I Responsive Design](http://ami.responsivedesign.is/) used to check the website's responsiveness.
+ 
+### Site Design
+ 
+* [Favicon.io](https://favicon.io/favicon-generator/)Used to generate a favicon for the website title.
+* [Font Awesome](https://fontawesome.com/) used for the icons of the website.
+* [Coolers.co](https://coolors.co/a71313-3c3cdf-0f0f0f-ffffff-198754-ffca02) used to choose and generate the colour scheme.
+* [Google Fonts](https://fonts.google.com/) used to import _Lado_ font across the site.
+
+### Database Design Technologies
+
+* [MongoDB](https://www.mongodb.com/) used as main database to store site's contents and allow full CRUD functionality.
+* [Flask-PyMongo](https://flask-pymongo.readthedocs.io/en/latest/) used to link Python / Flask app with MongoDB.
+
+### Frameworks, Libraries and Others
+
+* [Flask](https://flask.palletsprojects.com/en/2.0.x/) used as web application framework.
+* [Jinja](https://jinja.palletsprojects.com/en/3.0.x/) used as full-featured template engine for Python.
+* [Bootstrap](https://getbootstrap.com/) was used to create an responsive website.
+* [dnspython](https://pypi.org/project/dnspython/) A DNS toolkit for Python to provide access to DNS.
+* [Heroku](https://www.heroku.com) used for the site's deployment.
+* [Google DevTools](https://developer.chrome.com/docs/devtools/) used to check bugs emerged throughout building the project and site responsiveness.
+* [Lighthouse](https://developers.google.com/web/tools/lighthouse/) used to check the site's Performance, Accessibility, Best Practices, and SEO.
+* [pip](https://pip.pypa.io/en/stable/) was used to install the required dependancies for this site.
+
+
+
+### Testing
+
+* [W3C Markup Validation Service](https://validator.w3.org/) was used to test that the HTML is valid.
+* [W3C CSS Validation Service](http://jigsaw.w3.org/css-validator/) was used to test that the CSS is valid.
+* [JSHint](https://jshint.com/) was used to test that the JavaScript is valid.
+* [PEP8](http://pep8online.com/) was used to validate the python syntax.
+
 
 
