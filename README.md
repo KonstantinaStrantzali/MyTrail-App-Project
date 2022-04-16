@@ -154,6 +154,21 @@ The site website's map is shown below.
   ![Log In Form](documentation/screenshots/signIn-page.png)
  
  **Logout Page**
+ 
+**Navigation bar**
+
+The navigation bar changes depending on user status and screen size:
+
+| Nav Link | Logged Out | Logged In (User) | Logged In (Admin) |
+|-------|-----|-----|-----|
+| Logo | &#9989; | &#9989; | &#9989; |
+| Log In | &#9989; | &#10060; | &#10060; |
+| Register | &#9989; | &#10060; | &#10060; |
+| Add Trails | &#10060; | &#9989; | &#9989; |
+| Trails | &#10060; | &#9989; | &#9989; |
+| Profile | &#10060; | &#9989; | &#9989; |
+| Manage Trails | &#10060; | &#10060; | &#9989; |
+| Log Out | &#10060; | &#9989; | &#9989; |
 
  **Trails Page**
  ![Register Form](documentation/screenshots/trails-page.png)
@@ -186,6 +201,7 @@ The site website's map is shown below.
    - Allows user to edit details of the trails including: location, trail name, trail type, difficulty, image url, miles description of trail.
   
  **Profile Page**
+ 
  ![Profile](documentation/screenshots/profile-page.png)
   - Username
     - On the top of the profile page is written `<usersname> s Profile`, showing whom the website belongs to.
@@ -223,6 +239,93 @@ The site website's map is shown below.
 
 ### Future Features
  
+In future I would like to implement a few extra features such as:
  
+ - To allow users to delete their account.
+ - To allow users to comment below other users trails posts.
+ - To give the right to admin to delete other users profiles.
+ - Allowing a user to upload images from their device.
+ - To add a system where the user would be able to find cafe, restaurants and hotel close to the trails.
+
+### Database Design
+
+MongoDB was used to store data for this site in a database, using the collection are described below:
+
+
+### User Collection
+
+| Title      | Field        | Data Type |
+| ---------- | -----------  | --------- |
+| users      | _id          | ObjectId  | 
+|            | fname        | String    |
+|            | lname        | String    | 
+|            | email        | String    | 
+|            | username     | String    | 
+|            | password     | String    | 
+
+### Trails Collection
+
+| Title      | Field    | Data Type |
+| ---------- | -------- | --------- |
+| Trails     | _id      | ObjectId  |
+|            | trail_id| ObjectId  |
+|            | type     | String    |
+|            | difficulty| String    |
+|            | miles    | String    |
+|            | location   | String    |
+|            | image_url  | String    |
+|            | description| String    |
+
+### Favourites Collection
+
+| Title      | Field    | Data Type |
+| ---------- | -------- | --------- |
+| favourite  | _id      | ObjectId  | 
+|            | title_name| ObjectId  |
+|            | username  | string  | 
+
+### Types Collection
+
+| Title      | Field        | Data Type |
+| ---------- | -----------  | --------- |
+| Types      | _id          | ObjectId  |
+|            | type_name    | String    |
+
+### Difficulty Collection
+
+| Title      | Field        | Data Type |
+| ---------- | -----------  | --------- |
+| Difficulty | _id          | ObjectId  |
+|            | difficulty_level| String    |
+
+
+
+---
+
+## **Technologies Used**
+
+### Languages Used
+
+* [HTML5](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5)
+* [CSS3](https://developer.mozilla.org/en-US/docs/Archive/CSS3#:~:text=CSS3%20is%20the%20latest%20evolution,flexible%20box%20or%20grid%20layouts.)
+* [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+* [Python](https://www.python.org/)
+
+### Workspace
+
+* [Gitpod](https://gitpod.io/) An online IDE linked to the GitHub repository used to build the site.
+
+### Version Control
+
+* [Git](https://git-scm.com/) was used for version control by utilizing the Gitpod terminal to add and commit to Git and push to GitHub.
+* [GitHub](https://github.com/) is used to store the code for this project after being pushed from Git.
+
+### Wireframing
+
+* [Balsamiq](https://balsamiq.com/) was used to create the wireframes during the design process.
+
+### Responsive Design
+
+* [Am I Responsive Design](http://ami.responsivedesign.is/)
 
 
