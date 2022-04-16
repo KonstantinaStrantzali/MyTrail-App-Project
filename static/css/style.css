@@ -284,6 +284,9 @@ html {
     height: 29vw;
     object-fit: cover;
   }
+  .btn-delete-fav{
+   size:5%;
+  }
 }
 
 
@@ -365,7 +368,10 @@ textarea {
 .trails-section{
   background-color: #7A5D49;
 }
-
+.btn-delete-fav {
+  margin-left: 70px;
+  
+}
 .username{
   width: 250px;
   height: 10vh;
@@ -382,7 +388,7 @@ textarea {
 }
 
 .invalid-feedback{
-  color#DEDDDB ;
+  color: #DEDDDB ;
 }
 .flash-messages{
   margin-bottom: 0%;
