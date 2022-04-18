@@ -1,0 +1,118 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="hero-image">
+    <div class="container-fluid mb-5">
+        <div class="row">
+            <form class="form-card col-12 col-md-8 offset-md-2 col-lg-6 offset-lg-3 requires-validation mt-4" novalidate
+                method="POST" action="{{ url_for('add_trail') }}">
+                <div class="card-body mb-3">
+                    <h2 class="text-center text-white">Add Your Trail</h2>
+                    <div class="row g-2">
+                        <!-- title -->
+                        <div class="col-md-1 align-self-center font-icon">
+                            <i class="fa-brands fa-pagelines trail-icon"></i>
+                        </div>
+                        <div class="col-md-10 offset-md-1 col-lg-11 offset-lg-0">
+                            <div class="form-floating mb-3">
+                                <input type="text" name="title" class="form-control" id="title" placeholder="Title"
+                                    onkeyup="checkInput(this)" required>
+
+                                <label for="title">Title</label>
+                            </div>
+                        </div>
+                        <!-- location -->
+                        <div class="col-md-1 align-self-center font-icon">
+                            <i class="fa-solid fa-location-dot trail-icon"></i>
+                        </div>
+                        <div class="col-md-10 offset-md-1 col-lg-11 offset-lg-0">
+                            <div class="form-floating mb-3">
+                                <input type="text" name="location" class="form-control" id="location"
+                                    placeholder="Location" minlength="1" onkeyup="checkInput(this)" required>
+                                <label for="location">Location</label>
+                            </div>
+                        </div>
+                        <!-- Type -->
+                        <div class="col-md-1 align-self-center font-icon">
+                            <i class="fa-solid fa-person-hiking trail-icon"></i>
+                        </div>
+                        <div class="col-md-10 offset-md-1 col-lg-11 offset-lg-0">
+                            <div class="form-floating mb-3">
+                                <select class="form-select form-select-m mb-3" onkeyup="checkInput(this)" id="type_name"
+                                    name="type_name" required>
+
+                                    <option selected disabled value="">Select type</option>
+                                    {% for type in types %}
+                                    <option value="{{ type.type_name  }}">{{ type.type_name  }}</option>
+
+                                    {% endfor %}
+                                </select>
+                                <label for="type_name"></label>
+                            </div>
+                        </div>
+                        <!-- difficulty -->
+                        <div class="col-md-1 align-self-center font-icon">
+                            <i class="fa-solid fa-battery-full trail-icon"></i>
+                        </div>
+                        <div class="col-md-10 offset-md-1 col-lg-11 offset-lg-0">
+                            <div class="form-floating mb-3">
+                                <select class="form-select form-select-m mb-3" id="difficulty_level"
+                                    name="difficulty_level" required
+                                    aria-label=".form-select-lg example">
+                                    <option selected disabled value="">Select difficulty</option>
+                                    {% for level in difficulty %}
+                                    <option value="{{ level.difficulty_level }}">{{ level.difficulty_level }}</option>
+                                    {% endfor %}
+                                </select>
+                                <label for="difficulty_level"></label>
+                            </div>
+                        </div>
+                        <!-- Miles -->
+                        <div class="col-md-1 align-self-center font-icon">
+                            <i class="fa-solid fa-shoe-prints trail-icon"></i>
+                        </div>
+                        <div class="col-md-10 offset-md-1 col-lg-11 offset-lg-0">
+                            <div class="form-floating mb-3">
+                                <input type="text" name="miles" class="form-control col-md-8" id="miles" minlength="1"
+                                    maxlength="7" placeholder="Miles" pattern="^\d*\.?\d+$" required>
+                                <label for="miles">Miles</label>
+                            </div>
+                        </div>
+                        <!-- image url -->
+                        <div class="col-md-1 align-self-center font-icon">
+                            <i class="fas fa-image col-md trail-icon"></i>
+                        </div>
+                        <div class="col-md-10 offset-md-1 col-lg-11 offset-lg-0">
+                            <div class="form-floating mb-3">
+                                <input type="text" name="image_url" class="form-control col-md-8" id="image_url"
+                                    placeholder="Image" minlength="5" maxlength="150"
+                                    pattern="https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)">
+                                <label for="image_url">Image url</label>
+                            </div>
+                        </div>
+                        <!-- Description -->
+                        <div class="col-md-1 align-self-center font-icon">
+                            <i class="fas fa-edit col-md trail-icon"></i>
+                        </div>
+                        <div class="col-md-10 offset-md-1 col-lg-11 offset-lg-0">
+                            <div class="form-floating">
+                                <textarea class="form-control" placeholder="description" id="description"
+                                    name="description" style="height: 150px" onkeyup="checkInput(this)"
+                                    required></textarea>
+                                <label for="description">Description</label>
+                            </div>
+                        </div>
+                        <!-- Add button -->
+                        <div class="row d-flex justify-content-center mt-4">
+                            <div class="d-grid col-md-4 mb-3">
+                                <button type="submit" class="btn text-shadow btn-add-trail">
+                                    Add Trail <i class="far fa-plus-square"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+{% endblock %}
