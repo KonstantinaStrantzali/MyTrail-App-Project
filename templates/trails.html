@@ -28,7 +28,7 @@
           {% if trail.image_url %}
           <img src="{{ trail.image_url }}" class="card-img-top" alt="...">
           {% else %}
-           <img src="/static/images/welcome-image.jpg" class="card-img-top" alt="...">
+           <img src="/static/images/default-image.png" class="card-img-top" alt="...">
           {% endif %}
               <div class="card-body">
                 <h5 class="card-title text-center">{{ trail.title }} </h5>
@@ -82,7 +82,7 @@
         {% if trail.image_url %}
           <img src="{{ trail.image_url }}" class="card-img-top" alt="...">
           {% else %}
-           <img src="/static/images/welcome-image.jpg" class="card-img-top" alt="...">
+           <img src="/static/images/default-image.png" class="card-img-top" alt="...">
           {% endif %}
         <div class="modal-body">
           <p class="card-field"> <i class="fa-solid fa-info"></i> Information: {{ trail.description }}</p>
