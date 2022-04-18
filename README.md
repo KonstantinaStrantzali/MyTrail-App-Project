@@ -129,11 +129,11 @@ The site website's map is shown below.
     </p>
 * For users logged in: 
  <p float="center">
-  <img src="documentation/screenshots/site-map-graph-logged.png.png"/>
+  <img src="documentation/screenshots/site-map-graph-logged.png"/>
     </p>
 
 * For users logged out: 
-
+ <p>
   <img src="documentation/screenshots/site-map-graph-logged-out.png"/>
     </p>
 
@@ -153,6 +153,8 @@ The site website's map is shown below.
   ![Log In Form](documentation/screenshots/signIn-page.png)
  
  **Logout Page**
+ - Flash message informs the users that they have successfully logged out.
+ ![Register Form](documentation/screenshots/logged-out.png)
  
 **Navigation bar**
 
@@ -175,12 +177,18 @@ The navigation bar changes depending on user status and screen size:
 - Welcome
     - Flash message at the top of the page gives feedback that register is successful or `Welcome <users first name>` in case their are already signed users.
 - View Trails
-    - Trails experiences written by other users, including title and username whom was created be. Button for read more details, activates a modal which show more details for the trail such as type, description, miles, image_url, difficulty, location.
-    
+    - Trails experiences written by other users, including title and username whom was created be. Button for read more details, activates a modal which show more details for the trail such as type, description, miles, image_url, difficulty, location. A read more button leads to a modal which shows again the picture and other details for the trail.
+  ![Modal](documentation/screenshots/modal-card-description.png) 
 - My Favourites
-    - User can click on the heart icon and save the trail as favourite.
+    - User can click on the heart icon and save the trail as favourite. After clicking, the empty heart icon, turns to full heart icon and user infored that the trail has been saved as favourite.
+   <div float="right">
+  <img src="documentation/screenshots/empty-heart-icon.png"/>
+  <img src="documentation/screenshots/empty-heart-icon.png"/>
+  <img src="documentation/screenshots/favourite-flash.png"/>
+    </div>
 - Search Bar
-  - The search bar allows the user to search by trail name and description so they can find more trails based on their interests. Search and reset buttons present for easy use. 
+  - The search bar allows the user to search by trail name and description word so they can find more trails based on their interests. Search and reset buttons present for easy use. 
+
 
  **Add Trails**
  
@@ -207,10 +215,13 @@ The navigation bar changes depending on user status and screen size:
  
   - User's Posts
     - User can view the trails posted and edit or delete them if they want by clicking the corresponding button.
+    - Delete button triggers a modal asking if the user is wants to complete the deletion.
+    ![Delete_modal](documentation/screenshots/delete-modal.png)
  
  - Favourites
-   - Trails chosen as favourites by clicking the heart icon on the trails page, have been saved and displayed on the fabourites field.
-
+   - Trails selected as favourites by clicking the heart icon on the trails page, are saved and displayed on the fabourites field. 
+  ![Favourite](documentation/screenshots/favourites-area.png)
+  
  **Manage Trails** - Only seen by admin user
  
   ![Manage](documentation/screenshots/manage-trails.png)
