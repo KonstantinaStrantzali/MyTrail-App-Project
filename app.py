@@ -25,6 +25,9 @@ mongo = PyMongo(app)
 
 @app.route("/")
 def index():
+     """
+    When first landing on the page welcome page is loaded
+    """
     return render_template("welcome.html")
 
 
@@ -128,6 +131,9 @@ def profile(username):
 
 @app.route("/get_trails")
 def trails():
+     """
+    get the list of reviews to show on reviews.html
+    """
     username = mongo.db.users.find_one({"username": session["user"]})["username"]
     trails = list(mongo.db.trails.find({}))
     favourites = list(mongo.db.favourites.find({"username": session['user']}))
@@ -240,6 +246,8 @@ def remove_favourite(trail_id):
                                      "username": username })
 
     return redirect(url_for("profile", username=session["user"]))
+
+
 def not_found(e):
     """
         Render 404 page if errors occur
@@ -247,6 +255,7 @@ def not_found(e):
         https://www.geeksforgeeks.org/python-404-error-handling-in-flask/
     """
     return render_template("404.html"), 404
+
 
 if __name__ == "__main__":
     app.run(

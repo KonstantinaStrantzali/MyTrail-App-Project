@@ -11,6 +11,7 @@
   {% if trails %}
   {% for trail in trails %}
   <div class="container-fluid">
+<!-- Cards to display list of users trails -->
       <div class="card-profile pt-5 shadow p-3 mb-5 rounded profile-card">
           <div class="row">
               {% if trail.image_url %}
@@ -67,6 +68,7 @@
   
     {% endif %}
 
+<!-- Modal -->
     {% for trail in trails %}
     <div class="modal fade" id="modal-{{ trail._id }}" tabindex="-1" aria-labelledby="{{ trail._id }}" aria-hidden="true">
       <div class="modal-dialog">
