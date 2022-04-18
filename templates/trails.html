@@ -1,104 +1,97 @@
 {% extends "base.html" %}
 {% block content %}
 
-<section class ="hero-image mb-5">
-<div class="container-fluid search-section">
-  <div class="row">
-    <div class="col-12 mt-5">
-      <div class="row justify-content-center">
-
-        <!-- Search -->
-        <form class="col-lg-6 text-center text-md-start" action="{{ url_for('search') }}" method="POST">
-          <input class="form-control mb-2" name="query" id="query" type="search" placeholder="Search Trails"
-            aria-label="Search Trails">
-          <button class="btn btn-search text-shadow" type="submit"><i class="fas fa-search"></i> Search Trails</button>
-          <a href="{{ url_for('trails') }}" class="btn btn-search text-shadow">Reset</a>
-        </form>
+<section class="hero-image mb-5">
+  <div class="container-fluid search-section">
+    <div class="row">
+      <div class="col-12 mt-5">
+        <div class="row justify-content-center">
+          <!-- Search -->
+          <form class="col-lg-6 text-center text-md-start" action="{{ url_for('search') }}" method="POST">
+            <input class="form-control mb-2" name="query" id="query" type="search" placeholder="Search Trails"
+              aria-label="Search Trails">
+            <button class="btn btn-search text-shadow" type="submit"><i class="fas fa-search"></i> Search
+              Trails</button>
+            <a href="{{ url_for('trails') }}" class="btn btn-search text-shadow">Reset</a>
+          </form>
+        </div>
       </div>
     </div>
-  </div>
+    {% if trails|length > 0 %}
+    <div class="container-fluid">
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 pb-4">
 
-{% if trails|length > 0 %}
-  <div class="container-fluid">
-    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 pb-4">
-      
-      {% for trail in trails %}
+        {% for trail in trails %}
         <div class="col mb-5">
-        <div class="card-trails h-100 ">
-          {% if trail.image_url %}
-          <img src="{{ trail.image_url }}" class="card-img-top" alt="...">
-          {% else %}
-           <img src="/static/images/default-image.png" class="card-img-top" alt="...">
-          {% endif %}
-              <div class="card-body">
-                <h5 class="card-title text-center">{{ trail.title }} </h5>
-                <p class="card-text"> Trail Type: {{ trail.type }}</p>
-                <p><em>Created by {{ trail.created_by }} on {{ trail.post_date }}</em></p>
-              </div>
-              <div class="card-footer">
-                <div class = "col-12">
+          <div class="card-trails h-100 ">
+            {% if trail.image_url %}
+            <img src="{{ trail.image_url }}" class="card-img-top" alt="...">
+            {% else %}
+            <img src="/static/images/default-image.png" class="card-img-top" alt="...">
+            {% endif %}
+            <div class="card-body">
+              <h5 class="card-title text-center">{{ trail.title }} </h5>
+              <p class="card-text"> Trail Type: {{ trail.type }}</p>
+              <p><em>Created by {{ trail.created_by }} on {{ trail.post_date }}</em></p>
+            </div>
+            <div class="card-footer">
+              <div class="col-12">
                 <button type="button" class="btn btn-card text-shadow" data-bs-toggle="modal"
-                data-bs-target="#modal-{{ trail._id }}"> Read More</button>
+                  data-bs-target="#modal-{{ trail._id }}"> Read More</button>
 
-                    <a href="{{ url_for('add_favourite', trail_id=trail._id) }}"
-                        class=" ms-5 check-favourite favourite-icon"
-                        data-position="top" data-tooltip="Save to Favourites">
-                        <i class="like-icon {{ trail.favourite }} fa-heart"></i>
-                    </a>
-                    
-                
-              </div>
+                <a href="{{ url_for('add_favourite', trail_id=trail._id) }}"
+                  class=" ms-5 check-favourite favourite-icon" data-position="top" data-tooltip="Save to Favourites">
+                  <i class="like-icon {{ trail.favourite }} fa-heart"></i>
+                </a>
               </div>
             </div>
           </div>
-      {% endfor %}
-    </div>
-  </div>
-  </div>
-{% else %}
-<div class="container-fluid">
-  <div class="card pt-5 shadow p-3 mb-5 rounded profile-card">
-    <div class="row text-center ">
-      <h5 class="col-12 mb-4">
-        No results found.
-      </h5>
-    </div>
-  </div>
-</div>
-{% endif %}
-</div>
-</div>
-
-
-{% for trail in trails %}
-  <!-- Modal -->
-  <div class="modal fade" id="modal-{{ trail._id }}" tabindex="-1" aria-labelledby="{{ trail._id }}" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class=" text-center modal-title" id="exampleModalLabel">{{ trail.title }} </h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        {% if trail.image_url %}
-          <img src="{{ trail.image_url }}" class="card-img-top" alt="...">
-          {% else %}
-           <img src="/static/images/default-image.png" class="card-img-top" alt="...">
-          {% endif %}
-        <div class="modal-body">
-          <p class="card-field"> <i class="fa-solid fa-info"></i> Information: {{ trail.description }}</p>
-          <p class="card-field"> <i class="fa-solid fa-location-dot"></i> Location: {{ trail.location }}</p>
-          <p class="card-field"> <i class="fa-solid fa-battery-full"></i> Difficulty: {{ trail.difficulty }}</p>
-          <p class="card-field"><i class="fa-solid fa-shoe-prints"></i> Miles: {{ trail.miles }} ml</p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-cancel" data-bs-dismiss="modal">Close</button>
-        </div>
+        {% endfor %}
       </div>
     </div>
   </div>
+  {% else %}
+  <div class="container-fluid">
+    <div class="card pt-5 shadow p-3 mb-5 rounded profile-card">
+      <div class="row text-center ">
+        <h5 class="col-12 mb-4">
+          No results found.
+        </h5>
+      </div>
+    </div>
+  </div>
+  {% endif %}
 </section>
+{% for trail in trails %}
+<!-- Modal -->
+<div class="modal fade" id="modal-{{ trail._id }}" tabindex="-1" aria-labelledby="{{ trail._id }}" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class=" text-center modal-title" id="{{ trail._id }}">{{ trail.title }} </h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      {% if trail.image_url %}
+      <img src="{{ trail.image_url }}" class="card-img-top" alt="...">
+      {% else %}
+      <img src="/static/images/default-image.png" class="card-img-top" alt="...">
+      {% endif %}
+      <div class="modal-body">
+        <p class="card-field"> <i class="fa-solid fa-info"></i> Information: {{ trail.description }}</p>
+        <p class="card-field"> <i class="fa-solid fa-location-dot"></i> Location: {{ trail.location }}</p>
+        <p class="card-field"> <i class="fa-solid fa-battery-full"></i> Difficulty: {{ trail.difficulty }}</p>
+        <p class="card-field"><i class="fa-solid fa-shoe-prints"></i> Miles: {{ trail.miles }} ml</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-cancel" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 {% endfor %}
-<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+  crossorigin="anonymous"></script>
 <script src="{{ url_for('static', filename='js/like_icon.js') }}"></script>
 {% endblock %}
-  
