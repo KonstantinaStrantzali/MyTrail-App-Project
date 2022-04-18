@@ -229,7 +229,7 @@ html {
 
 /*----------------------------------Form */
 .form-icons{
-  size:15px;
+  font-size:15px;
 }
 .card{
   background-color: rgba(48, 47, 48, 0.699);
@@ -323,7 +323,6 @@ margin-right: 10%;
 .profile-card{
   background-color: rgba(122, 92, 73, 0.781);
   color: #DEDDDB ;
-  box-shadow: #272222;
   width: 100%;
   position:relative;
   
@@ -337,7 +336,6 @@ margin-right: 10%;
 .form-card{
   background-color: rgba(122, 92, 73, 0.781);
   color: black;
-  box-shadow: #272222;
   margin-bottom: 3%;
   
 }

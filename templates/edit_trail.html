@@ -57,11 +57,15 @@
                     </div>
                     <div class="col-md-10 offset-md-1 col-lg-11 offset-lg-0">
                         <div class="form-floating mb-3">
-                            <select class="form-select form-select-m mb-3" id="difficulty_level" name="difficulty_level" class="validate" required aria-label=".form-select-lg example">
+                            <select class="form-select form-select-m mb-3" id="difficulty_level" name="difficulty_level" required aria-label=".form-select-lg example">
                                 
-                                {% for level in difficulty %}
+                            {% for level in difficulty %}
+                                {% if level.difficulty_level == trail.difficulty %}
+                                <option value="{{ level.difficulty_level }}" selected>{{ level.difficulty_level }}</option>
+                                {% else %}
                                 <option value="{{ level.difficulty_level }}">{{ level.difficulty_level }}</option>
-                               {% endfor %}
+                                {% endif %}
+                            {% endfor %}
                               </select>
                             <label for="difficulty_level"></label>
                         </div>

@@ -1,10 +1,6 @@
 const likesButtons = document.querySelectorAll('.like-icon');
 
-
-//Change Icon class and input
-
-
-
+//Change Icon class on favorite section
 likesButtons.forEach(likeButton => {
     likeButton.addEventListener('click', e => {
         if (e.target.classList.contains('far')) {
@@ -18,25 +14,3 @@ likesButtons.forEach(likeButton => {
         }
     });
 });
-
-/*
-$(document).ready(function(){
-    if($(".like-icon").attr("href")==window.location.href){
-        $(".like-icon").attr("class","far");
-    }
-   else{
-      $(".like-icon").attr("class","fas");
-     }
-});
-
-$(document).ready(function() {
-    var body_class = $.cookie('body_class');
-    if(body_class) {
-        $('body').attr('class', body_class);
-    }
-    $("a#switcher").click(function() {
-        $("body").toggleClass("alternate_body");
-        $.cookie('body_class', $('body').attr('class'));
-    });
-});
-*/
