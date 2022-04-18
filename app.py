@@ -240,7 +240,13 @@ def remove_favourite(trail_id):
                                      "username": username })
 
     return redirect(url_for("profile", username=session["user"]))
-
+def not_found(e):
+    """
+        Render 404 page if errors occur
+        Code credit to Geeks for Geeks for 404 error handling
+        https://www.geeksforgeeks.org/python-404-error-handling-in-flask/
+    """
+    return render_template("404.html"), 404
 
 if __name__ == "__main__":
     app.run(
