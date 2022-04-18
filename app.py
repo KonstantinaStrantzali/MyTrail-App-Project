@@ -2,8 +2,6 @@
     Code adapted from Code Institute Course Material
     Task Manager Flask App mini Project
 """
-
-
 import os
 import datetime
 from flask import (
