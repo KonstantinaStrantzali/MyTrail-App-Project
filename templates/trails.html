@@ -25,9 +25,9 @@
         <div class="col mb-5">
           <div class="card-trails h-100 ">
             {% if trail.image_url %}
-            <img src="{{ trail.image_url }}" class="card-img-top" alt="...">
+            <img src="{{ trail.image_url }}" class="card-img-top" alt="Trail image">
             {% else %}
-            <img src="/static/images/default-image.png" class="card-img-top" alt="...">
+            <img src="/static/images/default-image.png" class="card-img-top" alt="Default image">
             {% endif %}
             <div class="card-body">
               <h5 class="card-title text-center">{{ trail.title }} </h5>
@@ -73,15 +73,15 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       {% if trail.image_url %}
-      <img src="{{ trail.image_url }}" class="card-img-top" alt="...">
+      <img src="{{ trail.image_url }}" class="card-img-top" alt="Trail image">
       {% else %}
-      <img src="/static/images/default-image.png" class="card-img-top" alt="...">
+      <img src="/static/images/default-image.png" class="card-img-top" alt="Default image">
       {% endif %}
       <div class="modal-body">
         <p class="card-field"> <i class="fa-solid fa-info"></i> Information: {{ trail.description }}</p>
         <p class="card-field"> <i class="fa-solid fa-location-dot"></i> Location: {{ trail.location }}</p>
         <p class="card-field"> <i class="fa-solid fa-battery-full"></i> Difficulty: {{ trail.difficulty }}</p>
-        <p class="card-field"><i class="fa-solid fa-shoe-prints"></i> Miles: {{ trail.miles }} ml</p>
+        <p class="card-field"><i class="fa-solid fa-shoe-prints"></i> Miles: {{ trail.miles }}</p>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-cancel" data-bs-dismiss="modal">Close</button>
