@@ -17,7 +17,7 @@ html {
 }
 /*----------------------------------Containers*/
 .welcome-hero-image {
-    background: url("/static/images/welcome-image.jpg") no-repeat center center fixed;
+    background: url("/static/images/home-page.png") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -58,25 +58,8 @@ html {
         margin-top: 0;
         padding-top:0;
 }
-.trails-hero{
-    
-    background: url("/static/images/trails.jpg") no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    min-height: 100vh;
-    margin-top: 0;
-}
-.add-trail-hero-image {
-  background: url("/static/images/add-trail-image.avif") no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  min-height: 100vh;
-  margin-top: 0;
-}
+
+
 /*----------------------------------Jumbotron*/
 .jumbotron{ 
     margin: 5rem 9rem 0rem;
