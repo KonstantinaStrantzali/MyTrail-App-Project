@@ -58,7 +58,7 @@
  - User immediately gets a flash message, feedback response, after completing an action on the website.
     
  <div float="right">
-  <img src="documentation/screenshots/favourite-flash.png."/>
+  <img src="documentation/screenshots/favourite-flash.png"/>
   <img src="documentation/screenshots/error-flash.png"/>
   <img src="documentation/screenshots/admin-flash.png"/>
   <img src="documentation/screenshots/succesfull-add-trail.png"/>
@@ -79,10 +79,29 @@
    <img src="documentation/screenshots/signIn-page.png"/>
    <img src="documentation/screenshots/loggout.png"/>
     
-
+**Add their own trail experiences and share them with other users**
+    - The user can add trail through a link on the navbar, a button on their profile page, a link on the navbar, as well as a button on the add form.
+    -  While filling the add form in, validation messages appeared to user, if they enter the correct or incorrect format of information or skip required fields.
     
+     <img src="documentation/screenshots/add-validation.png."/>
+     <img src="documentation/screenshots/added-trail.png."/>
     
+** Edit and delete their posted trails. **
+    - Users can edit their trails through the relevant button on their profile, which is linked with the edit form.
+  <img src="documentation/screenshots/edit-profile.png."/>
+  <img src="documentation/screenshots/edit-page.png."/>
     
+**View their posts on their profile**
+  - After posting a trail users can return back to their profile, to view, edit or delete it.
+   <img src="documentation/screenshots/edit-profile.png."/>
     
+ **Add trails as favourites on their profile.**
+  - User can click on the heart icon appears on the bottom of the trails cards and save them as favourites.
+  - Users can see all the saved favourite trails on their profile.
+  - Filled heart icon means that the trail has been click as favorite and added to favourite field on profile while outlined heart icon means it hasnt been added yet to favorites.
+    
+   <img src="documentation/screenshots/favorite-trail.png."/> 
+   <img src="documentation/screenshots/profile-favorite.png."/> 
+    <img src="documentation/screenshots/favourite-flash.png"/>
     
     
