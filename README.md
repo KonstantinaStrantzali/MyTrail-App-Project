@@ -68,7 +68,7 @@ As a first time visitor to this site, a user should be able to:
  A Returning Visitor should be able to:
 
 * Log in and out of their account.
-* Add their own trail experiences and share them with other users.
+* Add their own trails experiences and share them with other users.
 * Edit and delete their posted trails.
 * View their posts on their profile.
 * Add trails as favourites on their profile.
@@ -259,6 +259,10 @@ In future I would like to implement a few extra features such as:
 
 ### Database Design
 
+In this case, I have modeled my relational database on a non-relational database system., MongoDB. I have used the Mongodb best practice and guidance used when migrating relational database platforms to non-relational database platforms as my guide in this case.  I have used the following mapping:
+
+<img src="documentation/validation/relational-data.png"/>   
+
 MongoDB was used to store data for this site in a database, using the collection are described below:
 
 
@@ -435,7 +439,7 @@ Table:
 
 ## **Testing And Project Bugs**
 
-All testing and project Bugs can be found here - [TESTING.md]
+All testing and project Bugs can be found here - [TESTING.md](https://github.com/KonstantinaStrantzali/MyTrail-App-Project/blob/master/TESTING.md)
 
 [Back to Top](#contents)
 
