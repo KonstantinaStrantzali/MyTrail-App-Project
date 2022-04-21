@@ -143,7 +143,14 @@ def search():
     for 'title' and 'description'.
     """
     query = request.form.get("query")
+    favourites = list(mongo.db.favourites.find({"username": session['user']}))
     trails = list(mongo.db.trails.find({"$text": {"$search": query}}))
+    for trail in trails:
+        trail["favourite"] = "far"
+        for favourite in favourites:
+            if trail["_id"] == favourite["title_name"]:
+                trail["favourite"] = "fas"
+                break
     return render_template("trails.html", trails=trails)
 
 
