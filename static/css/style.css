@@ -393,3 +393,8 @@ textarea {
 .push{
   margin-top: 8px;
 }
+
+.error-page{
+  background-color: white;
+  height: 80vh;
+}

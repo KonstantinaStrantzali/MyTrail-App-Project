@@ -273,7 +273,7 @@ def remove_favourite(trail_id):
         {"title_name": ObjectId(trail_id),"username": username})
     return redirect(url_for("profile", username=session["user"]))
 
-
+@app.errorhandler(404)
 def not_found(e):
     """
         Render 404 page if errors occur
@@ -281,6 +281,16 @@ def not_found(e):
         https://www.geeksforgeeks.org/python-404-error-handling-in-flask/
     """
     return render_template("404.html"), 404
+
+
+@app.errorhandler(500)
+def internal_error(e):
+    """
+        Render 500 page if errors occur
+        Code credit to Digital Ocean for handling internal server errors
+        https://www.digitalocean.com/community/tutorials/how-to-handle-errors-in-a-flask-application
+    """
+    return render_template("500.html"), 500
 
 
 if __name__ == "__main__":
