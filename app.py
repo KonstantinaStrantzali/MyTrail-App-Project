@@ -241,6 +241,20 @@ def delete_trail(trail_id):
     return redirect(url_for("profile", username=username))
 
 
+@app.route("/delete_managetrail/<trail_id>")
+def delete_managetrail(trail_id):
+
+    """
+    Admin delete any trail from the collection and
+    and render manage_trails page.
+    """
+    mongo.db.trails.delete_one({"_id": ObjectId(trail_id)})
+    flash('Trail Successfully Deleted', 'success')
+    username = mongo.db.users.find_one(
+        {"username": session["user"]})["username"]
+    return redirect(url_for("manage_trails", username=username))
+    
+
 @app.route("/add_favourite/<trail_id>", methods=["GET", "POST"])
 def add_favourite(trail_id):
     """
@@ -297,4 +311,4 @@ if __name__ == "__main__":
     app.run(
         host=os.environ.get("IP", "0.0.0.0"),
         port=int(os.environ.get("PORT", "5000")),
-        debug=False)
+        debug=True)
