@@ -8,7 +8,7 @@
 
 [Code Validation](#code-validation)
 
-[Responsiveness And Compatibility](#responsiveness-and-compatibility)
+[Responsiveness](#responsiveness)
 
 [Testing Performance](#testing-performance)
 * [Lighthouse](#lighthouse)
@@ -46,7 +46,7 @@
     <img src="documentation/screenshots/nav-bar-logged-mobile.png"/>
     </div>  
     
-** Register for an account.**
+**Register for an account.**
     
  - Register page is visible on navbar only for the logged out users.
  - Register form is easy to follow and clear.
@@ -72,36 +72,161 @@
      
   #### Returning Visitor Goals
   
-  **Log in and out of their account.**
+**Log in and out of their account.**
     
-    * The Sign In page is visible for the users who aren't logged in and Log Out button on Navbar is visible for the logged in users.
+ - The Sign In page is visible for the users who aren't logged in and Log Out button on Navbar is visible for the logged in users.
     
    <img src="documentation/screenshots/signIn-page.png"/>
    <img src="documentation/screenshots/loggout.png"/>
     
 **Add their own trail experiences and share them with other users**
-    - The user can add trail through a link on the navbar, a button on their profile page, a link on the navbar, as well as a button on the add form.
-    -  While filling the add form in, validation messages appeared to user, if they enter the correct or incorrect format of information or skip required fields.
     
-     <img src="documentation/screenshots/add-validation.png."/>
-     <img src="documentation/screenshots/added-trail.png."/>
+- User can add trail through a link on the navbar, a button on their profile page, a link on the navbar, as well as a button on the add form.
+- While filling the add form in, validation messages appeared to user, if they enter the correct or incorrect format of information or skip required fields.
+  <img src="documentation/screenshots/add-validation.png"/>
+  <img src="documentation/screenshots/added-trail.png"/>
     
-** Edit and delete their posted trails. **
-    - Users can edit their trails through the relevant button on their profile, which is linked with the edit form.
-  <img src="documentation/screenshots/edit-profile.png."/>
-  <img src="documentation/screenshots/edit-page.png."/>
+**Edit and delete their posted trails**
+- Users can edit their trails through the relevant button on their profile, which is linked with the edit form.
+    
+  <img src="documentation/screenshots/edit-profile.png"/>
+  <img src="documentation/screenshots/edit-page.png"/>
     
 **View their posts on their profile**
   - After posting a trail users can return back to their profile, to view, edit or delete it.
-   <img src="documentation/screenshots/edit-profile.png."/>
-    
- **Add trails as favourites on their profile.**
+   <img src="documentation/screenshots/edit-profile.png"/>
+   
+ **Add trails as favourites on their profile**
   - User can click on the heart icon appears on the bottom of the trails cards and save them as favourites.
   - Users can see all the saved favourite trails on their profile.
   - Filled heart icon means that the trail has been click as favorite and added to favourite field on profile while outlined heart icon means it hasnt been added yet to favorites.
     
-   <img src="documentation/screenshots/favorite-trail.png."/> 
-   <img src="documentation/screenshots/profile-favorite.png."/> 
-    <img src="documentation/screenshots/favourite-flash.png"/>
+   <img src="documentation/screenshots/favorite-trail.png"/> 
+   <img src="documentation/screenshots/profile-favorite.png"/> 
+   <img src="documentation/screenshots/favourite-flash.png"/>
+    
+**Search other trails**
+- Users can view all the trails have been posted by other users and search by trail title and any word included on "description".
+  <img src="documentation/screenshots/search-bar.png"/>
+    
+### **Admin User**
+    
+  **Provide to nature lovers a platform where they can share their trail experiences securely**
+  - All user passwords are encrypted by using the generate_password_hash library which provides hashed passwords and gives extra security to login accounts. 
+    <img src="documentation/screenshots/users-object.png"/>
+    
+ **Edit and delete other users posts if needed**
+  - Admin can delete and edit any post of the app.
+    
+  <img src="documentation/screenshots/manage-trails.png"/>
+ 
+ ### W3C Markup Validation Service:
+
+The [W3C Markup Validation Service](https://validator.w3.org/) was used to validate the HTML of the website and returned no errors.
+
+Results below:-
+
+* The myTrail full website:
+  <img src="documentation/validation/home-page-validation.png"/>
+
+* Home Page:
+ <img src="documentation/validation/home-page-validation.png"/>
+
+* Registration Page:
+<img src="documentation/validation/register-page-validation.png"/>
+
+* Log In Page:
+<img src="documentation/validation/login-page-validation.png"/>
+
+* Profile Page:
+<img src="documentation/validation/profile-validation.png"/>
+
+* Trails Page:
+<img src="documentation/validation/trails-page-validation.png"/>
+
+* Add Trail Page:
+<img src="documentation/validation/add_trails_validation.png"/>
+  
+* Edit Trail Page:
+<img src="documentation/validation/edit-page-validation.png"/>
+    
+* Manage trails Page  (only for admin):
+<img src="documentation/validation/manage-trails-validation.png"/>
+
+* 404 Page:
+    * ![404 Page](docs/html_validation/404.png)
     
     
+### W3C CSS Validation Service:
+
+The CSS file was tested with [W3C CSS Validation Service](http://jigsaw.w3.org/css-validator/).
+
+* CSS Validation Results:
+<img src="documentation/validation/CSS-Validation.png"/>  
+
+---
+    
+All javascripts files were tested with [JSHint](https://jshint.com/). 
+
+* _script.js_ File Results:
+<img src="documentation/validation/script-validation.png"/>  
+   
+
+* _like_icon.js_ File Results:
+ <img src="documentation/validation/icon_script-validation.png"/>  
+    
+### Python 8:
+
+The python file was run through [PEP8](http://pep8online.com/).
+
+* PEP8 Results:
+<img src="documentation/validation/python-validator.png"/>    
+
+[Back to Top](#testing-and-project-barrier-solutions)
+
+---
+ ### Responsiveness
+
+Responsiveness tested  across different screen sizes and browsers. More specifically, Dev Tools used to emulate the following devices:
+
+**Mobile Devices**
+- Galaxy S5
+- Galaxy S9
+- iPhone 5/SE
+- iPhone 6/7/8
+- iPhone 6/7/8 plus
+- iPhone X / XS
+
+
+**Tablet Devices**
+- iPad
+- iPad Pro
+
+**Browsers**
+- Google Chrome
+- Mozilla Firefox
+   
+ 
+    
+ ## **Testing Performance**
+
+### Lighthouse
+Google Lighthouse checked different pages and returned different results. Most of the errors thrown was relating to the images size, types, as well as missing attributes and unnecessary classes removal. All the pictures compressed by ![Optimizilla](https://imagecompressor.com/) and been replaced on the site.
+
+ * Home
+  <img src="documentation/validation/Lighthouse-screenshot.png"/>   
+  
+* Add Trails Page 
+  <img src="documentation/validation/lighthouse-add-trail.png"/>   
+
+    
+* Trails Page
+<img src="documentation/validation/lighthouse-add-trail.png"/> 
+
+[Back to Top](#testing-and-project-barrier-solutions)
+
+---
+
+## **Project Barriers and Solutions**
+
+### Solved Bugs
