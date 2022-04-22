@@ -21,6 +21,7 @@ app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
 
+
 @app.route("/")
 def index():
     """
@@ -34,10 +35,9 @@ def register():
 
     """
     Get user's username from the form, and check if it already exists in
-    the database. If user exists, flash a message and redirect to
-    register page. 
-    Save user in the database, put user into a session cookie and redirect
-    to profile page.
+    the database. If user exists, flash a message and redirect to register
+    page. Save user in the database, put user into a session cookie and
+    redirect to profile page.
     """
     if request.method == "POST":
         # username already exists in db check
@@ -66,8 +66,9 @@ def register():
 @app.route("/login", methods=["GET", "POST"])
 def login():
     """
-    Find user's saved account in database, check if password matches 
-    and if not flash a message. If does, welcome usename in the profile page. 
+    Find user's saved account in database, check if password matches
+    and if not flash a message. If does, welcome usename in the profile
+    page.
     """
 
     if request.method == "POST":
@@ -80,7 +81,8 @@ def login():
             if check_password_hash(
                     existing_user["password"], request.form.get("password")):
                 session["user"] = request.form.get("username").lower()
-                flash('Welcome, {}'.format(request.form.get("username")), 'info')
+                flash(
+                    'Welcome, {}'.format(request.form.get("username")), 'info')
                 return redirect(url_for(
                     "trails", username=session["user"]))
             else:
@@ -106,15 +108,15 @@ def logout():
     return redirect(url_for("login"))
 
 
-
 @app.route("/get_trails")
 def trails():
     """
     Get the list of trails and render them on trails.page.
-    Find the clicked trail_id, check if trail_id equalls with the favourite title_name
-    and toggle the heart icon.
+    Find the clicked trail_id, check if trail_id equalls with the favourite
+    title_name and toggle the heart icon.
     """
-    username = mongo.db.users.find_one({"username": session["user"]})["username"]
+    username = mongo.db.users.find_one(
+        {"username": session["user"]})["username"]
     trails = list(mongo.db.trails.find({}))
     favourites = list(mongo.db.favourites.find({"username": session['user']}))
     for trail in trails:
@@ -123,7 +125,7 @@ def trails():
             if trail["_id"] == favourite["title_name"]:
                 trail["favourite"] = "fas"
                 break
-                 
+
     return render_template("trails.html", username=username, trails=trails)
 
 
@@ -151,6 +153,7 @@ def search():
             if trail["_id"] == favourite["title_name"]:
                 trail["favourite"] = "fas"
                 break
+            
     return render_template("trails.html", trails=trails)
 
 
@@ -158,7 +161,8 @@ def search():
 def profile(username):
     """
         Get username from db, get user's input for all fields and update in db.
-        If user has selected favourite, get and render it on the corresponding field.
+        If user has selected favourite, get and render it on the corresponding
+        field.
     """
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
@@ -170,8 +174,8 @@ def profile(username):
     # get all trails if the contain the id in our list of favourite ids
     favs = mongo.db.trails.find({"_id": {"$in": object_ids}})
 
-
-    return render_template("profile.html", favs=favs, trails=trails, username=username)
+    return render_template(
+        "profile.html", favs=favs, trails=trails, username=username)
 
 
 @app.route("/add_trail", methods=["GET", "POST"])
@@ -207,8 +211,8 @@ def add_trail():
 @app.route("/edit_trail/<trail_id>", methods=["GET", "POST"])
 def edit_trail(trail_id):
     """
-    Get user's editted input and update db. 
-    Redirect to trail page upon successful flash message.
+    Get user's editted input and update db.Redirect to trail page
+    upon successful flash message.
     """
     if request.method == "POST":
         submit = {
@@ -260,7 +264,7 @@ def delete_managetrail(trail_id):
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
     return redirect(url_for("manage_trails", username=username))
-    
+
 
 @app.route("/add_favourite/<trail_id>", methods=["GET", "POST"])
 def add_favourite(trail_id):
@@ -270,9 +274,9 @@ def add_favourite(trail_id):
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
     fav = mongo.db.favourites.find_one(
-        {"username": session["user"],"title_name": ObjectId(trail_id)})
+        {"username": session["user"], "title_name": ObjectId(trail_id)})
     if fav:
-        return redirect(url_for("trails", username=username))  
+        return redirect(url_for("trails", username=username))
     data = {
         "title_name": ObjectId(trail_id),
         "username": username
@@ -285,14 +289,14 @@ def add_favourite(trail_id):
 @app.route("/remove_favourite/<trail_id>")
 def remove_favourite(trail_id):
     """
-    delete trails from favourites collection 
-    in DB and from profile.
+    delete trails from favourites collection in DB and from profile.
     """
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
     mongo.db.favourites.delete_one(
-        {"title_name": ObjectId(trail_id),"username": username})
+        {"title_name": ObjectId(trail_id), "username": username})
     return redirect(url_for("profile", username=session["user"]))
+    
 
 @app.errorhandler(404)
 def not_found(e):

@@ -171,11 +171,21 @@ html {
 .btn-edit,
 .btn-edit-trail {
   background-color: #2C2D31;
-  color: #DEDDDB;
+  color: inherit;
   border-color: #2C2D31;
   border-radius: 5px;
   padding: 13px 25px;
-  text-decoration: none;
+  text-decoration:none;
+  font-size: 20px;
+}
+
+.btn-edit-trail:hover{
+  background-color: #2C2D31;
+  color: inherit;
+  border-color: #2C2D31;
+  border-radius: 5px;
+  padding: 13px 25px;
+  text-decoration:none;
   font-size: 20px;
 }
 
@@ -189,13 +199,7 @@ html {
   color: #DEDDDB;
 }
 
-.btn-edit:hover {
-  background-color: #2C2D31;
-  color: #DEDDDB;
-  border-color: #2C2D31;
-  padding: 6px 20px;
 
-}
 
 .btn-delete:hover,
 .btn-search:hover {
