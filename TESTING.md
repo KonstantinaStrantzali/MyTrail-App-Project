@@ -14,7 +14,7 @@
 * [Lighthouse](#lighthouse)
 
 [Project Barriers and Solutions](#project-barriers-and-solutions)
-* [Solved Bugs](#solved-bugs)
+* [Fixed Bugs](#fixed-bugs)
 * [Known Bugs](#known-bugs)
 
 ---
@@ -214,11 +214,14 @@ Responsiveness tested  across different screen sizes and browsers. More specific
 Google Lighthouse checked different pages and returned different results. Most of the errors thrown was relating to the images size, types, as well as missing attributes and unnecessary classes removal. All the pictures compressed by ![Optimizilla](https://imagecompressor.com/) and been replaced on the site.
 
  * Home
-  <img src="documentation/validation/Lighthouse-screenshot.png"/>   
+   <div float= "centre">
+  <img src="documentation/screenshots/Lighthouse-screenshot.png"/>   
+    </div>
   
 * Add Trails Page 
-  <img src="documentation/validation/lighthouse-add-trail.png"/>   
-
+  <div float ="centre">
+  <img src="documentation/screenshots/lighthouse-add-trail.png"/>   
+   </div>
     
 * Trails Page
 <img src="documentation/validation/lighthouse-add-trail.png"/> 
@@ -229,4 +232,25 @@ Google Lighthouse checked different pages and returned different results. Most o
 
 ## **Project Barriers and Solutions**
 
-### Solved Bugs
+### Fixed Bugs
+    
+  - On the bottom of each trail cards, there is a heart icon, which toggle classes by using Javascript Event Listener and changes icon when it's clicked. A bug found when the new class set by clicking couldn't remain οn the card after refreshing the page. Thus, I had to fix that manually on app.py by looping into trails and favourites collection and give a specific class for the icon, if the trail_id and favourites_title_name were same. That prevents the icon from changing after refreshing the page. 
+
+- An other bug I came across with was that the like button didn't render on trail cards after clicking the search button on the search bar. The bug solved by looping through the trails and favourites collection, finding if the current user's favourites trails existing in the trails collection that were just searched and then render the heart icon accordingly. 
+    
+ <div float="center">
+<img src="documentation/validation/bug-icon01.png"/> 
+<img src="documentation/validation/bug-icon.png"/> 
+    </div>
+    
+- While this project was building, Heroku made updates that caused significant problems and failures on deployment especially for those had an app created which used automatic deploys from Github to Heroku. As a result all the deployments had to be done manually form the terminal running the commands: 
+*heroku login -i*  
+*heroku git:remote -a your_app_name_here*
+*git push heroku main* 
+    
+
+### Known Bugs
+
+* There are no known errors.
+   
+
