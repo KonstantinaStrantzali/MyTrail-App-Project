@@ -244,6 +244,11 @@ Google Lighthouse checked different pages and returned different results. Most o
 <img src="documentation/screenshots/bug-icon01.png"/> 
 <img src="documentation/screenshots/bug-icon.png"/> 
     </div>
+
+- Using Jinja template I managed to render the same footer section on all of my pages without repeating the same code in all the pages. Dealing with trails.html grid, I came across with a bug, as the footer couldn't stay on the bottom of the page and moving while scrolling upwards. The problem solved after using position:relative; class on html element and margin:bottom on the body.
+
+<img src="documentation/screenshots/footer-problem.png"/>
+
     
 - While this project was building, Heroku made updates that caused significant problems and failures on deployment especially for those had an app created which used automatic deploys from Github to Heroku. As a result all the deployments had to be done manually form the terminal running the commands: 
 *heroku login -i*  
@@ -253,6 +258,6 @@ Google Lighthouse checked different pages and returned different results. Most o
 
 ### Known Bugs
 
-* There are no known errors.
+* On profile and manage trails page, 2 stray divs appear on HTML Validation Checker. When the user adds an new item, the divs automatically close and the erros is fixed.
    
 

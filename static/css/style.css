@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,300;1,400&family=Permanent+Marker&display=swap');
 
 body {
-  margin-bottom: 5%;
+  margin-bottom:5%;
   font-family: 'Lato', sans-serif;
   background-color: #2C2D31;
 }
@@ -11,7 +11,6 @@ html {
   font-family: 'Lato', sans-serif;
   position: relative;
   padding-bottom: 35px;
-
   min-height: 100vh;
 
 }
@@ -37,7 +36,6 @@ html {
   margin-top: 0;
   background-size: cover;
   box-shadow: inset 0 0 0 2000px rgba(37, 36, 37, 0.61);
-
 }
 
 .register-hero-image {
@@ -70,8 +68,6 @@ html {
   padding-bottom: 10px;
 }
 
-
-
 .search-bar-icon {
   font-size: 20px;
   margin-right: 10px;
@@ -82,7 +78,6 @@ html {
 .navbar {
   background-color: #2C2D31 !important;
 }
-
 
 .navbar-brand {
   color: #DEDDDB;
@@ -120,8 +115,6 @@ html {
   font-size: 15px;
 
 }
-
-
 
 /* Buttons */
 .btn-welcome {
@@ -199,8 +192,6 @@ html {
   color: #DEDDDB;
 }
 
-
-
 .btn-delete:hover,
 .btn-search:hover {
   background-color: #2C2D31;
@@ -242,7 +233,6 @@ footer {
 
 .card {
   background-color: rgba(48, 47, 48, 0.699);
-
 
 }
 
@@ -372,10 +362,6 @@ footer {
 .profile-card {
   background-color: rgba(122, 92, 73, 0.781);
   color: #DEDDDB;
-  width: 100%;
-  position: relative;
-
-
 }
 
 .trail-content {

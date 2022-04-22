@@ -45,8 +45,7 @@
           </div>
         </div>
       </div>
-    </div>
-  </div>
+    
 
   {% endfor %}
 
@@ -60,14 +59,14 @@
         <div class="col-12 text-center">
           <a class="btn btn-danger btn-lg" href="{{ url_for('add_trail') }}">Add</a>
         </div>
-        </div>
-        </div>
-        {% endif %}
+      </div>
+    </div>
+    {% endif %}
 
         <!-- Modal -->
         {% for trail in trails %}
         <div class="modal fade" id="modal-{{ trail._id }}" tabindex="-1" aria-labelledby="{{ trail._id }}">
-          
+
           <div class="modal-dialog ">
             <div class="modal-content delete-modal">
               <div class="modal-header" id="{{ trail._id }}">
@@ -86,8 +85,8 @@
                 </a>
               </div>
             </div>
-            </div>
-            </div>
+          </div>
+        </div>
          
 
         {% endfor %}
