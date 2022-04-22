@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,300;1,400&family=Permanent+Marker&display=swap');
 
-body{
+body {
   margin-bottom: 5%;
   font-family: 'Lato', sans-serif;
   background-color: #2C2D31;
@@ -9,24 +9,25 @@ body{
 html {
   padding: 0;
   font-family: 'Lato', sans-serif;
-  position:relative;
+  position: relative;
   padding-bottom: 35px;
-    
-    min-height: 100vh;
+
+  min-height: 100vh;
 
 }
+
 /*----------------------------------Containers*/
 .welcome-hero-image {
-    background: url("/static/images/home-page.avif") no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    min-height: 100vh;
-    margin-top: 0;
+  background: url("/static/images/home-page.avif") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  min-height: 100vh;
+  margin-top: 0;
 }
 
-.hero-image{
+.hero-image {
   background: url("/static/images/profile-image.avif") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -34,301 +35,258 @@ html {
   background-size: cover;
   min-height: 100vh;
   margin-top: 0;
-  background-size:cover;
-  box-shadow:inset 0 0 0 2000px rgba(37, 36, 37, 0.61);
+  background-size: cover;
+  box-shadow: inset 0 0 0 2000px rgba(37, 36, 37, 0.61);
 
 }
+
 .register-hero-image {
-    background: url("/static/images/register-image.avif") no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    min-height: 100vh;
-    margin-top: 0;
+  background: url("/static/images/register-image.avif") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  min-height: 100vh;
+  margin-top: 0;
 }
-.login-hero-image{
-    
-        background: url("/static/images/signIn-image.avif") no-repeat center center fixed;
-        -webkit-background-size: cover;
-        -moz-background-size: cover;
-        -o-background-size: cover;
-        background-size: cover;
-        min-height: 100vh;
-        margin-top: 0;
-        padding-top:0;
+
+.login-hero-image {
+
+  background: url("/static/images/signIn-image.avif") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  min-height: 100vh;
+  margin-top: 0;
+  padding-top: 0;
 }
 
 
 /*----------------------------------Jumbotron*/
-.jumbotron{ 
-    margin: 5rem 9rem 0rem;
-    background-color: rgba(196, 194, 194, 0.603);
-    padding-bottom: 10px;
+.jumbotron {
+  margin: 5rem 9rem 0rem;
+  background-color: rgba(196, 194, 194, 0.603);
+  padding-bottom: 10px;
 }
 
 
 
-.search-bar-icon{
-    font-size: 20px;
-    margin-right: 10px;
+.search-bar-icon {
+  font-size: 20px;
+  margin-right: 10px;
 }
 
 /*----------------------------------Navigation Bar*/
 /* over-write the Bootstrap navbar class */
-.navbar{
-    background-color: #2C2D31 !important;
-  }
+.navbar {
+  background-color: #2C2D31 !important;
+}
 
-  
-  .navbar-brand {
-    color:#DEDDDB ;
-    left:5px;
-    font-family:'Roboto', sans-serif;
-    }
-  .navbar-brand:hover{
-    color:#F6F6F6 !important;
-  }
-  /* Change the color of nav text by using !important, answer found on StackOverflow, user: dynamiclynk (https://stackoverflow.com/questions/24420080/change-navbar-text-color-bootstrap) */
-  .navbar-nav li a{
-    font-size: 23px;
-    color:#F6F6F6!important;
-  }
-  .nav-item a:hover {
-    background-color: #7A5D49;
-    color: #F6F6F6!important;
-  }
-  .navbar-brand i{
-    transform: rotate(30deg); 
-    background-color: #7A5D49;
-    font-size:30px;
-    padding: 3px;
-    margin-right: 10px;
-    margin-left:5px;
-    
-  }
-  .logo {
-      color: #DEDDDB ;
-      font-size: 15px;
-   
-  }
-  
-  
-  
+
+.navbar-brand {
+  color: #DEDDDB;
+  left: 5px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.navbar-brand:hover {
+  color: #F6F6F6 !important;
+}
+
+/* Change the color of nav text by using !important, answer found on StackOverflow, user: dynamiclynk (https://stackoverflow.com/questions/24420080/change-navbar-text-color-bootstrap) */
+.navbar-nav li a {
+  font-size: 23px;
+  color: #F6F6F6 !important;
+}
+
+.nav-item a:hover {
+  background-color: #7A5D49;
+  color: #F6F6F6 !important;
+}
+
+.navbar-brand i {
+  transform: rotate(30deg);
+  background-color: #7A5D49;
+  font-size: 30px;
+  padding: 3px;
+  margin-right: 10px;
+  margin-left: 5px;
+
+}
+
+.logo {
+  color: #DEDDDB;
+  font-size: 15px;
+
+}
+
+
+
 /* Buttons */
-  .btn-welcome {
-    background-color:#7A5D49;
-    color: #F6F6F6 !important;
-    border-color:  #7A5D49;
-    text-decoration: none;
-  }
-  .btn-cancel,
-  .btn-add-trail:hover,
-  .btn-welcome:hover {
-    background-color: #2C2D31;
-    color: #DEDDDB  !important;
-    border-color:#2C2D31;
-    text-decoration: none;
-  }
- .btn-card,
- .btn-register,
- .btn-login {
-    background-color: #7A5D49;
-    color: #DEDDDB ;
-    border-color:#7A5D49;
-  
-  }
-  
-  .btn-card:hover,
-  .btn-register:hover,
-  .btn-login:hover{
-    background-color: #7A5D49;
-    color: #DEDDDB  !important;
-    border-color:#7A5D49;
-  }
-  .btn-add-trail,
-  .btn-edit,
-  .btn-cancel,
-  .btn-delete,
-  .btn-reset,
-  .btn-search{
-    background-color: #2C2D31;
-    color: #DEDDDB;
-    border-color: #2C2D31;
-  }
-  .btn-edit,
-  .btn-edit-trail{
-    background-color: #2C2D31;
-    color:#DEDDDB;
-    border-color: #2C2D31;
-    border-radius: 5px;
-    padding:13px 25px;
-    text-decoration: none;
-    font-size: 20px;
-  }
+.btn-welcome {
+  background-color: #7A5D49;
+  color: #F6F6F6 !important;
+  border-color: #7A5D49;
+  text-decoration: none;
+}
 
+.btn-cancel,
+.btn-add-trail:hover,
+.btn-welcome:hover {
+  background-color: #2C2D31;
+  color: #DEDDDB !important;
+  border-color: #2C2D31;
+  text-decoration: none;
+}
 
-  
+.btn-card,
+.btn-register,
+.btn-login {
+  background-color: #7A5D49;
+  color: #DEDDDB;
+  border-color: #7A5D49;
 
-  .btn-edit:hover{
-    background-color: #2C2D31;
-    color:#DEDDDB;
-    border-color: #2C2D31;
-    padding:6px 20px;
-    
-  }
+}
 
-  .btn-delete:hover,
-  .btn-search:hover{
-    background-color: #2C2D31;
-    color:#DEDDDB ;
-    border-color: #2C2D31;
-  }
-  
+.btn-card:hover,
+.btn-register:hover,
+.btn-login:hover {
+  background-color: #7A5D49;
+  color: #DEDDDB !important;
+  border-color: #7A5D49;
+}
+
+.btn-add-trail,
+.btn-edit,
+.btn-cancel,
+.btn-delete,
+.btn-reset,
+.btn-search {
+  background-color: #2C2D31;
+  color: #DEDDDB;
+  border-color: #2C2D31;
+}
+
+.btn-edit,
+.btn-edit-trail {
+  background-color: #2C2D31;
+  color: #DEDDDB;
+  border-color: #2C2D31;
+  border-radius: 5px;
+  padding: 13px 25px;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.btn-error {
+  background-color: #2C2D31;
+  color: #DEDDDB;
+}
+
+.btn-error:hover {
+  background-color: #2C2D31;
+  color: #DEDDDB;
+}
+
+.btn-edit:hover {
+  background-color: #2C2D31;
+  color: #DEDDDB;
+  border-color: #2C2D31;
+  padding: 6px 20px;
+
+}
+
+.btn-delete:hover,
+.btn-search:hover {
+  background-color: #2C2D31;
+  color: #DEDDDB;
+  border-color: #2C2D31;
+}
+
 /* Footer */
-  footer{
-    background-color: #2C2D31;
-    color: #F6F6F6;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-  } 
-    
-    .social-media-section .list-inline .list-inline-item a{
-      border-color:#272222;
-      font-size: 20px;
-      text-align: center;
-    }
-    .social-media-section .list-inline .list-inline-item a i{
-      margin-left:10px;
-      font-size: 20px;
-      color:#F6F6F6;
-      transition: 0.6s all;
-    }
-    .list-inline-item i:hover {
-      transform: scale(1.4);
-    }
+footer {
+  background-color: #2C2D31;
+  color: #F6F6F6;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.social-media-section .list-inline .list-inline-item a {
+  border-color: #272222;
+  font-size: 20px;
+  text-align: center;
+}
+
+.social-media-section .list-inline .list-inline-item a i {
+  margin-left: 10px;
+  font-size: 20px;
+  color: #F6F6F6;
+  transition: 0.6s all;
+}
+
+.list-inline-item i:hover {
+  transform: scale(1.4);
+}
 
 
 /*----------------------------------Form */
-.form-icons{
-  font-size:15px;
+.form-icons {
+  font-size: 15px;
 }
-.card{
+
+.card {
   background-color: rgba(48, 47, 48, 0.699);
-  
-  
+
+
 }
-.icons{
-  font-size:25px;
-  padding-top:5px;
-  color:#DEDDDB;
+
+.icons {
+  font-size: 25px;
+  padding-top: 5px;
+  color: #DEDDDB;
 }
 
 .form-link-here {
-  color: #DEDDDB ;
+  color: #DEDDDB;
   text-decoration: none;
 }
 
 .form-area h3 {
-    color:#DEDDDB;
-  }
-
-.trails-section{
-  
-  color:#DEDDDB;
+  color: #DEDDDB;
 }
+
+.trails-section {
+
+  color: #DEDDDB;
+}
+
 /*----------------------------------https://stackoverflow.com/questions/37287153/how-to-get-images-in-bootstraps-card-to-be-the-same-height-width */
 
-.card-trails{
+.card-trails {
   background-color: #2C2D31;
-  color:#DEDDDB;
+  color: #DEDDDB;
 }
-.card-img-top{
+
+.card-img-top {
   width: 100%;
   height: 15vw;
   object-fit: cover;
 }
-.modal-content{
+
+.modal-content {
   background-color: #7A5D49;
   color: #DEDDDB;
 }
 
-.font-icon{
+.font-icon {
   font-size: 25px;
 }
 
-.trail-icon{
+.trail-icon {
   font-size: 25px;
-  color:#DEDDDB;
-}
-/*----------------------------------Media Queries */
-  @media only screen and (max-width: 600px) {
-    .jumbotron{ 
-      margin: 5rem 1rem 0rem;
-  }
-
-  .card-img-top{
-    width: 100%;
-    height: 29vw;
-    object-fit: cover;
-  }
-
-  .btn-delete-trail,
-  .btn-delete-fav{
-   padding:10px !important;
-   font-size: 15px;
-   
-}
- .btn-edit-trail {
-  font-size: 16px;
-  padding: 12px 22px;
-}
-  }
-
-
-@media only screen and (max-width: 900px) {
-.card-img-top{
-  width: 100%;
-  height: 29vw;
-  object-fit: cover;
-}
-}
-
-
-.img-thumbnail{
-  width: 60%;
-margin-left: 20px;
-margin-right: 10%;
-}
-
-.card-add-trail,
-.profile-card{
-  background-color: rgba(122, 92, 73, 0.781);
-  color: #DEDDDB ;
-  width: 100%;
-  position:relative;
-  
-  
-}
-
-.trail-content{
-  font-size: 20px;
-}
-
-.form-card{
-  background-color: rgba(122, 92, 73, 0.781);
-  color: black;
-  margin-bottom: 3%;
-  
-}
-textarea {
- 
-  height: 30vh;
-}
-
-.no-results{
-  color:black;
+  color: #DEDDDB;
 }
 
 /* Flashes */
@@ -338,7 +296,7 @@ textarea {
   margin-bottom: 16px;
   border: 2px solid darkred;
   background-color: red;
-  color:#DEDDDB ;
+  color: #DEDDDB;
   padding-bottom: 0;
 }
 
@@ -348,53 +306,121 @@ textarea {
   margin-bottom: 16px;
   border: 2px solid rgba(8, 143, 64, 0.582);
   background-color: rgba(8, 143, 64, 0.582);
-  color: #DEDDDB ;
+  color: #DEDDDB;
   padding-bottom: 0;
 }
 
 .alert-info {
   background-color: #7A5D49;
-  color:#DEDDDB ;
+  color: #DEDDDB;
   font-size: 1.2rem;
   margin-bottom: 16px;
   border: 2px solid #7A5D49;
   padding-bottom: 0%;
 }
 
-.trails-section{
+.trails-section {
   background-color: #7A5D49;
 }
+
 .btn-delete-fav {
   margin-left: 70px;
-  
+
 }
-.username{
+
+.username {
   width: 250px;
   height: 10vh;
   padding: 10px;
   background-color: rgba(122, 92, 73, 0.781);
-  color: #DEDDDB ;
-  
- 
+  color: #DEDDDB;
+
 }
 
-.like-icon{
+.like-icon {
   font-size: 30px;
-  color:rgba(189, 15, 44, 0.979)
+  color: rgba(189, 15, 44, 0.979)
 }
 
-.invalid-feedback{
-  color: #DEDDDB ;
+.invalid-feedback {
+  color: #DEDDDB;
 }
+
 .flash-messages {
   margin-bottom: 0%;
 }
 
-.push{
+.push {
   margin-top: 8px;
 }
 
-.error-page{
-  background-color: white;
-  height: 80vh;
+.error-message {
+  height: 40vh;
+}
+
+.img-thumbnail {
+  width: 60%;
+  margin-left: 20px;
+  margin-right: 10%;
+}
+
+.card-add-trail,
+.profile-card {
+  background-color: rgba(122, 92, 73, 0.781);
+  color: #DEDDDB;
+  width: 100%;
+  position: relative;
+
+
+}
+
+.trail-content {
+  font-size: 20px;
+}
+
+.form-card {
+  background-color: rgba(122, 92, 73, 0.781);
+  color: black;
+  margin-bottom: 3%;
+
+}
+
+textarea {
+
+  height: 30vh;
+}
+
+.no-results {
+  color: black;
+}
+
+/*----------------------------------Media Queries */
+@media only screen and (max-width: 600px) {
+  .jumbotron {
+    margin: 5rem 1rem 0rem;
+  }
+
+  .card-img-top {
+    width: 100%;
+    height: 29vw;
+    object-fit: cover;
+  }
+  .btn-delete-trail,
+  .btn-delete-fav {
+    padding: 10px !important;
+    font-size: 15px;
+
+  }
+  .btn-edit-trail {
+    font-size: 16px;
+    padding: 12px 22px;
+  }
+}
+@media only screen and (max-width: 900px) {
+  .card-img-top {
+    width: 100%;
+    height: 29vw;
+    object-fit: cover;
+  }
+
 }

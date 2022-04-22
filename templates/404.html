@@ -3,30 +3,16 @@
 {% block title %}Page 404{% endblock %}
 {% block content %}
 
-    <section class="container-fluid error-page">
-        <div class="row">
-            <div class="col text-center order-xl-2">
+    <section class="container-fluid hero-image"> 
                 <div class="row">
-                    <div class="col col-sm-12">
-                        <h2 class="text-center comic-font page-not-found-heading">404: Page Not Found</h2>
-                    </div>
-                </div>
-                <a href="{{ url_for('index') }}" class="d-none d-xl-block btn btn-lg text-shadow 
-                    btn-success comic-font my-catalogue-button">
-                    Back to My Trails<i class="fas fa-arrow-circle-left"></i>
+                    <div class="card col text-center error-message profile-card mt-5">
+                    <h1 class="text-center">Oops!</h1>
+                        <h2 class="page-not-found-heading mt-3">404: Page Not Found</h2>
+                    <div>
+                <a href="{{ url_for('index') }}" class="mt-5 btn btn-lg btn-error text-shadow">
+                    Back to Home <i class="fas fa-arrow-circle-left"></i>
                 </a>
             </div>
-            <div class="col order-xl-1 col-sm-12 col-xl-4">
-               
-                <div class="page-not-found mx-auto d-block"></div>
-            </div>
-            <a href="{{ url_for('index') }}" class="d-xl-none btn btn-lg text-shadow 
-                    btn-success comic-font my-catalogue-button">
-                    Back to My Catalogue <i class="fas fa-arrow-circle-left"></i>
-            </a>
-            <div class="col d-sm-none d-none d-xl-block order-xl-3">
-               
-                <div class="page-not-found mx-auto d-block"></div>
             </div>
         </div>
     </section>
