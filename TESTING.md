@@ -1,4 +1,4 @@
-# **Testing And Project Barrier Solutions**
+# **Testing And Project Bugs**
 
 ![Final project image home page](documentation/responsive-site.png)
 
@@ -67,7 +67,7 @@
        
 **Be able to view nature trails posted by other users**
  <div float="right">
- <img src="documentation/screenshots/trail-cards.png."/>
+ <img src="documentation/screenshots/trail-cards.png"/>
   </div>
      
   #### Returning Visitor Goals
@@ -75,17 +75,19 @@
 **Log in and out of their account.**
     
  - The Sign In page is visible for the users who aren't logged in and Log Out button on Navbar is visible for the logged in users.
-    
+  <div float="center"> 
    <img src="documentation/screenshots/signIn-page.png"/>
    <img src="documentation/screenshots/loggout.png"/>
+   </div>
     
 **Add their own trail experiences and share them with other users**
     
 - User can add trail through a link on the navbar, a button on their profile page, a link on the navbar, as well as a button on the add form.
 - While filling the add form in, validation messages appeared to user, if they enter the correct or incorrect format of information or skip required fields.
+   <div float="center"> 
   <img src="documentation/screenshots/add-validation.png"/>
   <img src="documentation/screenshots/added-trail.png"/>
-    
+    </div>
 **Edit and delete their posted trails**
 - Users can edit their trails through the relevant button on their profile, which is linked with the edit form.
     
@@ -119,6 +121,8 @@
   - Admin can delete and edit any post of the app.
     
   <img src="documentation/screenshots/manage-trails.png"/>
+ 
+#### Code Validation
  
  ### W3C Markup Validation Service:
 
@@ -156,8 +160,6 @@ Results below:-
 * 404 Page:
     * ![404 Page](docs/html_validation/404.png)
     
-    
-### W3C CSS Validation Service:
 
 The CSS file was tested with [W3C CSS Validation Service](http://jigsaw.w3.org/css-validator/).
 
@@ -239,8 +241,8 @@ Google Lighthouse checked different pages and returned different results. Most o
 - An other bug I came across with was that the like button didn't render on trail cards after clicking the search button on the search bar. The bug solved by looping through the trails and favourites collection, finding if the current user's favourites trails existing in the trails collection that were just searched and then render the heart icon accordingly. 
     
  <div float="center">
-<img src="documentation/validation/bug-icon01.png"/> 
-<img src="documentation/validation/bug-icon.png"/> 
+<img src="documentation/screenshots/bug-icon01.png"/> 
+<img src="documentation/screenshots/bug-icon.png"/> 
     </div>
     
 - While this project was building, Heroku made updates that caused significant problems and failures on deployment especially for those had an app created which used automatic deploys from Github to Heroku. As a result all the deployments had to be done manually form the terminal running the commands: 
