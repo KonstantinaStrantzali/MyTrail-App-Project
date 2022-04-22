@@ -17,7 +17,7 @@
 /* form input validation */
     function checkInput(input) {
       const value = input.value;
-      if (value.length < 2) {
+      if (value.length <= 1) {
         input.classList.remove("is-valid");
         input.classList.add("is-invalid");
       } 

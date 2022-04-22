@@ -1,11 +1,21 @@
 <h1 align ="center">MyTrail App</h1>
-<h4 align="center">  Backend Development Third Milestone Project. </h4>
+<h4 align ="center">  Backend Development Third Milestone Project. </h4>
 
 ![Final project image home page](documentation/responsive-site.png)
 
 This website provides a platform to users who love sharing trail as well as exploring and discovering new trail experiences. As more and more users starting using the service, the website become a free resource. The main goal of this project is a database maintenance attached to a website, with full CRUD (Create, Read, Update and Delete) functionality. The site is designed to be responsive on a range of devices to make it accessible for trail lovers.
 
 [View the live site here](https://mytrailap.herokuapp.com/)
+
+To log in as admin:
+<div float="right">
+username: admin
+</div>
+<div float="right">
+password: 123456789
+</div>
+
+
 
 ## **Contents**
 
@@ -247,7 +257,7 @@ The navigation bar changes depending on user status and screen size:
 * 500 Internal Server Error
     * ![404 Page Not Found](documentation/screenshots/404-error.png)
     
-    * ![500 Internal Error](documentation/screenshots/500 error.png)
+    * ![500 Internal Error](documentation/screenshots/500-error.png)
 
 ---
 

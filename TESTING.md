@@ -158,7 +158,7 @@ Results below:-
 <img src="documentation/validation/manage-trails-validation.png"/>
 
 * 404 Page:
-    * ![404 Page](docs/html_validation/404.png)
+<img src="documentation/screenshots/404-page-validation.png"/>
     
 
 The CSS file was tested with [W3C CSS Validation Service](http://jigsaw.w3.org/css-validator/).
@@ -184,7 +184,7 @@ The python file was run through [PEP8](http://pep8online.com/).
 * PEP8 Results:
 <img src="documentation/validation/python-validator.png"/>    
 
-[Back to Top](#testing-and-project-barrier-solutions)
+[Back to Top](#testing-user-stories)
 
 ---
  ### Responsiveness
@@ -225,8 +225,8 @@ Google Lighthouse checked different pages and returned different results. Most o
   <img src="documentation/screenshots/lighthouse-add-trail.png"/>   
    </div>
     
-* Trails Page
-<img src="documentation/validation/lighthouse-add-trail.png"/> 
+* Profile Page
+<img src="documentation/screenshots/profile-lighthouse.png"/> 
 
 [Back to Top](#testing-and-project-barrier-solutions)
 
@@ -249,7 +249,7 @@ Google Lighthouse checked different pages and returned different results. Most o
 *heroku login -i*  
 *heroku git:remote -a your_app_name_here*
 *git push heroku main* 
-    
+<img src="documentation/screenshots/heroku-bug.png"/>     
 
 ### Known Bugs
 
