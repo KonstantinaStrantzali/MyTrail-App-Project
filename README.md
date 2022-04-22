@@ -37,14 +37,12 @@ This website provides a platform to users who love sharing trail as well as expl
 
 [Deployment](#deployment)
 * [Initial Deployment](#initial-deployment)
-* [How to Fork it](#how-to-fork-it)
 * [Making a Local Clone](#making-a-local-clone)
 
 [Testing and Project Barrier Solutions](#testing-and-project-barrier-solutions)
 
 [Credits](#credits)
 * [Code](#code)
-* [Content](#content)
 * [Media](#media)
 * [Acknowledgements](#acknowledgements)
 
@@ -232,12 +230,12 @@ The navigation bar changes depending on user status and screen size:
 ---
 
 * Confirm trail deletion modal
-    * ![Confirm account deletion](docs/screenshots/confirm_delete_account.png)
+    * ![Confirm account deletion](documentation/screenshots/modal-delete.png)
 
 ---
 
 * Social links that open in a new tab
-    * ![Social Links](docs/screenshots/full_footer.png)
+    * ![Social Links](documentation/screenshots/social-links.png)
 
 ---
 
@@ -261,7 +259,7 @@ In future I would like to implement a few extra features such as:
 
 In this case, I have modeled my relational database on a non-relational database system., MongoDB. I have used the Mongodb best practice and guidance used when migrating relational database platforms to non-relational database platforms as my guide in this case.  I have used the following mapping:
 
-<img src="documentation/validation/relational-data.png"/>   
+<img src="documentation/screenshots/relational-data.png"/>   
 
 MongoDB was used to store data for this site in a database, using the collection are described below:
 
@@ -439,7 +437,7 @@ Table:
 
 ## **Testing And Project Bugs**
 
-All testing and project Bugs can be found here - [TESTING.md](https://github.com/KonstantinaStrantzali/MyTrail-App-Project/blob/master/TESTING.md)
+All testing and project Bugs can be found here - [TESTING.md](https://github.com/KonstantinaStrantzali/MyTrail-App-Project/blob/main/TESTING.md)
 
 [Back to Top](#contents)
 
@@ -449,5 +447,24 @@ All testing and project Bugs can be found here - [TESTING.md](https://github.com
 
 ### Code
  * [Code Institute](https://codeinstitute.net/) Task Manager Mini Project walkthrough was the main source to create this project.
+ * [Geeksforgeeks](https://www.geeksforgeeks.org/python-404-error-handling-in-flask/) for how to handle an error in flask article.
+ * [DigitalOcean Community](https://www.digitalocean.com/community/tutorials/how-to-handle-errors-in-a-flask-application) for how to haddle 500 error in flask.
+ * [StackOverflow](https://stackoverflow.com/questions/24420080/change-navbar-text-color-bootstrap) for changing the color of nav text by using !important.
+ * [Tim Nelson](https://github.com/TravelTimN/flask-task-manager-project/blob/demo/templates/partials/modals.html) for showing the modal pops-up  and a unique ID for each one inside of a for-loop.
+ * [Bootstrap](https://getbootstrap.com/): For providing a responsive layout to my project.
  
-
+ 
+ ### Media
+All images have been taken from [Unsplash](https://unsplash.com/)
+* [Home Page Background](https://unsplash.com/photos/__E07WwlywA)
+* [Register Page Background](https://unsplash.com/photos/6Zfg9nar_CA)
+* [Log In Page Background](https://unsplash.com/photos/H_F47AfA1S0)
+* [Other Pages Background](https://unsplash.com/photos/lfVJsPvNJU0)
+* [Default Trail Image](https://unsplash.com/photos/wuQFGqIV5QY)
+ 
+### Acknowledgements
+ * I would like to thank my mentor Ronan for his precious advices and guadelines.
+ * My family, the sweet thought of them keeps me always foced and determined to achieve my dreams.
+ * To Iggy a heartfull thank you for his patience and help.
+ * To Stef for all of his jokes, support, comfront, patience and help.
+ 
