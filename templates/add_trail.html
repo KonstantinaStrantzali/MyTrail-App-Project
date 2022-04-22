@@ -56,8 +56,7 @@
                         <div class="col-md-10 offset-md-1 col-lg-11 offset-lg-0">
                             <div class="form-floating mb-3">
                                 <select class="form-select form-select-m mb-3" id="difficulty_level"
-                                    name="difficulty_level" required
-                                    aria-label=".form-select-lg example">
+                                    name="difficulty_level" required aria-label=".form-select-lg example">
                                     <option selected disabled value="">Select difficulty</option>
                                     {% for level in difficulty %}
                                     <option value="{{ level.difficulty_level }}">{{ level.difficulty_level }}</option>
