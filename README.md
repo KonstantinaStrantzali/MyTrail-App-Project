@@ -3,7 +3,9 @@
 
 ![Final project image home page](documentation/responsive-site.png)
 
-This website provides a platform to users who love sharing trail as well as exploring and discovering new trails. As more and more users starting using the service, the website become a free resource. The main goal of this project is a database maintenance attached to a website, with full CRUD (Create, Read, Update and Delete) functionality. The site is designed to be responsive on a range of devices to make it accessible for trail lovers.
+This website provides a platform to users who love sharing trail as well as exploring and discovering new trail experiences. As more and more users starting using the service, the website become a free resource. The main goal of this project is a database maintenance attached to a website, with full CRUD (Create, Read, Update and Delete) functionality. The site is designed to be responsive on a range of devices to make it accessible for trail lovers.
+
+[View the live site here](https://mytrailap.herokuapp.com/)
 
 ## **Contents**
 
@@ -21,8 +23,10 @@ This website provides a platform to users who love sharing trail as well as expl
 [Information Architecture](#information-architecture)
 * [Database Design](#database-design)
 * [User Collection](#user-collection)
-* [Trail Collection](#comic-collection)
-* [Favourites Collection](#publishers-collection)
+* [Trails Collection](#trails-collection)
+* [Favourites Collection](#favourites-collection)
+* [Types Collection](#types-collection)
+* [Difficulty Collection](#difficulty-collection)
 
 [Technologies Used](#technologies-used)
 * [Languages Used](#languages-used)
@@ -39,7 +43,7 @@ This website provides a platform to users who love sharing trail as well as expl
 * [Initial Deployment](#initial-deployment)
 * [Making a Local Clone](#making-a-local-clone)
 
-[Testing and Project Barrier Solutions](#testing-and-project-barrier-solutions)
+[Testing And Project Bugs*](#testing-and-project-bugs)
 
 [Credits](#credits)
 * [Code](#code)
@@ -101,7 +105,7 @@ As an admin user should be able to:
 - The [Home page](static/images/welcome-image.jpg) show a nice background, visually appealing image and while welcoming the user.
 - The [Register page](static/images/register-image.png) has a strong mountain background image and make the site inviting.
 - The [Login page](static/images/singIn-image.png) has an other beautiful nature scened image making the site welcoming for the user.
-- The rest of pages, used [hero image](static/images/profile-image.avif) as general image background to keep consistency and harmony in terms of web design across the site.
+- The rest of pages, use [hero image](static/images/profile-image.avif) as general image background to keep consistency and harmony in terms of web design across the site.
 
 
 ### **Wireframes**
@@ -170,15 +174,15 @@ The navigation bar changes depending on user status and screen size:
 | Log Out | &#10060; | &#9989; | &#9989; |
 
  **Trails Page**
- ![Register Form](documentation/screenshots/trails-page.png)
+ ![Trails](documentation/screenshots/trails-page.png)
  
 - Welcome
-    - Flash message at the top of the page gives feedback that register is successful or `Welcome <users first name>` in case their are already signed users.
+    - Flash message at the top of the page gives feedback that registration is successful or `Welcome <users first name>` in case their are already registered users.
 - View Trails
-    - Trails experiences written by other users, including title and username whom was created be. Button for read more details, activates a modal which show more details for the trail such as type, description, miles, image_url, difficulty, location. A read more button leads to a modal which shows again the picture and other details for the trail.
+    - Trails experiences written by other users, including title and the username of the creator. Button for Read More details, activates a modal which showS more details for the trail such as the same picture, type, description, miles, image_url, difficulty, location.
   ![Modal](documentation/screenshots/modal-card-description.png) 
 - My Favourites
-    - User can click on the heart icon and save the trail as favourite. After clicking, the empty heart icon, turns to full heart icon and user infored that the trail has been saved as favourite.
+    - User can click on the heart icon and save the trail as favourite. After clicking, the empty heart icon turns to full heart icon and user informed that the trail has been saved as favourite.
    <div float="right">
   <img src="documentation/screenshots/empty-heart-icon.png"/>
   <img src="documentation/screenshots/empty-heart-icon.png"/>
@@ -212,12 +216,12 @@ The navigation bar changes depending on user status and screen size:
     - On the top of the profile page is written `<usersname> s Profile`, showing whom the website belongs to.
  
   - User's Posts
-    - User can view the trails posted and edit or delete them if they want by clicking the corresponding button.
-    - Delete button triggers a modal asking if the user is wants to complete the deletion.
+    - User can view the trails posted and edit or delete them if they want by clicking on the corresponding button.
+    - Delete button triggers a modal asking if the user is sure for the potential deletion.
     ![Delete_modal](documentation/screenshots/delete-modal.png)
  
  - Favourites
-   - Trails selected as favourites by clicking the heart icon on the trails page, are saved and displayed on the fabourites field. 
+   - Trails selected as favourites by clicking the heart icon on the trails page, are saved and displayed on the fabourites field at user's profile. 
   ![Favourite](documentation/screenshots/favourites-area.png)
   
  **Manage Trails** - Only seen by admin user
@@ -234,26 +238,30 @@ The navigation bar changes depending on user status and screen size:
 
 ---
 
-* Social links that open in a new tab
+* Social links that open in a new tab.
     * ![Social Links](documentation/screenshots/social-links.png)
 
 ---
 
 * 404 Page Not Found
 * 500 Internal Server Error
-    * ![404 Page Not Found](docs/screenshots/page_not_found.png)
+    * ![404 Page Not Found](documentation/screenshots/404-error.png)
+    
+    * ![500 Internal Error](documentation/screenshots/500 error.png)
 
 ---
 
 ### Future Features
  
-In future I would like to implement a few extra features such as:
+In the future I would like to implement a few extra features such as:
  
  - To allow users to delete their account.
  - To allow users to comment below other users trails posts.
  - To give the right to admin to delete other users profiles.
- - Allowing a user to upload images from their device.
+ - To allow users to upload images from their device.
  - To add a system where the user would be able to find cafe, restaurants and hotel close to the trails.
+
+## **Information Architecture**
 
 ### Database Design
 
@@ -434,7 +442,7 @@ Table:
 7. Type `git clone`, and then paste the URL copied in Step 3.
 8. Press Enter, to creat the local clone.
 9. An env.py file with new values, a MongoDB database with the data keys and types need to be created.
-
+ 
 ## **Testing And Project Bugs**
 
 All testing and project Bugs can be found here - [TESTING.md](https://github.com/KonstantinaStrantzali/MyTrail-App-Project/blob/main/TESTING.md)
@@ -455,7 +463,7 @@ All testing and project Bugs can be found here - [TESTING.md](https://github.com
  
  
  ### Media
-All images have been taken from [Unsplash](https://unsplash.com/)
+All images have been taken from [Unsplash](https://unsplash.com/).
 * [Home Page Background](https://unsplash.com/photos/__E07WwlywA)
 * [Register Page Background](https://unsplash.com/photos/6Zfg9nar_CA)
 * [Log In Page Background](https://unsplash.com/photos/H_F47AfA1S0)
@@ -464,7 +472,7 @@ All images have been taken from [Unsplash](https://unsplash.com/)
  
 ### Acknowledgements
  * I would like to thank my mentor Ronan for his precious advices and guadelines.
- * My family, the sweet thought of them keeps me always foced and determined to achieve my dreams.
- * To Iggy a heartfull thank you for his patience and help.
+ * My family, the sweet thought of them keeps me always focused and determined to achieve my dreams.
+ * To Iggy a heartfelt thank you for his patience and help.
  * To Stef for all of his jokes, support, comfront, patience and help.
  
